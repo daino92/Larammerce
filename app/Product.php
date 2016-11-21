@@ -6,13 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Elasticquent\ElasticquentTrait;
 class Product extends Model
 {
-    protected $fillable = ['imagePath', 'title', 'description', 'price'];
+    protected $fillable = ['imagePath', 'title', 'description', 'tag', 'category', 'price', 'quantity', ];
     use ElasticquentTrait;
-
     function getIndexName(){
         return 'products';
     }
-
     protected $indexSettings = [
         'analysis' => [
             'char_filter' => [
@@ -51,7 +49,6 @@ class Product extends Model
             ],
         ],
     ];
-
     protected $mappingProperties = array(
         'title' => array(
             'type' => 'string',
