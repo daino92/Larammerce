@@ -38,7 +38,9 @@
                                             <input type="text" class="form-control input-sm" value="{{ $product['qty'] }}">
                                         </div>
                                         <div class="col-xs-2">
-                                                <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"> </span></a>
+                                            <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"> </span></a>
+                                            <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-minus"> </span></a>
+                                            <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> </span></a>
                                         </div>
                                     </div>
                                 </div>
