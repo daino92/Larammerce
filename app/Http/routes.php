@@ -41,6 +41,7 @@ Route::get('/shopping-cart', [
     'as' => 'product.shoppingCart'
 ]);
 
+
 Route::get('/checkout', [
     'uses' => 'ProductController@getCheckout',
     'as' => 'checkout',
