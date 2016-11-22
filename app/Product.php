@@ -50,17 +50,22 @@ class Product extends Model
         ],
     ];
     protected $mappingProperties = array(
-        'title' => array(
+        'title' => [
             'type' => 'string',
-            'analyzer' => 'standard'
-        ),
-        'description' => array(
+            "analyzer" => "standard"
+        ],
+        'description' => [
             'type' => 'string',
-            'analyzer' => 'standard'
-        ),
-        'price' => array(
+            "analyzer" => "standard"
+        ],
+        'tag' => [
+            'type' => 'string',
+            'analyzer' => 'stop',
+            "stopwords" => [","]
+        ],
+        'price' => [
             'type' => 'integer',
             'include_in_all' => false
-        )
+        ],
     );
 }
