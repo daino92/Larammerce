@@ -14,7 +14,6 @@ class UserController extends Controller
         return view('user.signup');
     }
 
-
     public function postSignup(Request $request) {
         $this-> validate($request, [
             'email' => 'email|required|unique:users',
@@ -31,7 +30,6 @@ class UserController extends Controller
             'confirmation_code' => $confirmation_code //for confirmation mail
         ]);
         $user->save();
-        //$data = $request->all();
 
         //Mail::send('mails.verify', $data, function($message) { //new
         //    $message->to($data['username'], $data['email'])->subject('Verify your email address');
@@ -94,4 +92,3 @@ class UserController extends Controller
         return redirect()->route('product.index');
     }
 }
-
