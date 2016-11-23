@@ -7,9 +7,9 @@
                 <h1>{{ Auth::user()->username }}'s profile</h1>
                 <hr>
                 <h2><center>Order History</center></h2>
-                <div class="panel panel-info">
-                    <div class="panel-body">
-                        @foreach($orders as $order)
+                @foreach($orders as $order)
+                    <div class="panel panel-info">
+                        <div class="panel-body">
                             @foreach($order->cart->items as $item)
                                 <div class="row">
                                     <div class="col-xs-2">
@@ -26,16 +26,16 @@
                                 </div>
                                 <hr>
                             @endforeach
-                        @endforeach
-                    </div>
-                    <div class="panel-footer">
-                        <div class="row text-center">
-                            <div class="col-xs-9 pull-right">
-                                <h4 class="text-right"><strong>Total Price: {{ $order->cart->totalPrice }} $</strong></h4>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row text-center">
+                                <div class="col-xs-9 pull-right">
+                                    <h4 class="text-right"><strong>Total Price: {{ $order->cart->totalPrice }} $</strong></h4>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -45,9 +45,9 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2><center>Ongoing Orders</center></h2>
-                    <div class="panel panel-info">
-                        <div class="panel-body">
-                            @foreach($orders as $order)
+                    @foreach($orders as $order)
+                        <div class="panel panel-info">
+                            <div class="panel-body">
                                 @foreach($order->cart->items as $item)
                                     <div class="row">
                                         <div class="col-xs-2">
@@ -64,16 +64,16 @@
                                     </div>
                                     <hr>
                                 @endforeach
-                            @endforeach
-                        </div>
-                        <div class="panel-footer">
-                            <div class="row text-center">
-                                <div class="col-xs-9 pull-right">
-                                    <h4 class="text-right"><strong>Total Price: {{ $order->cart->totalPrice }} $</strong></h4>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="row text-center">
+                                    <div class="col-xs-9 pull-right">
+                                        <h4 class="text-right"><strong>Total Price: {{ $order->cart->totalPrice }} $</strong></h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
