@@ -7,6 +7,7 @@ use App\User;
 use Mail; //new
 use Auth;
 use Session;
+//use Illuminate\Support\Facades\Input;
 
 class UserController extends Controller
 {
@@ -32,7 +33,7 @@ class UserController extends Controller
         $user->save();
 
         //Mail::send('mails.verify', $data, function($message) { //new
-        //    $message->to($data['username'], $data['email'])->subject('Verify your email address');
+        //    $message->to($data['email'])->subject('Verify your email address');
         //});
 
         //Auth::login($user); //If a new user creates an account, the system automatically logs him in.

@@ -1,3 +1,5 @@
+<script src="src/js/login.js" type="text/javascript"></script>
+
 <!-- BEGIN # BOOTSNIP INFO -->
 <div class="container">
 	<div class="row">
