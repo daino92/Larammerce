@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Elasticquent\ElasticquentTrait;
 class Product extends Model
 {
-    protected $fillable = ['imagePath', 'title', 'description', 'tag', 'category', 'price', 'quantity'];
+    protected $fillable = ['imagePath', 'title', 'description', 'category', 'price', 'quantity', 'XS', 'S', 'M', 'L', 'XL', 'XXL'];
     use ElasticquentTrait;
     function getIndexName(){
         return 'products';
@@ -58,7 +58,7 @@ class Product extends Model
             'type' => 'string',
             "analyzer" => "standard"
         ],
-        'tag' => [
+        'category' => [
             'type' => 'string',
             'analyzer' => 'stop',
             "stopwords" => [","]
