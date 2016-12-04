@@ -67,5 +67,23 @@ class Product extends Model
             'type' => 'integer',
             'include_in_all' => false
         ],
+        'XS' => [
+            'type' => 'integer',
+        ],
+        'S' => [
+            'type' => 'integer',
+        ],
+        'M' => [
+            'type' => 'integer',
+        ],
+        'L' => [
+            'type' => 'integer',
+        ],
+        'XL' => [
+            'type' => 'integer',
+        ],
+        'XXL' => [
+            'type' => 'integer',
+        ],
     );
 }
