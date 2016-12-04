@@ -21,6 +21,12 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->integer('price');
             $table->integer('quantity');
+            $table->integer('XS');
+            $table->integer('S');
+            $table->integer('M');
+            $table->integer('L');
+            $table->integer('XL');
+            $table->integer('XXL');
         });
     }
 
