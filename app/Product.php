@@ -19,7 +19,7 @@ class Product extends Model
                     'mappings' => [
                         '&=> and '
                     ],
-                ],
+                ], //asdasd
             ],
             'filter' => [
                 'word_delimiter' => [
