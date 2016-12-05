@@ -32,7 +32,7 @@ class Product extends Model
                     'preserve_original' => true,
                     'catenate_numbers' => true,
                 ]
-            ],
+            ],//aaaaaa
             'analyzer' => [
                 'default' => [
                     'type' => 'custom',
