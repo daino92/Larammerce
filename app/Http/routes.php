@@ -21,6 +21,12 @@ Route::get('/add-to-cart/{id}', [
     'as' => 'product.addToCart'
 ]);
 
+Route::get('/admin', [
+    'uses' => 'AdminController@adminIndex',
+    'as' => 'admin.adminIndex'
+]);
+
+
 Route::get('/reduce/{id}', [
     'uses' => 'ProductController@getReduceByOne',
     'as' => 'product.reduceByOne'
