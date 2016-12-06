@@ -19,7 +19,7 @@ class Product extends Model
                     'mappings' => [
                         '&=> and '
                     ],
-                ], //asdasd
+                ],
             ],
             'filter' => [
                 'word_delimiter' => [
@@ -32,8 +32,12 @@ class Product extends Model
                     'preserve_original' => true,
                     'catenate_numbers' => true,
                 ]
+<<<<<<< HEAD
             ],//aaaaaa
             //test
+=======
+            ],
+>>>>>>> 8e361d69af2fc237892db50758eaec24277c8fcb
             'analyzer' => [
                 'default' => [
                     'type' => 'custom',
@@ -49,7 +53,7 @@ class Product extends Model
                 ],
             ],
         ],
-    ];
+    ]; //adsads
     protected $mappingProperties = array(
         'title' => [
             'type' => 'string',
