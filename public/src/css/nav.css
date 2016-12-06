@@ -5,20 +5,55 @@
  */
 
 
-
+/*                        ADMIN PAGE                            */
 .statistic-box{
     
    height: 190px;
     background: white;
     margin-top: 30px;
-    border-right: 1px solid rgba(120,130,140,0.13);
- 
+    border-right: 1px solid rgba(120,130,140,0.13);   
+}
+.statistic-num{
+    font-size: 38pt;
+    padding-top: 15px;
+    padding-right: 42px;
+}
+
+.progress-bar{
+    float: left;
+    width: 0;
+    height: 6px!important;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(21, 18, 18, 0.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.pr-bar{
+    padding: 0px !important;
+    background-color:#f3f3f3;
     
 }
 
+#chartContainer{
+    width: 96% !important;
+    height: 350px;
+    padding: 29px;
+}
 
+#chartContainer2{
+    width: 47% !important;
+    height: 350px;
+    padding: 43px;  
+    padding-top: 63px;
+}
 
-
+/*                        ADMIN PAGE                            */
 
  body {
     overflow-x: hidden;

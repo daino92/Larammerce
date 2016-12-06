@@ -13,7 +13,12 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
       
     @yield('styles')
-    <link rel="stylesheet"href="{{URL::to('source/css/nav.css')}}">   
+    <link rel="stylesheet"href="{{URL::to('src/css/nav.css')}}">   
+    
+    
+    
+      <script type="text/javascript" src="{{ URL::to('src/js/canvasjs.min.js') }}"></script>
+  
 </head>
 
 <body>
@@ -27,29 +32,27 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        <h3>Admin Page</h3> 
                     </a>
+                   
                 </li>
                 <li>
                     <a href="#">Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#">Recent sales</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="#">Vendor management</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#">User Management</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">Emails</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="#">Homepage</a>
                 </li>
             </ul>
         </div>
@@ -60,14 +63,16 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
                         <h1>Dashboard</h1>
                         <hr>
           </div>                
                      </div>
                      </div>
                      </div>
-                <div id="page-content-wrapper dash-area" style="height:500px;background:#EDF1F5;">   
+                     
+                     
+                <div id="page-content-wrapper dash-area" style="height:100%;background:#EDF1F5;">   
                       <div class="container-fluid">  
                       <div class="col-lg-12"> 
                         <div class="container-fluid statistic-region" style="height: 180px;">
@@ -75,11 +80,16 @@
                                 <div class="statistic-box-inside">
                                      <div class="col-md-6">
                                          <i class="fa fa-users  fa-4x" style="    padding-top: 20px" aria-hidden="true"></i><br>
-                                         Total Clients
+                                         <h4>  Total Clients</h4>
                                      </div>
-                                     <div class="col-md-6"> 25</div>
-                                     <div class="col-md-12"> 
-                                   
+                                     <div class="col-md-6 text-right statistic-num" style="color: #3dabce;"> 25</div>
+                                     <div class="col-md-12 pr-bar"> 
+                      
+                                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:55%;background-color: #3dabce;">
+                                     <span class="sr-only">70% Complete</span>
+     
+                                    </div> 
+                                                                                                                                              
                                     </div>
                                </div>
                             </div>
@@ -88,11 +98,19 @@
                                 <div class="statistic-box-inside">
                                      <div class="col-md-6"> 
                                        <i class="fa fa-cart-plus fa-4x" style="    padding-top: 20px" aria-hidden="true"></i><br>
-                                        Products Sold
+                                        <h4>Products Sold</h4>
                                      
                                      </div>
-                                     <div class="col-md-6"> 125 </div>
-                                     <div class="col-md-12"> 1a</div>
+                                     <div class="col-md-6 text-right statistic-num" style="color: #b255c7;"> 125 </div>
+                                     
+                                     <div class="col-md-12 pr-bar"> 
+                                     
+                       <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:60%;background-color: #b255c7;">
+                                     <span class="sr-only">70% Complete</span>
+     
+                        </div>                                    
+                                     
+                                     </div>
                                </div>
                             </div>
 
@@ -100,11 +118,20 @@
                                 <div class="statistic-box-inside">
                                      <div class="col-md-6">
                                         <i class="fa fa-credit-card  fa-4x" style="    padding-top: 20px" aria-hidden="true"></i><br> 
-                                         Total Income
+                                         <h4>Total Income</h4>
                                      
                                      </div>
-                                     <div class="col-md-6"> 300</div>
-                                     <div class="col-md-12"> 1a</div>
+                                     <div class="col-md-6 text-right statistic-num" style="color: #23b953;"> 300</div>
+                                     <div class="col-md-12 pr-bar"> 
+                                     
+                      
+                                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;background-color: #23b953;">
+                                     <span class="sr-only">70% Complete</span>
+     
+                                    </div>                                      
+                                     
+                                     
+                                     </div>
                                </div>
                             </div>
 
@@ -113,11 +140,18 @@
                                      <div class="col-md-6"> 
                                      <i class="fa fa-suitcase  fa-4x" style="    padding-top: 20px" aria-hidden="true"></i><br>
                                      
-                                     Vendors
+                                     <h4>Vendors</h3>
                                      
                                      </div>
-                                     <div class="col-md-6"> 1120</div>
-                                     <div class="col-md-12"> 1a</div>
+                                     <div class="col-md-6 text-right statistic-num" style="    color: #ff1212;"> 1120</div>
+                                     <div class="col-md-12 pr-bar"> 
+                                     
+                                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%;background-color: #ff1212;">
+                                     <span class="sr-only">70% Complete</span>
+     
+                                    </div>        
+                                                                         
+                                     </div>
                                </div>
                             </div>
 
@@ -126,29 +160,137 @@
                         </div>
                       </div>
                       </div>
+                      
+                     <div class="container-fluid">
+                     <div class="col-xl-12">
+                         <div id="chartContainer"> </div>  
+                    </div>
+                     </div>         
+                      
                        
-                  </div>     
+                    
                        
+                         
+                     <div class="col-xl-12">
+                          <div id="chartContainer2">
+                    </div>
+                             
+                     </div>    
                        
-                       
-                       
-                   
+                  </div>       
+
+                  
                 
             
       
         <!-- /#page-content-wrapper -->
+     
+
+
+
+
+
+
 
     </div>
     <!-- /#wrapper -->
 
-    
-    
+      
     
     
     
 </body>
 
 
+<script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      theme: "theme1",
+      title:{
+        text: "Orders - per month"
+      },
+      animationEnabled: true,
+      axisX: {
+        valueFormatString: "MMM",
+        interval:1,
+        intervalType: "month"
+        
+      },
+      axisY:{
+        includeZero: false
+        
+      },
+      data: [
+      {        
+        type: "line",
+              
+        dataPoints: [
+        { x: new Date(2016, 00, 1), y: 450 },
+        { x: new Date(2016, 01, 1), y: 414},
+        { x: new Date(2016, 02, 1), y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle"},
+        { x: new Date(2016, 03, 1), y: 460 },
+        { x: new Date(2016, 04, 1), y: 450 },
+        { x: new Date(2016, 05, 1), y: 500 },
+        { x: new Date(2016, 06, 1), y: 480 },
+        { x: new Date(2016, 07, 1), y: 480 },
+        { x: new Date(2016, 08, 1), y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross"},
+        { x: new Date(2016, 09, 1), y: 500 },
+        { x: new Date(2016, 10, 1), y: 480 },
+        { x: new Date(2016, 11, 1), y: 510 }
+        
+        ]
+      }
+      
+      
+      ]
+    });
+          var chart2 = new CanvasJS.Chart("chartContainer2",
+    {
+      title:{
+        text: "Top Sellers"    
+      },
+      animationEnabled: true,
+      axisY: {
+        title: "Total Sales"
+      },
+      legend: {
+        verticalAlign: "bottom",
+        horizontalAlign: "center"
+      },
+      theme: "theme3",
+      data: [
+
+      {        
+        type: "column",  
+        showInLegend: true, 
+        legendMarkerColor: "grey",
+        legendText: "Top Sellers",
+        dataPoints: [      
+        {y: 4571, label: "Bob"},
+        {y: 3017,  label: "Nick" },
+        {y: 2200,  label: "Tasos"},
+        {y: 1580,  label: "Manos"},
+        {y: 6000,  label: "Diogenis"},
+        {y: 800, label: "Dionisis"},
+        {y: 682,  label: "Dimitris"},        
+        {y: 350,  label: "Emmanouela"}        
+        ]
+      }   
+      ]
+    });
+
+    chart2.render();
+
+chart.render();
+}
+</script>
+
+
+
+  <script type="text/javascript">
+ 
+  </script>
 
 
 
