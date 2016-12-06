@@ -53,7 +53,7 @@ class Product extends Model
                 ],
             ],
         ],
-    ]; //adsads
+    ]; //adsads FROOOOOOOOOOOOOOOOOOOOOOOOOOOO
     protected $mappingProperties = array(
         'title' => [
             'type' => 'string',
