@@ -48,7 +48,7 @@ class Product extends Model
                 ],
             ],
         ],
-    ];
+    ]; //adsads
     protected $mappingProperties = array(
         'title' => [
             'type' => 'string',
