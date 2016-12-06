@@ -33,7 +33,7 @@ class Product extends Model
                     'catenate_numbers' => true,
                 ]
             ],//aaaaaa
-            //test 
+            //test
             'analyzer' => [
                 'default' => [
                     'type' => 'custom',
