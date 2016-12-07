@@ -13,11 +13,12 @@
       
     @yield('styles')
     <link rel="stylesheet"href="{{URL::to('src/css/nav.css')}}">
+    <link rel="stylesheet" href="{{ URL::to('src/css/app.css') }}">
     <script type="text/javascript" src="{{ URL::to('src/js/canvasjs.min.js') }}"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default admin-nav">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -27,16 +28,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+    
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{route('product.index')}}">Return to site</a></li>
+            <ul class="nav navbar-nav navbar-left">
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Approve Products</a></li>
+                        <li><a href="#">User Management</a></li>
+                        <li><a href="#">Emails</a></li>
+                        <li><a href="#">Homepage</a></li>                       
+                        <li><a href="{{route('product.index')}}">Return to site</a></li>                       
                         <li><a href="{{ route('user.logout') }}">Log out</a></li>
                     </ul>
                 </li>
@@ -47,36 +54,17 @@
 
     <div id="wrapper">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#"><h3>Admin Page</h3></a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Recent sales</a></li>
-                <li><a href="#">Vendor management</a></li>
-                <li><a href="#">User Management</a></li>
-                <li><a href="#">Emails</a></li>
-                <li><a href="#">Homepage</a></li>
-            </ul>
-        </div>
+
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                        <h1>Dashboard</h1>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div id="page-content-wrapper dash-area" style="height:100%;background:#EDF1F5;">
-            <div class="container-fluid">
+
+        
+            <div class="container-fluid admin " style="height:auto%;background:#EDF1F5;">
+               <div class="row">
                 <div class="col-lg-12">
-                    <div class="container-fluid statistic-region" style="height: 180px;">
+                    <div class="statistic-region" style="height: 180px;">
                         <div class="col-lg-3 statistic-box">
                             <div class="statistic-box-inside">
                                 <div class="col-md-6">
@@ -137,32 +125,113 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    </div>
+                    </div>
+                
+            
                       
-            <div class="container-fluid">
-                <div class="col-xl-12">
-                    <div id="chartContainer"> </div>
-                </div>
+<div class="row">
+       <div class="col-lg-6 charts">
+                      <div class="Chart-titles">
+                Orders-per Month
             </div>
-
-            <div class="col-xl-12">
-                <div id="chartContainer2">
-                </div>
-            </div>
+           <div id="chartContainer"> </div>
         </div>
-        <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
+       <div class="col-lg-6 charts">
+                      <div class="Chart-titles">
+                Top Sellers
+            </div>
+           <div id="chartContainer2"></div>
+        </div>        
+</div>
+
+
+<div class="row">
+      <div class="col-lg-6 charts">
+                      <div class="Chart-titles">
+                Recent Activities
+            </div>
+                        <table class="sales-table">
+                <tr>
+                    <td><b>Manos Gaitanakis</b></td>
+                    <td><b>21:36</b></td>
+                    <td><b>Jacket Upload</b></td>
+                </tr>
+                <tr>
+                    <td><b>Dionisis Kalepanagos</b></td>
+                    <td><b>19:00</b></td>
+                    <td><b>Red Tshirt Upload</b></td>
+                </tr>
+                <tr>
+                    <td><b>Foo Bar</b></td>
+                    <td><b>1:24</b></td>
+                    <td><b>Shoes DC 24' Upload</b></td>
+                </tr>
+                <tr>
+                    <td><b>John Snow</b></td>
+                    <td><b>13:23</b></td>
+                    <td><b>Epic Sword 24 inch Upload</b></td>
+                </tr>
+                <tr>
+                    <td><b>Nikola Tesla</b></td>
+                    <td><b>18:23</b></td>
+                    <td><b>Tesla Coil Prototype Uploaded</b></td>
+                </tr>
+                
+                
+            </table>
+           
+        </div>
+        <div class="col-lg-6 charts">
+            <div class="Chart-titles">
+                Recent Sales
+            </div>
+            <table class="sales-table">
+                <tr>
+                    <td><b>Red Shirt</b></td>
+                    <td><b>17:36</b></td>
+                    <td><b>+5.56$</b></td>
+                </tr>
+                <tr>
+                    <td><b>Jacket Volcom</b></td>
+                    <td><b>16:00</b></td>
+                    <td><b>+13.56$</b></td>
+                </tr>
+                <tr>
+                    <td><b>Hight heels PRADA</b></td>
+                    <td><b>12:24</b></td>
+                    <td><b>+222.56$</b></td>
+                </tr>
+                <tr>
+                    <td><b>Snowboard OSIRIS</b></td>
+                    <td><b>1:23</b></td>
+                    <td><b>+345.56$</b></td>
+                </tr>
+                <tr>
+                    <td><b>BMX 24'' Size</b></td>
+                    <td><b>6:24</b></td>
+                    <td><b>+80.56$</b></td>
+                </tr>
+                
+                
+            </table>
+        </div>
+</div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+    @include('partials.footer')
+
 </body>
 
 <script type="text/javascript">
   window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer",
     {
-      theme: "theme1",
+      theme: "theme2",
       title:{
-        text: "Orders - per month"
+        text: ""
       },
       animationEnabled: true,
       axisX: {
@@ -196,7 +265,7 @@
           var chart2 = new CanvasJS.Chart("chartContainer2",
     {
       title:{
-        text: "Top Sellers"    
+        text: ""    
       },
       animationEnabled: true,
       axisY: {

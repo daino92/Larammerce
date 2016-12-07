@@ -36,7 +36,25 @@
     font: bold 16px sans-serif;
 
     padding: 55px 50px;
-    margin-top: 80px;
+
+}
+.navbar-default .navbar-nav>li>a {
+    color: #ececec;
+    font-size: 20px;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+     color: #ececec !important;
+    background-color: #292C2F !important;
+}
+.dropdown-menu li {
+    padding-left: 5px;
+    font-size: 20px;
+    width: 100%;
+}
+.navbar-brand{
+    color: #ececec !important;
+    font-size: 28px!important;
+    margin-top: 4px;
 }
 
 .footer-distributed .footer-left,
