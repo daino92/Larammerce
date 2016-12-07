@@ -93,6 +93,8 @@ Route::group(['prefix' => 'user'], function() {
     });
 });
 
+/* Admin Routes */
+
 Route::get('/admin', [
     'uses' => 'AdminController@adminIndex',
     'as' => 'admin.adminIndex',

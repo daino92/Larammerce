@@ -33,7 +33,7 @@
                     @if (Auth::check() && Auth::user()->username=='admin')
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> Administration<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ route('admin.adminIndex') }}">Admin page</a></li>
+                            <li><a href="{{ route('admin.adminIndex') }}">Admin page!</a></li>
                             <li><a href="{{ route('user.logout') }}">Log out</a></li>
                         </ul>
                     @elseif(Auth::check())

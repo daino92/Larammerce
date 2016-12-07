@@ -66,7 +66,7 @@ class UserController extends Controller
                 Session::forget('oldUrl');
                 return redirect()->to($oldUrl);
             }
-            if(Auth::user()->username=='admin')
+            if(Auth::user()->username=='admin') //lalala
                 return redirect()->route('product.index');
             else
                 return redirect()->route('user.profile');
