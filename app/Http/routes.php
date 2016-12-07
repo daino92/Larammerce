@@ -21,12 +21,6 @@ Route::get('/add-to-cart/{id}', [
     'as' => 'product.addToCart'
 ]);
 
-Route::get('/admin', [
-    'uses' => 'AdminController@adminIndex',
-    'as' => 'admin.adminIndex'
-]);
-
-
 Route::get('/reduce/{id}', [
     'uses' => 'ProductController@getReduceByOne',
     'as' => 'product.reduceByOne'
@@ -65,6 +59,8 @@ Route::get('/signup/{confirmationCode}', [ //new
     'as' => 'mails.email'
 ]);
 
+/* User routes */
+
 Route::group(['prefix' => 'user'], function() {
     Route::group(['middleware' => 'guest'], function(){
         Route::get('/signup', [
@@ -96,3 +92,9 @@ Route::group(['prefix' => 'user'], function() {
         ]);
     });
 });
+
+Route::get('/admin', [
+    'uses' => 'AdminController@adminIndex',
+    'as' => 'admin.adminIndex',
+    'middleware' => 'auth'
+]);

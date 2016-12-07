@@ -66,7 +66,10 @@ class UserController extends Controller
                 Session::forget('oldUrl');
                 return redirect()->to($oldUrl);
             }
-            return redirect()->route('user.profile');
+            if(Auth::user()->username=='admin')
+                return redirect()->route('product.index');
+            else
+                return redirect()->route('user.profile');
         }
         elseif (Auth::attempt(['email' => $request->input('login'), 'password' => $request->input('password')])) {
             if (Session::has('oldUrl')) {
@@ -74,7 +77,10 @@ class UserController extends Controller
                 Session::forget('oldUrl');
                 return redirect()->to($oldUrl);
             }
-            return redirect()->route('user.profile');
+            if(Auth::user()->username=='admin')
+                return redirect()->route('product.index');
+            else
+                return redirect()->route('user.profile');
         }
         return redirect()->back();
     }
