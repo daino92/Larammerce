@@ -66,9 +66,9 @@ class UserController extends Controller
                 Session::forget('oldUrl');
                 return redirect()->to($oldUrl);
             }
-            if(Auth::user()->username=='admin') //lalala
+            if(Auth::user()->role==0)
                 return redirect()->route('product.index');
-            else
+            else if(Auth::user()->role==2)
                 return redirect()->route('user.profile');
         }
         elseif (Auth::attempt(['email' => $request->input('login'), 'password' => $request->input('password')])) {
@@ -77,9 +77,9 @@ class UserController extends Controller
                 Session::forget('oldUrl');
                 return redirect()->to($oldUrl);
             }
-            if(Auth::user()->username=='admin')
+            if(Auth::user()->role==0)
                 return redirect()->route('product.index');
-            else
+            else if(Auth::user()->role==2)
                 return redirect()->route('user.profile');
         }
         return redirect()->back();
