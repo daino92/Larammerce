@@ -1,6 +1,6 @@
 <footer class="footer-distributed">
     <div class="footer-left">
-        <h3>Locoroco<span>logo</span></h3>
+        <h3>Locoroco<img class="img-circle" id="img_logo" src="http://vignette3.wikia.nocookie.net/locoroco/images/b/b4/LocoRoco_Kulche.png/revision/latest?cb=20151125103417"></h3>
         <p class="footer-links">
             <a href="{{ route('product.index') }}">Home</a> ·
             <a href="#">Blog</a> ·
