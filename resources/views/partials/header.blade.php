@@ -11,14 +11,6 @@
             <a class="navbar-brand" href="{{ route('product.index') }}">Home</a>
         </div>
 
-        <!--Search Bar and Submit Button -->
-        <form class="navbar-form navbar-left global-search">
-            <div class="form-group">
-                <input type="text" class="form-control" name="search" placeholder="Search...">
-               <!-- <input id="cn" name="cn" type="hidden" value="false" /> -->
-                <button type="submit" class="btn btn-primary"/><span class="glyphicon glyphicon-search"></span>
-            </div>
-        </form>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

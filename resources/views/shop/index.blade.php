@@ -5,6 +5,41 @@
 @endsection
 
 @section('content')
+  
+  
+
+   
+  
+   <div class="container-fluid search-area" style="background: url('{{ URL::to('pictures/search.jpg') }}');background-repeat:no-repeat;">
+   <div class="row" > 
+     <div class="algn-center">
+        
+    
+
+               <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+   
+   
+   
+
+   
+    </div>
+
+    </div>
+  </div>
+
+
+      
+   
+   
     @if(Session::has('success'))
         <div class="row">
             <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
