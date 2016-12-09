@@ -71,7 +71,7 @@
                                 <input type="text" id="register_email" name="email" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for=password">Password</label>
+                                <label for="password">Password</label>
                                 <input type="password" id="register_password" name="password" class="form-control" data-toggle="password">
                             </div>
                     </div>

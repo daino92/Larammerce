@@ -31,17 +31,18 @@
                                         <h4 class="product-name"><strong>{{ $product['item']['title'] }}</strong></h4><h4><small>{{ $product['item']['description'] }}</small></h4>
                                     </div>
                                     <div class="col-xs-6">
-                                        <div class="col-xs-6 text-right">
+                                        <div class="col-xs-3 text-right">
                                             <h4><strong>{{ $product['price'] }} $ <span class="text-muted">x</span></strong></h4>
                                         </div>
-                                        <div class="col-xs-4">
-                                            <input type="text" class="form-control input-sm" value="{{ $product['qty'] }}">
+                                        <div class="col-xs-9">
+                                        <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-minus"> </span></a>
+                                        <input type="text" class="input-sm" value="{{ $product['qty'] }}">
+                                        <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> </span></a><br>
+                                        <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item"><span class="glyphicon glyphicon-trash"> </span></a>                                            
                                         </div>
-                                        <div class="col-xs-2">
-                                            <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"> </span></a>
-                                            <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-minus"> </span></a>
-                                            <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> </span></a>
-                                        </div>
+                                        
+                                           
+                                        
                                     </div>
                                 </div>
                                 <hr>

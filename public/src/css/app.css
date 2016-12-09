@@ -82,6 +82,17 @@
     color:  #5383d3;
 }
 
+/* Shoping cart.blade css */
+.input-sm {
+    width: 151px !important;
+    text-align: center !important;
+    font-size: 10pt !important;
+}
+.delete-item{
+    margin-top: 21px;
+    font-size: 22px;
+}
+/* Shoping cart.blade css */
 /* Footer links */
 
 .footer-distributed .footer-links{
