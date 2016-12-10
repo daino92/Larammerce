@@ -100,3 +100,15 @@ Route::get('/admin', [
     'as' => 'admin.adminIndex',
     'middleware' => 'auth'
 ]);
+
+Route::get('/admin/users', [
+   'uses' => 'AdminController@adminUsers',
+    'as' => 'admin.users',
+    'middleware' => 'auth'
+]);
+
+Route::get('/admin/dashboard', [
+    'uses' => 'AdminController@adminDashboard',
+    'as' => 'admin.dashboard',
+    'middleware' => 'auth'
+]);
