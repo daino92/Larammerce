@@ -1,7 +1,7 @@
 @extends('layouts.admin.adminMaster')
 
 @section('contents')
-<div id="page-wrapper">
+<div id="page-wrapper" class="dashboard" >
     <div class="container-fluid">
         <!-- Page Heading -->
         <div class="row">

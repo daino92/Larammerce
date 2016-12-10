@@ -17,6 +17,15 @@ body {
     }
 }
 
+
+    #page-wrapper#dashboard {
+        padding-left: 14% !important;
+    }
+.dashboard{
+    padding-left: 14% !important;
+}
+
+
 #wrapper {
     padding-left: 0;
 }
