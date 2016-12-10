@@ -10,7 +10,7 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-      
+
     @yield('styles')
     <link rel="stylesheet"href="{{URL::to('src/css/nav.css')}}">
     <link rel="stylesheet" href="{{ URL::to('src/css/app.css') }}">
@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-    
+
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,8 +42,8 @@
                         <li><a href="#">Approve Products</a></li>
                         <li><a href="#">User Management</a></li>
                         <li><a href="#">Emails</a></li>
-                        <li><a href="#">Homepage</a></li>                       
-                        <li><a href="{{route('product.index')}}">Return to site</a></li>                       
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="{{route('product.index')}}">Return to site</a></li>
                         <li><a href="{{ route('user.logout') }}">Log out</a></li>
                     </ul>
                 </li>
@@ -60,7 +60,7 @@
         <!-- Page Content -->
 
 
-        
+
             <div class="container-fluid admin " style="height:auto%;background:#EDF1F5;">
                <div class="row">
                 <div class="col-lg-12">
@@ -127,9 +127,9 @@
                     </div>
                     </div>
                     </div>
-                
-            
-                      
+
+
+
 <div class="row">
        <div class="col-lg-6 charts">
                       <div class="Chart-titles">
@@ -142,7 +142,7 @@
                 Top Sellers
             </div>
            <div id="chartContainer2"></div>
-        </div>        
+        </div>
 </div>
 
 
@@ -177,10 +177,10 @@
                     <td><b>18:23</b></td>
                     <td><b>Tesla Coil Prototype Uploaded</b></td>
                 </tr>
-                
-                
+
+
             </table>
-           
+
         </div>
         <div class="col-lg-6 charts">
             <div class="Chart-titles">
@@ -212,8 +212,8 @@
                     <td><b>6:24</b></td>
                     <td><b>+80.56$</b></td>
                 </tr>
-                
-                
+
+
             </table>
         </div>
 </div>
@@ -238,13 +238,13 @@
         valueFormatString: "MMM",
         interval:1,
         intervalType: "month"
-        
+
       },
       axisY:{
         includeZero: false
       },
       data: [
-      {        
+      {
         type: "line",
         dataPoints: [
         { x: new Date(2016, 00, 1), y: 450 },
@@ -265,7 +265,7 @@
           var chart2 = new CanvasJS.Chart("chartContainer2",
     {
       title:{
-        text: ""    
+        text: ""
       },
       animationEnabled: true,
       axisY: {
@@ -277,22 +277,22 @@
       },
       theme: "theme3",
       data: [
-      {        
-        type: "column",  
-        showInLegend: true, 
+      {
+        type: "column",
+        showInLegend: true,
         legendMarkerColor: "grey",
         legendText: "Top Sellers",
-        dataPoints: [      
+        dataPoints: [
         {y: 4571, label: "Bob"},
         {y: 3017,  label: "Nick" },
         {y: 2200,  label: "Tasos"},
         {y: 1580,  label: "Manos"},
         {y: 6000,  label: "Diogenis"},
         {y: 800, label: "Dionisis"},
-        {y: 682,  label: "Dimitris"},        
-        {y: 350,  label: "Emmanouela"}        
+        {y: 682,  label: "Dimitris"},
+        {y: 350,  label: "Emmanouela"}
         ]
-      }   
+      }
       ]
     });
     chart2.render();
