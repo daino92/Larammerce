@@ -1,4 +1,7 @@
-<script type="text/javascript" src="src/js/login.js"></script>
+@section('scripts')
+    <script type="text/javascript" src="src/js/login.js"></script>
+@endsection
+
 <link rel="stylesheet" type="text/css" href="src/css/login.css">
 
 <a href="#" role="button" data-toggle="modal" data-target="#login-modal" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Account</a>
@@ -108,10 +111,8 @@
                     </div>
                 </form>
                 <!-- End | Lost Password Form -->
-
             </div>
             <!-- End # DIV Form -->
-
         </div>
     </div>
 </div>

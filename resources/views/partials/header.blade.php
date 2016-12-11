@@ -23,7 +23,7 @@
                 </li>
                 <li class="dropdown">
                     @if (Auth::check() && Auth::user()->role=='admin')
-                        <a href="{{ route('admin.adminIndex') }}" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> Administration</a>
+                        <a href="{{ route('admin.dashboard') }}" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> Administration</a>
                     @elseif(Auth::check() && Auth::user()->role=='user')
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> {{ Auth::user()->username }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
