@@ -63,10 +63,10 @@
             <ul class="nav navbar-nav side-nav">
                 <li class="active"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
                 <li><a href="{{ route('admin.users') }}"><i class="fa fa-fw fa-user"></i> User Management</a></li>
-                <li><a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
+                <li><a href="{{ route('admin.charts') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
                 <li><a href="#"><i class="fa fa-fw fa-table"></i> Approve Products</a></li>
-                <li><a href="#"><i class="fa fa-fw fa-table"></i> Transactions Management</a></li>
-                <li><a href="#"><i class="fa fa-fw fa-table"></i> Recent Activities</a></li>
+                <li><a href="{{ route('admin.transactions') }}"><i class="fa fa-fw fa-table"></i> Transactions Management</a></li>
+                <li><a href="{{ route('admin.activities') }}"><i class="fa fa-fw fa-table"></i> Recent Activities</a></li>
             </ul>
         </div>
     </nav>

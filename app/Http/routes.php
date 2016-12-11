@@ -112,3 +112,21 @@ Route::get('/admin/dashboard', [
     'as' => 'admin.dashboard',
     'middleware' => 'auth'
 ]);
+
+Route::get('/admin/charts', [
+    'uses' => 'AdminController@adminCharts',
+    'as' => 'admin.charts',
+    'middleware' => 'auth'
+]);
+
+Route::get('/admin/activities', [
+    'uses' => 'AdminController@adminActivities',
+    'as' => 'admin.activities',
+    'middleware' => 'auth'
+]);
+
+Route::get('/admin/transactions', [
+    'uses' => 'AdminController@adminTransactions',
+    'as' => 'admin.transactions',
+    'middleware' => 'auth'
+]);
