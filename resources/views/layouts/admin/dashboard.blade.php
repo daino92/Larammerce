@@ -16,7 +16,6 @@
                 </ol>
             </div>
         </div>
-
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-3 col-md-6">
@@ -54,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="{{ route('admin.products') }}">
                         <div class="panel-footer">
                             <span class="pull-left">View Details</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -76,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="{{ route('admin.transactions') }}">
                         <div class="panel-footer">
                             <span class="pull-left">View Details</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -109,7 +108,6 @@
             </div>
         </div>
         <!-- /.row -->
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -123,7 +121,6 @@
             </div>
         </div>
         <!-- /.row -->
-
         <div class="row">
             <div class="col-lg-4">
                 <div class="panel panel-default">
@@ -133,7 +130,7 @@
                     <div class="panel-body">
                         <div id="morris-donut-chart"></div>
                         <div class="text-right">
-                            <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('admin.charts') }}">View Details <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +160,7 @@
                             </a>
                         </div>
                         <div class="text-right">
-                            <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('admin.activities') }}">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -213,7 +210,7 @@
                             </table>
                         </div>
                         <div class="text-right">
-                            <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('admin.transactions') }}">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>

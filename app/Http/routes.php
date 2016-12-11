@@ -130,3 +130,9 @@ Route::get('/admin/transactions', [
     'as' => 'admin.transactions',
     'middleware' => 'auth'
 ]);
+
+Route::get('/admin/products', [
+    'uses' => 'AdminController@adminProducts',
+    'as' => 'admin.products',
+    'middleware' => 'auth'
+]);

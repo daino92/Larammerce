@@ -5,12 +5,9 @@
 @section('contents')
     <div id="page-wrapper" class="dashboard" >
         <div class="container-fluid">
-            <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Activities <small>Overview</small>
-                    </h1>
+                    <h1 class="page-header">Activities <small>Overview</small></h1>
                     <ol class="breadcrumb">
                         <li class="active">
                             <i class="fa fa-fw fa-bar-chart-o"></i> Activities
@@ -22,7 +19,7 @@
     </div>
 
     <div id="wrapper">
-        <div class="container-fluid admin " style="height:auto;background:#EDF1F5;">
+        <div class="container-fluid admin" style="height:auto;background:#EDF1F5;">
             <div class="row">
                 <div class="col-lg-6 charts">
                     <div class="Chart-titles">Recent Activities</div>
@@ -56,6 +53,5 @@
                 </div>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
     </div>
 @endsection

@@ -30,4 +30,8 @@ class adminController extends Controller
     public function adminTransactions(){
         return view('layouts.admin.transactions');
     }
+
+    public function adminProducts(){
+        return view('layouts.admin.adminproducts');
+    }
 }
