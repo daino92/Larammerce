@@ -122,17 +122,17 @@
     color:  #5383d3;
 }
 
-/* Shoping cart.blade css */
+/* Shopping cart.blade css */
 .input-sm {
-    width: 151px !important;
+    width: 150px !important;
     text-align: center !important;
     font-size: 10pt !important;
 }
 .delete-item{
-    margin-top: 21px;
-    font-size: 22px;
+    margin-top: 5px;
+    font-size: 20px;
 }
-/* Shoping cart.blade css */
+/* Shopping cart.blade css */
 
 .algn-center{
     padding-bottom: 13%;
@@ -273,4 +273,8 @@
     .footer-distributed .footer-center i{
         margin-left: 0;
     }
+}
+
+.btn{
+    border-radius:3px!important;
 }
