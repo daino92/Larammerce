@@ -40,9 +40,6 @@
                                         <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> </span></a><br>
                                         <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item"><span class="glyphicon glyphicon-trash"> </span></a>                                            
                                         </div>
-                                        
-                                           
-                                        
                                     </div>
                                 </div>
                                 <hr>
