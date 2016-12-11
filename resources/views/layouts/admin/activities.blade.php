@@ -1,6 +1,6 @@
 @extends('layouts.admin.adminMaster')
 <head>
-    <link rel="stylesheet"href="{{URL::to('src/css/nav.css')}}">
+    <link rel="stylesheet"href="{{URL::to('src/css/admin.css')}}">
 </head>
 @section('contents')
     <div id="page-wrapper" class="dashboard" >

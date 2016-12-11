@@ -1,10 +1,7 @@
 @extends('layouts.admin.adminMaster')
-<head>
-    <link rel="stylesheet"href="{{URL::to('src/css/nav.css')}}">
-    <script type="text/javascript" src="{{ URL::to('src/js/canvasjs.min.js') }}"></script>
-</head>
+
 @section('contents')
-    <div id="page-wrapper" class="dashboard" >
+    <div id="page-wrapper" class="dashboard">
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="row">
@@ -26,7 +23,6 @@
                     <h2 class="page-header">Flot Charts</h2>
                 </div>
             </div>
-            <!-- /.row -->
 
             <div class="row">
                 <div class="col-lg-12">
@@ -42,7 +38,6 @@
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
 
             <div class="row">
                 <div class="col-lg-4">
@@ -61,7 +56,6 @@
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
 
             <!-- Morris Charts -->
             <div class="row">
@@ -69,7 +63,6 @@
                     <h2 class="page-header">Morris Charts</h2>
                 </div>
             </div>
-            <!-- /.row -->
 
             <div class="row">
                 <div class="col-lg-12">
@@ -83,7 +76,6 @@
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
 
             <div class="row">
                 <div class="col-lg-4">
@@ -131,9 +123,8 @@
         <!-- /.container-fluid -->
     </div>
     <!-- /#page-wrapper -->
-
     <div id="wrapper">
-        <div class="container-fluid admin " style="height:auto;background:#EDF1F5;">
+        <div class="container-fluid admin" style="height:auto;background:#EDF1F5;">
             <div class="row">
                 <div class="col-lg-6 charts">
                     <div class="Chart-titles">Orders-per Month</div>
@@ -144,76 +135,10 @@
                     <div id="chartContainer2"></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 charts">
-                    <div class="Chart-titles">Recent Activities</div>
-                    <table class="sales-table">
-                        <tr>
-                            <td><b>Manos Gaitanakis</b></td>
-                            <td><b>21:36</b></td>
-                            <td><b>Jacket Upload</b></td>
-                        </tr>
-                        <tr>
-                            <td><b>Dionisis Kalepanagos</b></td>
-                            <td><b>19:00</b></td>
-                            <td><b>Red Tshirt Upload</b></td>
-                        </tr>
-                        <tr>
-                            <td><b>Foo Bar</b></td>
-                            <td><b>1:24</b></td>
-                            <td><b>Shoes DC 24' Upload</b></td>
-                        </tr>
-                        <tr>
-                            <td><b>John Snow</b></td>
-                            <td><b>13:23</b></td>
-                            <td><b>Epic Sword 24 inch Upload</b></td>
-                        </tr>
-                        <tr>
-                            <td><b>Nikola Tesla</b></td>
-                            <td><b>18:23</b></td>
-                            <td><b>Tesla Coil Prototype Uploaded</b></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-lg-6 charts">
-                    <div class="Chart-titles">Recent Sales</div>
-                    <table class="sales-table">
-                        <tr>
-                            <td><b>Red Shirt</b></td>
-                            <td><b>17:36</b></td>
-                            <td><b>+5.56$</b></td>
-                        </tr>
-                        <tr>
-                            <td><b>Jacket Volcom</b></td>
-                            <td><b>16:00</b></td>
-                            <td><b>+13.56$</b></td>
-                        </tr>
-                        <tr>
-                            <td><b>Hight heels PRADA</b></td>
-                            <td><b>12:24</b></td>
-                            <td><b>+222.56$</b></td>
-                        </tr>
-                        <tr>
-                            <td><b>Snowboard OSIRIS</b></td>
-                            <td><b>1:23</b></td>
-                            <td><b>+345.56$</b></td>
-                        </tr>
-                        <tr>
-                            <td><b>BMX 24'' Size</b></td>
-                            <td><b>6:24</b></td>
-                            <td><b>+80.56$</b></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
         </div>
         <!-- /#page-content-wrapper -->
     </div>
 @endsection
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 
 <script type="text/javascript">
     window.onload = function () {
@@ -296,3 +221,5 @@
         $("#wrapper").toggleClass("toggled");
     });
 </script>
+
+<script type="text/javascript" src="{{ URL::to('src/js/canvasjs.min.js') }}"></script>

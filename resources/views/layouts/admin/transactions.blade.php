@@ -1,6 +1,6 @@
 @extends('layouts.admin.adminMaster')
 <head>
-    <link rel="stylesheet"href="{{URL::to('src/css/nav.css')}}">
+    <link rel="stylesheet"href="{{URL::to('src/css/admin.css')}}">
 </head>
 @section('contents')
     <div id="page-wrapper" class="dashboard" >
@@ -22,7 +22,7 @@
     </div>
 
     <div id="wrapper">
-        <div class="container-fluid admin " style="height:auto;background:#EDF1F5;">
+        <div class="container-fluid admin" style="height:auto;background:#EDF1F5;">
             <div class="row">
                 <div class="col-lg-6 charts">
                     <div class="Chart-titles">Recent Sales</div>
