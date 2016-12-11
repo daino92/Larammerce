@@ -32,11 +32,17 @@
                         @endif
                             <div class="form-group">
                                 <label>Login</label>
-                                <input type="text" id="login_username" name="login" class="form-control">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" id="login_username" name="login" class="form-control">
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" id="login_password" name="password" class="form-control" data-toggle="password">
+                                <label>Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" id="login_password" name="password" class="form-control" data-toggle="password">
+                                </div>
                             </div>
                             <div class="checkbox">
                                 <label><input type="checkbox">Remember me</label>
@@ -66,16 +72,25 @@
                             </div>
                         @endif
                             <div class="form-group">
-                                <label for="email">Username</label>
-                                <input type="text" id="register_username" name="username" class="form-control">
+                                <label>Username</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" id="login_username" name="login" class="form-control">
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="text" id="register_email" name="email" class="form-control">
+                                <label>E-mail</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <input type="text" id="register_email" name="email" class="form-control">
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" id="register_password" name="password" class="form-control" data-toggle="password">
+                                <label>Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" id="login_password" name="password" class="form-control" data-toggle="password">
+                                </div>
                             </div>
                     </div>
                     <div class="modal-footer">
@@ -94,11 +109,10 @@
                 <!-- Begin | Lost Password Form -->
                 <form id="lost-form" style="display:none;">
                     <div class="modal-body">
-                        <div id="div-lost-msg">
-                            <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                            <span id="text-lost-msg">Type your e-mail.</span>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input id="lost_email" class="form-control" type="text" placeholder="Type your e-mail" required>
                         </div>
-                        <input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
                     </div>
                     <div class="modal-footer">
                         <div>
