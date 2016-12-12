@@ -11,9 +11,35 @@ class adminController extends Controller
         return view('layouts.admin.adminMaster');
     }
 
-    public function adminUsers(){
-        return view('layouts.admin.users');
+    /* Admin Users */
+    public function adminAllUsers(){
+        return view('layouts.admin.users.allusers');
     }
+
+    public function adminAddUsers(){
+        return view('layouts.admin.users.adduser');
+    }
+
+    public function adminManageRoles(){
+        return view('layouts.admin.users.roles');
+    }
+
+    public function adminEditUser(){
+        return view('layouts.admin.users.edituser');
+    }
+
+    public function adminUsersOnly(){
+        return view('layouts.admin.users.usersonly');
+    }
+
+    public function adminAdminsOnly(){
+        return view('layouts.admin.users.adminsonly');
+    }
+
+    public function adminVendorsOnly(){
+        return view('layouts.admin.users.vendorsonly');
+    }
+    /* Admin Users */
 
     public function adminDashboard(){
         return view('layouts.admin.dashboard');

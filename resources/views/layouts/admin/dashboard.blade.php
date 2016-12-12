@@ -26,12 +26,12 @@
                                 <i class="fa fa-users fa-4x" style="padding-top: 5px" aria-hidden="true"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">26</div>
+                                <div class="huge">{{ Auth::user()->count() }}</div>
                                 <div>Total Users</div>
                             </div>
                         </div>
                     </div>
-                    <a href="{{ route('admin.users') }}">
+                    <a href="{{ route('admin.users.allusers') }}">
                         <div class="panel-footer">
                             <span class="pull-left">View Details</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

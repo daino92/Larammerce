@@ -10,7 +10,7 @@
                     <h1 class="page-header">Activities <small>Overview</small></h1>
                     <ol class="breadcrumb">
                         <li class="active">
-                            <i class="fa fa-fw fa-bar-chart-o"></i> Activities
+                            <i class="fa fa-tasks" aria-hidden="true"></i> Activities
                         </li>
                     </ol>
                 </div>
