@@ -16,19 +16,17 @@
                     </ol>
                 </div>
             </div>
-
             <!-- Flot Charts -->
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="page-header">Flot Charts</h2>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Line Graph Example with Tooltips</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Line Graph with Tooltips</h3>
                         </div>
                         <div class="panel-body">
                             <div class="flot-chart">
@@ -38,12 +36,11 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-lg-4">
                     <div class="panel panel-green">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Pie Chart Example with Tooltips</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Pie Chart with Tooltips</h3>
                         </div>
                         <div class="panel-body">
                             <div class="flot-chart">
@@ -56,19 +53,17 @@
                     </div>
                 </div>
             </div>
-
             <!-- Morris Charts -->
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="page-header">Morris Charts</h2>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-green">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Area Line Graph Example with Tooltips</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Area Line Graph with Tooltips</h3>
                         </div>
                         <div class="panel-body">
                             <div id="morris-area-chart"></div>
@@ -76,12 +71,11 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-lg-4">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Donut Chart Example</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Donut Chart</h3>
                         </div>
                         <div class="panel-body">
                             <div id="morris-donut-chart"></div>
@@ -94,7 +88,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-red">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Line Graph Example with Tooltips</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Line Graph with Tooltips</h3>
                         </div>
                         <div class="panel-body">
                             <div id="morris-line-chart"></div>
@@ -107,7 +101,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Bar Graph Example</h3>
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Bar Graph</h3>
                         </div>
                         <div class="panel-body">
                             <div id="morris-bar-chart"></div>
@@ -118,7 +112,6 @@
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
     </div>
