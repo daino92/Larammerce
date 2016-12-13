@@ -171,3 +171,9 @@ Route::get('/admin/products', [
     'as' => 'admin.products',
     'middleware' => 'auth'
 ]);
+
+Route::get('user/{user}', [
+    'middleware' => ['auth', 'roles'], // A 'roles' middleware must be specified
+    'uses' => 'UserController@index',
+    'roles' => ['administrator', 'vendor'] // Only an administrator, or a vendor can access this route
+]);

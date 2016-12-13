@@ -18,7 +18,8 @@ class CreateUserTable extends Migration
             $table->string('email')->unique();
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('role')->default('user');
+            //$table->string('role')->default('user');
+            $table->string('role_id');
             $table->rememberToken();
             $table->boolean('confirmed')->default(0);       //for confirmation mail.
             $table->string('confirmation_code')->nullable();// -//-

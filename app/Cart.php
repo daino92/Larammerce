@@ -55,4 +55,7 @@ class Cart
         unset($this->items[$id]);
     }
 
+    public function products(){
+        return $this->belongsToMany('App\Cart', 'cart_product', 'product_id', 'cart_id');
+    }
 }

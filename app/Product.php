@@ -11,6 +11,15 @@ class Product extends Model
     function getIndexName(){
         return 'products';
     }
+
+    public function orders(){
+        return $this->belongsToMany('App\Order', 'order_product', 'order_id', 'product_id');
+    }
+
+    public function carts(){
+        return $this->belongsToMany('App\Cart', 'cart_product', 'cart_id', 'product_id');
+    }
+
     protected $indexSettings = [
         'analysis' => [
             'char_filter' => [
