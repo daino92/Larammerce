@@ -1,10 +1,7 @@
-<?php
-
-namespace App\Http\Middleware;
+<?php namespace App\Http\Middleware;
 
 use Closure;
-class CheckRole
-{
+class CheckRole{
     /**
      * Handle an incoming request.
      *

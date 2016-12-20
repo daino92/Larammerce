@@ -31,28 +31,4 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsToMany('App\Role', 'user_role', 'user_id', 'role_id');
     }
-
-    public function hasRole($roles){
-        $this->have_role = $this->getUserRole();
-        // Check if the user is an admin
-        if($this->have_role->name == 'Admin') {
-            return true;
-        }
-        if(is_array($roles)){
-            foreach($roles as $need_role){
-                if($this->checkIfUserHasRole($need_role)) {
-                    return true;
-                }
-            }
-        } else{
-            return $this->checkIfUserHasRole($roles);
-        }
-        return false;
-    }
-    private function getUserRole(){
-        return $this->role()->getResults();
-    }
-    private function checkIfUserHasRole($need_role){
-        return (strtolower($need_role) == strtolower($this->have_role->name)) ? true : false;
-    }
 }
