@@ -1,4 +1,4 @@
-@extends('layouts.admin.adminMaster')
+@extends('admin.adminMaster')
 
 @section('contents')
     <div id="page-wrapper" class="dashboard">
@@ -35,7 +35,9 @@
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->username }}</td>
-                            <td>{{ $user->role }}</td>
+                            @foreach ($user->roles as $role)
+                                <td>{{$role->name}}</td>
+                            @endforeach
                             <td><a href="{{route('admin.users.showusers',$user->id)}}" class="btn btn-success btn-block btn">Read</a></td>
                             <td><a href="{{route('admin.users.edituser',$user->id)}}" class="btn btn-warning btn-block">Edit</a></td>
                             <td>

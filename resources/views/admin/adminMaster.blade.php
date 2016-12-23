@@ -13,7 +13,7 @@
     @yield('styles')
 </head>
 <body>
-@include('layouts.admin.partials.navbar')
+@include('admin.partials.navbar')
 
 
 @yield('contents')

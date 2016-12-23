@@ -1,4 +1,4 @@
-@extends('layouts.admin.adminMaster')
+@extends('admin.adminMaster')
 <head>
     <link rel="stylesheet"href="{{URL::to('src/css/admin.css')}}">
 </head>

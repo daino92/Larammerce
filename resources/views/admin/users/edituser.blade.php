@@ -1,4 +1,4 @@
-@extends('layouts.admin.adminMaster')
+@extends('admin.adminMaster')
 
 @section('contents')
 <div id="wrapper">
@@ -40,12 +40,11 @@
                 </div>
                 <div class="form-group">
                     {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                    <a href="{{ route('admin.users.allusers')}}" class="btn btn-primary">Back</a>
                 </div>
                 {!! Form::close() !!}
             </div>
         </div>
     </div>
 </div>
-
-
 @endsection

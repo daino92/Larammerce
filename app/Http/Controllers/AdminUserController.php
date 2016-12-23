@@ -9,39 +9,39 @@ use App\Http\Requests;
 use App\User;
 class AdminUserController extends Controller
 {
-    public function adminAllUsers(){    //ok
+    public function adminAllUsers(){
         $users = User::all();
-        return view('layouts.admin.users.allusers', compact('users'));
+        return view('admin.users.allusers', compact('users'));
     }
 
-    public function adminShowUsers($id){    //ok
+    public function adminShowUsers($id){
         $user = User::find($id);
-        return view('layouts.admin.users.showusers',compact('user'));
+        return view('admin.users.showusers',compact('user'));
     }
 
-    public function adminAddUsers(){    //ok
-        return view('layouts.admin.users.adduser');
+    public function adminAddUsers(){
+        return view('admin.users.adduser');
     }
 
-    public function store(Request $request){
+    public function store(Request $request){ // ok?
         $user=Request::all();
         User::create($user);
         return redirect()->back();
     }
 
-    public function adminEditUser($id){
+    public function adminEditUser($id){ //ok?
         $user=User::find($id);
-        return view('layouts.admin.users.edituser', compact('user'));
+        return view('admin.users.edituser', compact('user'));
     }
 
-    public function update($id){
+    public function update($id){ //ok?
         $userUpdate=Request::all();
         $user=User::find($id);
         $user->update($userUpdate);
         return redirect()->back();
     }
 
-    public function adminDestroyUser($id){  //ok
+    public function adminDestroyUser($id){
         User::find($id)->delete();
         Session::flash('flash_message', 'User successfully deleted.');
         return redirect()->back();

@@ -1,4 +1,4 @@
-@extends('layouts.admin.adminMaster')
+@extends('admin.adminMaster')
 
 @section('contents')
     <div id="wrapper">
@@ -31,7 +31,10 @@
                     <div class="form-group">
                         <label for="Role" class="col-sm-2 control-label">Role</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Role" placeholder={{$user->role}} readonly>
+                            <input type="text" class="form-control" id="Role" placeholder=
+                            @foreach ($user->roles as $role)
+                                {{$role->name}}
+                            @endforeach readonly>
                         </div>
                     </div>
                     <div class="form-group">
