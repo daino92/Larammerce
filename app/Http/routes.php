@@ -9,6 +9,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+
 Route::get('/', [
     'uses' => 'ProductController@getIndex',
     'as' => 'product.index'
@@ -89,6 +91,8 @@ Route::group(['prefix' => 'user'], function() {
         ]);
     });
 });
+//===========================================================================
+
 
 /* Admin Routes */
 
@@ -104,49 +108,7 @@ Route::get('/admin/dashboard', [
     'middleware' => 'auth'
 ]);
 
-/* Admin Users */
-Route::get('/admin/users/allusers', [
-   'uses' => 'AdminController@adminAllUsers',
-    'as' => 'admin.users.allusers',
-    'middleware' => 'auth'
-]);
 
-Route::get('/admin/users/adduser', [
-    'uses' => 'AdminController@adminAddUsers',
-    'as' => 'admin.users.adduser',
-    'middleware' => 'auth'
-]);
-
-Route::get('/admin/users/roles', [
-    'uses' => 'AdminController@adminManageRoles',
-    'as' => 'admin.users.roles',
-    'middleware' => 'auth'
-]);
-
-Route::get('/admin/users/edituser', [
-    'uses' => 'AdminController@adminEditUser',
-    'as' => 'admin.users.edituser',
-    'middleware' => 'auth'
-]);
-
-Route::get('/admin/users/sort/users', [
-    'uses' => 'AdminController@adminUsersOnly',
-    'as' => 'admin.users.usersonly',
-    'middleware' => 'auth'
-]);
-
-Route::get('/admin/users/sort/admins', [
-    'uses' => 'AdminController@adminAdminsOnly',
-    'as' => 'admin.users.adminsonly',
-    'middleware' => 'auth'
-]);
-
-Route::get('/admin/users/sort/vendors', [
-    'uses' => 'AdminController@adminVendorsOnly',
-    'as' => 'admin.users.vendorsonly',
-    'middleware' => 'auth'
-]);
-/* Admin Users */
 
 Route::get('/admin/charts', [
     'uses' => 'AdminController@adminCharts',
@@ -172,8 +134,62 @@ Route::get('/admin/products', [
     'middleware' => 'auth'
 ]);
 
-//Route::get('user/{user}', [
-//    'uses' => 'UserController@index',
-//    'middleware' => ['auth', 'roles'], // A 'roles' middleware must be specified
-//    'roles' => ['administrator', 'vendor'] // Only an administrator, or a vendor can access this route
-//]);
+
+
+//-----------------------------------------------------------------------------------------------
+Route::get('/admin/users/roles', [
+    'uses' => 'AdminController@adminManageRoles',
+    'as' => 'admin.users.roles',
+    'middleware' => 'auth'
+]);
+
+
+/* Admin Users */
+
+//Route::group(['middleware' => 'auth'], function() {
+//    Route::resource('admin/users', 'AdminUserController');
+//});
+
+/* Admin Users */
+Route::get('/admin/users/allusers', [           // ok ok
+    'uses' => 'AdminController@adminAllUsers',
+    'as' => 'admin.users.allusers',
+    'middleware' => 'auth'
+]);
+
+Route::get('/admin/users/adduser', [            // ok
+    'uses' => 'AdminController@adminAddUsers',
+    'as' => 'admin.users.adduser',
+    'middleware' => 'auth'
+]);
+
+
+Route::get('/admin/users/{id}/edituser', [           // ok ok
+    'uses' => 'AdminController@adminEditUser',
+    'as' => 'admin.users.edituser',
+    'middleware' => 'auth'
+]);
+
+Route::get('/admin/users/showusers/{id}', [           // ok ok
+    'uses' => 'AdminController@adminShowUsers',
+    'as' => 'admin.users.showusers',
+    'middleware' => 'auth'
+]);
+
+Route::delete('/admin/users/{id}', [           // ok ok
+    'uses' => 'AdminController@adminDestroyUser',
+    'as' => 'admin.users.destroyuser',
+    'middleware' => 'auth'
+]);
+
+Route::patch('/admin/users/{id}', [     // ok?
+    'uses' => 'AdminController@update',
+    'as' => 'admin.users.update',
+    'middleware' => 'auth'
+]);
+
+Route::post('/admin/users/{id}', [      // ?
+    'uses' => 'AdminController@store',
+    'as' => 'admin.users.store',
+    'middleware' => 'auth'
+]);

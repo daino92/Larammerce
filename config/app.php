@@ -155,7 +155,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Elasticquent\ElasticquentServiceProvider::class //new for elastic search
+        Elasticquent\ElasticquentServiceProvider::class, //new for elastic search
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -201,7 +203,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Es' => Elasticquent\ElasticquentElasticsearchFacade::class //new for elastic search
+        'Es' => Elasticquent\ElasticquentElasticsearchFacade::class, //new for elastic search
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

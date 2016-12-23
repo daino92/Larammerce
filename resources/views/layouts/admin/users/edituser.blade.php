@@ -14,63 +14,38 @@
                     </ol>
                 </div>
             </div>
-            <div class="col-sm-12">
-                <form method="POST" action="#/user/5" accept-charset="UTF-8" class="form-horizontal panel">
-                    <div class="form-group  ">
-                        <label for="username" class="control-label">Name</label>
-                        <input class="form-control" name="username" type="text" value=".." id="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="control-label">Email</label>
-                        <input class="form-control" name="email" type="email" value=".." id="email">
-                    </div>
-                    <div class="form-group" style="width:200px;">
-                        <label for="role" class="control-label">Role</label>
-                        <select class="form-control" id="role" name="role">
-                            <option value="1">Administrator</option>
-                            <option value="2">Vendor</option>
-                            <option value="3" selected="selected">User</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <div class="checkbox">
-                            <label><input name="confirmed" type="checkbox" value="0">Confirmed</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input class="btn btn-default" type="submit" value="Send">
-                    </div>
-                </form>
+            <div>
+                <h1>Update {{$user->username}}</h1>
+                {!! Form::model($user,['method' => 'PATCH','route'=>['admin.users.update',$user->id]]) !!}
+                <div class="form-group">
+                    {!! Form::label('Username', 'Username:') !!}
+                    {!! Form::text('username',null,['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('Password', 'Password:') !!}
+                    {!! Form::text('password',null,['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('E-mail', 'E-mail:') !!}
+                    {!! Form::text('email',null,['class'=>'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('Role', 'Role:') !!}
+                    <select class="form-control" id="role" name="role">
+                        <option value="Administrator">Administrator</option>
+                        <option value="Vendor">Vendor</option>
+                        <option value="User" selected="selected">User</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                </div>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
 </div>
 
-<script>
-    $(function() {
-        $('#logout').click(function(e) {
-            e.preventDefault();
-            $('#logout-form').submit();
-        });
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $('.btn-destroy').on('click',function(e){
-            e.preventDefault();
-            var form = $(this).parents('form');
-            swal({
-                title: $(this).attr('data-title'),
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes",
-                cancelButtonText: "No"
-            }, function(isConfirm){
-                if (isConfirm) form.submit();
-            });
-        });
-    });
-</script>
+
 @endsection
