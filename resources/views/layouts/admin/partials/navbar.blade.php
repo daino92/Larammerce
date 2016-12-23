@@ -72,7 +72,7 @@
                 </li>
                 <li><a href="{{ route('admin.charts') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
                 <li><a href="{{ route('admin.products') }}"><i class="fa fa-fw fa-table"></i> Product Management</a></li>
-                <li><a href="{{ route('admin.transactions') }}"><i class="fa fa-fw fa-table"></i> Transactions Management</a></li>
+                <li><a href="{{ route('admin.transactions') }}"><i class="fa fa-fw fa-money"></i> Transactions Management</a></li>
                 <li><a href="{{ route('admin.activities') }}"><i class="fa fa-tasks" aria-hidden="true"></i> Recent Activities</a></li>
             </ul>
         </div>

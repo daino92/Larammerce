@@ -10,6 +10,7 @@
 |
 */
 
+//============= *** Product Routes *** =============///
 
 Route::get('/', [
     'uses' => 'ProductController@getIndex',
@@ -53,12 +54,12 @@ Route::post('/checkout', [
     'middleware' => 'auth'
 ]);
 
-Route::get('/signup/{confirmationCode}', [ //new
-    'uses' => 'UserController@getSignup',
-    'as' => 'mails.email'
-]);
+//Route::get('/signup/{confirmationCode}', [
+//    'uses' => 'UserController@getSignup',
+//    'as' => 'mails.email'
+//]);
 
-/* User routes */
+//============= *** User Routes *** =============//
 
 Route::group(['prefix' => 'user'], function() {
     Route::group(['middleware' => 'guest'], function(){
@@ -91,10 +92,9 @@ Route::group(['prefix' => 'user'], function() {
         ]);
     });
 });
-//===========================================================================
+//=========================================================
 
-
-/* Admin Routes */
+//============= *** Admin Routes *** =============//
 
 Route::get('/admin', [
     'uses' => 'AdminController@adminIndex',
@@ -107,8 +107,6 @@ Route::get('/admin/dashboard', [
     'as' => 'admin.dashboard',
     'middleware' => 'auth'
 ]);
-
-
 
 Route::get('/admin/charts', [
     'uses' => 'AdminController@adminCharts',
@@ -134,62 +132,57 @@ Route::get('/admin/products', [
     'middleware' => 'auth'
 ]);
 
-
-
-//-----------------------------------------------------------------------------------------------
+//--------------------------------------------------------------
 Route::get('/admin/users/roles', [
     'uses' => 'AdminController@adminManageRoles',
     'as' => 'admin.users.roles',
     'middleware' => 'auth'
 ]);
 
+//============= ***  Admin Users *** =============//
 
-/* Admin Users */
-
-//Route::group(['middleware' => 'auth'], function() {
-//    Route::resource('admin/users', 'AdminUserController');
-//});
-
-/* Admin Users */
 Route::get('/admin/users/allusers', [           // ok ok
-    'uses' => 'AdminController@adminAllUsers',
+    'uses' => 'AdminUserController@adminAllUsers',
     'as' => 'admin.users.allusers',
     'middleware' => 'auth'
 ]);
 
 Route::get('/admin/users/adduser', [            // ok
-    'uses' => 'AdminController@adminAddUsers',
+    'uses' => 'AdminUserController@adminAddUsers',
     'as' => 'admin.users.adduser',
     'middleware' => 'auth'
 ]);
 
-
 Route::get('/admin/users/{id}/edituser', [           // ok ok
-    'uses' => 'AdminController@adminEditUser',
+    'uses' => 'AdminUserController@adminEditUser',
     'as' => 'admin.users.edituser',
     'middleware' => 'auth'
 ]);
 
 Route::get('/admin/users/showusers/{id}', [           // ok ok
-    'uses' => 'AdminController@adminShowUsers',
+    'uses' => 'AdminUserController@adminShowUsers',
     'as' => 'admin.users.showusers',
     'middleware' => 'auth'
 ]);
 
 Route::delete('/admin/users/{id}', [           // ok ok
-    'uses' => 'AdminController@adminDestroyUser',
+    'uses' => 'AdminUserController@adminDestroyUser',
     'as' => 'admin.users.destroyuser',
     'middleware' => 'auth'
 ]);
 
 Route::patch('/admin/users/{id}', [     // ok?
-    'uses' => 'AdminController@update',
+    'uses' => 'AdminUserController@update',
     'as' => 'admin.users.update',
     'middleware' => 'auth'
 ]);
 
 Route::post('/admin/users/{id}', [      // ?
-    'uses' => 'AdminController@store',
+    'uses' => 'AdminUserController@store',
     'as' => 'admin.users.store',
     'middleware' => 'auth'
 ]);
+
+//Route::group(['middleware' => 'auth'], function() {
+//    Route::resource('admin/users', 'AdminUserController');
+//});
