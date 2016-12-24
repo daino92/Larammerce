@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Cart;
 use Mail; //new
 use Auth;
 use Session;
@@ -91,7 +92,9 @@ class UserController extends Controller
             $order->cart = unserialize($order->cart);
             return $order;
         });
-        return view('user.profile', ['orders' => $orders]);
+        $oldCart = Session::get('cart'); //or if there is a cart, fetch it.
+        $cart = new Cart($oldCart);
+        return view('user.profile', ['orders' => $orders], ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
     public function getLogout(){
