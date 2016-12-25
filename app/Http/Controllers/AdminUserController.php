@@ -29,7 +29,7 @@ class AdminUserController extends Controller
         $user=User::create($user);
         $role = Role::whereName(Request::input('role'))->first();
         $user->roles()->attach($role);
-        return redirect()->back();
+        return redirect()->route('admin.users.allusers');
     }
 
     public function adminEditUser($id){
@@ -44,7 +44,7 @@ class AdminUserController extends Controller
         $role = Role::whereName(Request::input('role'))->first();
         $user->roles()->attach($role);
         $user->update($userUpdate);
-        return redirect()->back();
+        return redirect()->route('admin.users.allusers');
     }
 
     public function adminDestroyUser($id){
