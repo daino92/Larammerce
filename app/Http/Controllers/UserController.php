@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Cart;
-use Mail; //new
+use App\Role;
+//use Mail; //new
 use Auth;
 use Session;
 //use Illuminate\Support\Facades\Input;
@@ -32,6 +33,7 @@ class UserController extends Controller
             'confirmation_code' => $confirmation_code //for confirmation mail
         ]);
         $user->save();
+        $user->roles()->attach(Role::where('name', 'User')->first());
 
         //Mail::send('mails.verify', $data, function($message) { //new
         //    $message->to($data['email'])->subject('Verify your email address');
