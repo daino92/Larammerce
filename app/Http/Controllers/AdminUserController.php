@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use Illuminate\Http\Request;
 use Request;
 use Session;
+use DB;
 use App\User;
 use App\Role;
 class AdminUserController extends Controller
@@ -39,6 +40,7 @@ class AdminUserController extends Controller
     public function update($id){
         $userUpdate=Request::all();
         $user=User::find($id);
+        DB::table('user_role')->where('user_id',$id)->delete();
         $role = Role::whereName(Request::input('role'))->first();
         $user->roles()->attach($role);
         $user->update($userUpdate);
@@ -47,6 +49,7 @@ class AdminUserController extends Controller
 
     public function adminDestroyUser($id){
         User::find($id)->delete();
+        DB::table('user_role')->where('user_id',$id)->delete();
         Session::flash('flash_message', 'User successfully deleted.');
         return redirect()->back();
     }
