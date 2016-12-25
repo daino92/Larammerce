@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 //use Illuminate\Http\Request;
 use Request;
 use Session;
-use App\Http\Requests;
 use App\User;
+use App\Role;
 class AdminUserController extends Controller
 {
     public function adminAllUsers(){
@@ -23,20 +23,24 @@ class AdminUserController extends Controller
         return view('admin.users.adduser');
     }
 
-    public function store(Request $request){ // ok?
+    public function store(Request $request){
         $user=Request::all();
-        User::create($user);
+        $user=User::create($user);
+        $role = Role::whereName(Request::input('role'))->first();
+        $user->roles()->attach($role);
         return redirect()->back();
     }
 
-    public function adminEditUser($id){ //ok?
+    public function adminEditUser($id){
         $user=User::find($id);
         return view('admin.users.edituser', compact('user'));
     }
 
-    public function update($id){ //ok?
+    public function update($id){
         $userUpdate=Request::all();
         $user=User::find($id);
+        $role = Role::whereName(Request::input('role'))->first();
+        $user->roles()->attach($role);
         $user->update($userUpdate);
         return redirect()->back();
     }

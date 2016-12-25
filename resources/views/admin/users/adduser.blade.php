@@ -27,7 +27,7 @@
             <div class="form-group">
                 {!! Form::label('Role', 'Role:') !!}
                 <select class="form-control" id="role" name="role">
-                    <option value="Administrator">Administrator</option>
+                    <option value="Admin">Administrator</option>
                     <option value="Vendor">Vendor</option>
                     <option value="User" selected="selected">User</option>
                 </select>
