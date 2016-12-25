@@ -13,11 +13,11 @@ class Product extends Model
     }
 
     public function orders(){
-        return $this->belongsToMany('App\Order', 'order_product', 'order_id', 'product_id');
+        return $this->belongsToMany('App\Order', 'order_product', 'order_id', 'product_id')->withTimestamps();
     }
 
     public function carts(){
-        return $this->belongsToMany('App\Cart', 'cart_product', 'cart_id', 'product_id');
+        return $this->belongsToMany('App\Cart', 'cart_product', 'cart_id', 'product_id')->withTimestamps();
     }
 
     protected $indexSettings = [

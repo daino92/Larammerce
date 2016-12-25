@@ -56,6 +56,6 @@ class Cart
     }
 
     public function products(){
-        return $this->belongsToMany('App\Cart', 'cart_product', 'product_id', 'cart_id');
+        return $this->belongsToMany('App\Cart', 'cart_product', 'product_id', 'cart_id')->withTimestamps();
     }
 }
