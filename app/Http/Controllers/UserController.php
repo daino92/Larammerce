@@ -62,27 +62,17 @@ class UserController extends Controller
 
         //Authorization attempt using either username or email.
         //If succeeds, it redirects to the user profile. Else it goes to the previous page
-        //Needs refactoring
-        if (Auth::attempt(['username' => $request->input('login'), 'password' => $request->input('password')])) {
+        $login = $request->get('login');
+        $password = $request->get('password');
+        if ((Auth::attempt(['username' => $login, 'password' => $password])) || (Auth::attempt(['email' => $login, 'password' => $password]))) {
             if (Session::has('oldUrl')) {
                 $oldUrl = Session::get('oldUrl');
                 Session::forget('oldUrl');
                 return redirect()->to($oldUrl);
             }
-            if(Auth::user()->role=='admin')
+            if(Auth::user()->role=='Admin')
                 return redirect()->route('product.index');
-            else if(Auth::user()->role=='user')
-                return redirect()->route('user.profile');
-        }
-        elseif (Auth::attempt(['email' => $request->input('login'), 'password' => $request->input('password')])) {
-            if (Session::has('oldUrl')) {
-                $oldUrl = Session::get('oldUrl');
-                Session::forget('oldUrl');
-                return redirect()->to($oldUrl);
-            }
-            if(Auth::user()->role=='admin')
-                return redirect()->route('product.index');
-            else if(Auth::user()->role=='user')
+            else if(Auth::user()->role=='User')
                 return redirect()->route('user.profile');
         }
         return redirect()->back();
