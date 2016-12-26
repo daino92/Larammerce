@@ -16,9 +16,17 @@
             </div>
             <h1>Create new user</h1>
             {!! Form::open(['route' => 'admin.users.allusers']) !!}
+            <!--<div class="form-group">
+                {!! Form::label('Name', 'Name:') !!}
+                {!! Form::text('name',null,['class'=>'form-control']) !!}
+            </div>-->
             <div class="form-group">
                 {!! Form::label('Username', 'Username:') !!}
                 {!! Form::text('username',null,['class'=>'form-control']) !!}
+            </div>
+            <div class="form-group">
+                {!! Form::label('Password', 'Password:') !!}
+                {!! Form::text('password',null,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('E-mail', 'E-mail:') !!}
@@ -34,6 +42,7 @@
             </div>
             <div class="form-group">
                 {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('admin.users.allusers')}}" class="btn btn-primary">Back</a>
             </div>
             {!! Form::close() !!}
         </div>
