@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
 use Request;
 use Session;
 use DB;
@@ -10,21 +9,22 @@ use App\User;
 use App\Role;
 class AdminUserController extends Controller
 {
-    public function adminAllUsers(){
-        $users = User::all();
+    public function index(){
+        //$users = User::all();
+        $users = User::orderBy('id','ASC')->paginate(5); //pagination
         return view('admin.users.allusers')->withUsers($users);
     }
 
-    public function adminShowUsers($id){
+    public function show($id){
         $user = User::find($id);
         return view('admin.users.showusers')->withUser($user);
     }
 
-    public function adminAddUsers(){
+    public function create(){
         return view('admin.users.adduser');
     }
 
-    public function store(Request $request){
+    public function store(){
         $user=Request::all();
         $user=User::create($user);
         $role = Role::whereName(Request::input('role'))->first();
@@ -32,7 +32,7 @@ class AdminUserController extends Controller
         return redirect()->route('admin.users.allusers');
     }
 
-    public function adminEditUser($id){
+    public function edit($id){
         $user=User::find($id);
         return view('admin.users.edituser')->withUser($user);
     }
@@ -47,7 +47,7 @@ class AdminUserController extends Controller
         return redirect()->route('admin.users.allusers');
     }
 
-    public function adminDestroyUser($id){
+    public function destroy($id){
         User::find($id)->delete();
         DB::table('user_role')->where('user_id',$id)->delete();
         Session::flash('flash_message', 'User successfully deleted.');
