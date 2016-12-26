@@ -61,7 +61,7 @@ Route::post('/checkout', [
 
 //============= *** User Routes *** =============//
 
-Route::group(['prefix' => 'user'], function(){
+Route::group(['prefix' => 'user'], function() {
     Route::group(['middleware' => 'guest'], function(){
         Route::get('/signup', [
             'uses' =>'UserController@getSignup',
@@ -81,7 +81,7 @@ Route::group(['prefix' => 'user'], function(){
         ]);
     });
 
-    Route::group(['middleware' => 'auth'], function(){
+    Route::group(['middleware' => 'auth'], function (){
         Route::get('/profile', [
             'uses' =>'UserController@getProfile',
             'as' => 'user.profile'
@@ -96,9 +96,9 @@ Route::group(['prefix' => 'user'], function(){
 
 //============= *** Admin Routes *** =============//
 
-Route::get('/admin', [
-    'uses' => 'AdminController@adminIndex',
-    'as' => 'admin.adminIndex',
+Route::get('/admin', [ //this leads to dashboard
+    'uses' => 'AdminController@adminDashboard',
+    'as' => 'admin.dashboard',
     'middleware' => 'auth'
 ]);
 
