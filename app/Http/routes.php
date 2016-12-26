@@ -61,7 +61,7 @@ Route::post('/checkout', [
 
 //============= *** User Routes *** =============//
 
-Route::group(['prefix' => 'user'], function() {
+Route::group(['prefix' => 'user'], function(){
     Route::group(['middleware' => 'guest'], function(){
         Route::get('/signup', [
             'uses' =>'UserController@getSignup',
@@ -81,7 +81,7 @@ Route::group(['prefix' => 'user'], function() {
         ]);
     });
 
-    Route::group(['middleware' => 'auth'], function (){
+    Route::group(['middleware' => 'auth'], function(){
         Route::get('/profile', [
             'uses' =>'UserController@getProfile',
             'as' => 'user.profile'
@@ -141,43 +141,43 @@ Route::get('/admin/users/roles', [
 
 //============= ***  Admin Users *** =============//
 
-Route::get('/admin/users/allusers', [           // ok ok
-    'uses' => 'AdminUserController@adminAllUsers',
+Route::get('/admin/users/allusers', [
+    'uses' => 'AdminUserController@index',
     'as' => 'admin.users.allusers',
     'middleware' => 'auth'
 ]);
 
-Route::get('/admin/users/adduser', [            // ok
-    'uses' => 'AdminUserController@adminAddUsers',
+Route::get('/admin/users/adduser', [
+    'uses' => 'AdminUserController@create',
     'as' => 'admin.users.adduser',
     'middleware' => 'auth'
 ]);
 
-Route::get('/admin/users/{id}/edituser', [           // ok ok
-    'uses' => 'AdminUserController@adminEditUser',
+Route::get('/admin/users/{id}/edituser', [
+    'uses' => 'AdminUserController@edit',
     'as' => 'admin.users.edituser',
     'middleware' => 'auth'
 ]);
 
-Route::get('/admin/users/showusers/{id}', [           // ok ok
-    'uses' => 'AdminUserController@adminShowUsers',
+Route::get('/admin/users/showusers/{id}', [
+    'uses' => 'AdminUserController@show',
     'as' => 'admin.users.showusers',
     'middleware' => 'auth'
 ]);
 
-Route::delete('/admin/users/{id}', [           // ok ok
-    'uses' => 'AdminUserController@adminDestroyUser',
+Route::delete('/admin/users/{id}', [
+    'uses' => 'AdminUserController@destroy',
     'as' => 'admin.users.destroyuser',
     'middleware' => 'auth'
 ]);
 
-Route::patch('/admin/users/{id}', [     // ok?
+Route::patch('/admin/users/{id}', [
     'uses' => 'AdminUserController@update',
     'as' => 'admin.users.update',
     'middleware' => 'auth'
 ]);
 
-Route::post('/admin/users/{id}', [      // ?
+Route::post('/admin/users/{id}', [
     'uses' => 'AdminUserController@store',
     'as' => 'admin.users.store',
     'middleware' => 'auth'
