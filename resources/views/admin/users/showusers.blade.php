@@ -14,12 +14,24 @@
                         </ol>
                     </div>
                 </div>
-                <h1>Show {{$user->username}}</h1>
+                <h1>Show {{$user->username}}'s information</h1>
                 <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="Name" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" placeholder={{$user->name}} {{$user->surname}} readonly>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="Username" class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="Username" placeholder={{$user->username}} readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Password" placeholder={{$user->password}} readonly>
                         </div>
                     </div>
                     <div class="form-group">
