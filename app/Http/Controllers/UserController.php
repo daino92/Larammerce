@@ -6,19 +6,17 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Cart;
 use App\Role;
-//use Mail; //new
 use Auth;
 use Session;
-//use Illuminate\Support\Facades\Input;
-
+//use Mail;
 class UserController extends Controller
 {
-    public function getSignup() {
+    public function getSignup(){
         return view('user.signup');
     }
 
-    public function postSignup(Request $request) {
-        $this-> validate($request, [
+    public function postSignup(Request $request){
+        $this->validate($request,[
             'email' => 'email|required|unique:users',
             'password' => 'required|min:4',
             'username' => 'required|max:20|alpha_num|unique:users'
@@ -35,13 +33,13 @@ class UserController extends Controller
         $user->save();
         $user->roles()->attach(Role::where('name', 'User')->first());
 
-        //Mail::send('mails.verify', $data, function($message) { //new
-        //    $message->to($data['email'])->subject('Verify your email address');
-        //});
+        /*Mail::send('mails.verify', $data, function($message) { //new
+            $message->to($data['email'])->subject('Verify your email address');
+        });*/
 
         //Auth::login($user); //If a new user creates an account, the system automatically logs him in.
 
-        if (Session::has('oldUrl')) {
+        if (Session::has('oldUrl')){
             $oldUrl = Session::get('oldUrl');
             Session::forget('oldUrl');
             return redirect()->to($oldUrl);
@@ -53,9 +51,8 @@ class UserController extends Controller
         return view('user.signin');
     }
 
-    public function postSignin(Request $request)
-    {
-        $this->validate($request, [
+    public function postSignin(Request $request){
+        $this->validate($request,[
             'password' => 'required|min:4',
             'login' => 'required|max:30'
         ]);
@@ -64,8 +61,8 @@ class UserController extends Controller
         //If succeeds, it redirects to the user profile. Else it goes to the previous page
         $login = $request->get('login');
         $password = $request->get('password');
-        if ((Auth::attempt(['username' => $login, 'password' => $password])) || (Auth::attempt(['email' => $login, 'password' => $password]))) {
-            if (Session::has('oldUrl')) {
+        if ((Auth::attempt(['username' => $login, 'password' => $password])) || (Auth::attempt(['email' => $login, 'password' => $password]))){
+            if (Session::has('oldUrl')){
                 $oldUrl = Session::get('oldUrl');
                 Session::forget('oldUrl');
                 return redirect()->to($oldUrl);
@@ -79,12 +76,12 @@ class UserController extends Controller
     }
 
     public function getProfile(){
-        $orders = Auth::user()->orders; //for the profile page
-        $orders->transform(function($order, $key) {
+        $orders = Auth::user()->orders; //return completed orders to the profile page
+        $orders->transform(function($order, $key){
             $order->cart = unserialize($order->cart);
             return $order;
         });
-        $oldCart = Session::get('cart'); //or if there is a cart, fetch it.
+        $oldCart = Session::get('cart'); //if there is a cart, fetch it.
         $cart = new Cart($oldCart);
         return view('user.profile', ['orders' => $orders], ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
