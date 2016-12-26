@@ -49,6 +49,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                {!! $users->render() !!} <!--pagination-->
             </div>
         </div>
     </div>
