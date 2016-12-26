@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div>
-                <h1>Update {{$user->username}}</h1>
+                <h1>Update {{$user->username}}'s information</h1>
                 {!! Form::model($user,['method' => 'PATCH','route'=>['admin.users.update',$user->id]]) !!}
                 <div class="form-group">
                     {!! Form::label('Username', 'Username:') !!}
@@ -40,6 +40,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                    <a href="{{ route('admin.users.allusers')}}" class="btn btn-primary">Back</a>
                 </div>
                 {!! Form::close() !!}
             </div>
