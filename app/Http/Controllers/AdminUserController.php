@@ -26,6 +26,7 @@ class AdminUserController extends Controller
 
     public function store(){
         $user=Request::all();
+        $user['password'] = bcrypt(Request::input($user['password']));
         $user=User::create($user);
         $role = Role::whereName(Request::input('role'))->first();
         $user->roles()->attach($role);
