@@ -22,14 +22,20 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    @if (Auth::check() && Auth::user()->role=='admin')
+                    @if (Auth::check() && Auth::user()->roles->contains(1))
                         <a href="{{ route('admin.dashboard') }}" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> Administration</a>
-                    @elseif(Auth::check() && Auth::user()->role=='user')
+                    @elseif(Auth::check() && Auth::user()->roles->contains(2))
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> {{ Auth::user()->username }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ route('user.profile') }}">User Profile</a></li>
-                        <li><a href="{{ route('user.logout') }}">Log out</a></li>
+                        <li><a href="{{ route('user.profile') }}">User Profile</a></li> <!--It is meant to be vendor.profile -->
+                        <li><a href="{{ route('user.logout') }}">Log out</a></li>       <!--It is meant to be vendor.logout -->
                     </ul>
+                    @elseif(Auth::check() && Auth::user()->roles->contains(3))
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> {{ Auth::user()->username }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('user.profile') }}">User Profile</a></li>
+                            <li><a href="{{ route('user.logout') }}">Log out</a></li>
+                        </ul>
                     @else
                         @include('user.login')
                         <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> Account <span class="caret"></span></a>
