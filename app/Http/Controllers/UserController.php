@@ -57,8 +57,7 @@ class UserController extends Controller
             'login' => 'required|max:30'
         ]);
 
-        //Authorization attempt using either username or email.
-        //If succeeds, it redirects to the user profile. Else it goes to the previous page
+        //Authorization attempt using either username or email. If succeeds, it redirects to the user profile. Else it goes to home page
         $login = $request->get('login');
         $password = $request->get('password');
         if ((Auth::attempt(['username' => $login, 'password' => $password])) || (Auth::attempt(['email' => $login, 'password' => $password]))){
@@ -67,13 +66,14 @@ class UserController extends Controller
                 Session::forget('oldUrl');
                 return redirect()->to($oldUrl);
             }
-            if(Auth::user()->role=='Admin')
+            if(Auth::user()->roles->contains(1))
                 return redirect()->route('product.index');
-            else if(Auth::user()->role=='User')
+            else if(Auth::user()->roles->contains(3))
                 return redirect()->route('user.profile');
         }
         return redirect()->back();
     }
+//if (Auth::check() && Auth::user()->roles->contains(1))
 
     public function getProfile(){
         $orders = Auth::user()->orders; //return completed orders to the profile page
