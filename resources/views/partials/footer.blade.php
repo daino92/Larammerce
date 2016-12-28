@@ -1,6 +1,6 @@
 <footer class="footer-distributed">
     <div class="footer-left">
-        <h3>Locoroco<img class="img-circle" id="img_logo" src="http://vignette3.wikia.nocookie.net/locoroco/images/b/b4/LocoRoco_Kulche.png/revision/latest?cb=20151125103417"></h3>
+        <h3>Locoroco<img class="img-circle" id="img_logo" src="pictures/locoroco.png"></h3>
         <p class="footer-links">
             <a href="{{ route('product.index') }}">Home</a> ·
             <a href="#">Blog</a> ·
@@ -28,13 +28,13 @@
     <div class="footer-right">
         <p class="footer-company-about">
             <span>About Locoroco</span>
-            λαλαλαλα.
+            A multi-purpose e-commerce application.
         </p>
         <div class="footer-icons">
-            <a href="{{ route('product.index') }}"><i class="fa fa-facebook"></i></a>
-            <a href="{{ route('product.index') }}"><i class="fa fa-twitter"></i></a>
-            <a href="{{ route('product.index') }}"><i class="fa fa-linkedin"></i></a>
-            <a href="{{ route('product.index') }}"><i class="fa fa-github"></i></a>
+            <a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="http://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="http://www.github.com" target="_blank"><i class="fa fa-github"></i></a>
         </div>
     </div>
 </footer>
