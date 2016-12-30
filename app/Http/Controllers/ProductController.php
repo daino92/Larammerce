@@ -21,7 +21,7 @@ class ProductController extends Controller
     public function getResults(Request $request){ //Search results
         $query = $request->input('query');
         if(!$query){
-            return view ('shop.results')->withMessage('No Details found. Try to search again!');
+            return redirect()->route('product.index');
         } else{
             $products = Product::where('title', 'LIKE', "%{$query}%")->orWhere('description', 'LIKE', "%{$query}%")->get();
             //dd($products);

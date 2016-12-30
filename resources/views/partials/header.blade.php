@@ -10,8 +10,6 @@
             </button>
             <a class="navbar-brand" href="{{ route('product.index') }}">Home</a>
         </div>
-
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -37,12 +35,11 @@
                             <li><a href="{{ route('user.logout') }}">Log out</a></li>
                         </ul>
                     @else
-                        @include('user.login')
-                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> Account <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user fa-2x" aria-hidden="true"></i> Account <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('user.signup') }}">Sign Up</a></li>
                             <li><a href="{{ route('user.signin') }}">Sign In</a></li>
-                        </ul>-->
+                        </ul>
                     @endif
                 </li>
             </ul>

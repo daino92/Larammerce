@@ -1,5 +1,5 @@
 <div class="container-fluid search-area" style="background: url('{{ URL::to('pictures/search.jpg') }}');background-repeat:no-repeat;">
-    {!! Form::open(['route' => 'shop.results', 'method' => 'GET',  'role' => 'search']) !!}
+    {!! Form::open(['route' => 'shop.results', 'method' => 'GET', 'role' => 'search']) !!}
         {{ csrf_field() }}
         <div class="row">
             <div class="algn-center">
