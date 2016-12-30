@@ -18,4 +18,34 @@
             </div>
         </div>
     </div>
+    <div id="wrapper">
+        <div class="container-fluid admin" style="height:auto;background:#EDF1F5;">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr class="bg-info">
+                        <th>No. </th>
+                        <th>Product Creation date</th>
+                        <th>Product Creation time</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($products as $product)
+                        <tr>
+                            <td>{{ $product->id }}</td>
+                            <td>{{ $product->created_at->format('Y-m-d') }}</td>
+                            <td>{{ $product->created_at->format('H:i:s') }}</td>
+                            <td>{{ $product->title }}</td>
+                            <td>{{ $product->category }}</td>
+                            <td>{{ $product->price }}$</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection
