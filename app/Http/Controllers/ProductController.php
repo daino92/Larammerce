@@ -6,8 +6,6 @@ use App\Cart;
 use App\Product;
 use App\Order;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use Session;
 use Auth;
 use Stripe\Stripe;
@@ -15,12 +13,23 @@ use Stripe\Charge;
 
 class ProductController extends Controller
 {
-    public function getIndex(){
+    public function getIndex(){ //get all products. now in products.blade.php
         $products = Product::all();
         return view('shop.index', ['products' => $products]);
     }
 
-    public function getAddToCart(Request $request, $id) {
+    public function getResults(Request $request){ //Search results
+        $query = $request->input('query');
+        if(!$query){
+            return view ('shop.results')->withMessage('No Details found. Try to search again!');
+        } else{
+            $products = Product::where('title', 'LIKE', "%{$query}%")->orWhere('description', 'LIKE', "%{$query}%")->get();
+            //dd($products);
+            return view('shop.results')->with('products',$products);
+        }
+    }
+
+    public function getAddToCart(Request $request, $id){
         $product = Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
@@ -31,48 +40,44 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
-    public function getReduceByOne($id) {
+    public function getReduceByOne($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->reduceByOne($id);
 
-        if (count($cart->items) > 0) {
+        if(count($cart->items) > 0){
             Session::put('cart', $cart);
         } else {
             Session::forget('cart');
         }
-
         return redirect()->route('product.shoppingCart');
     }
 
-    public function getIncreaseByOne($id) {
+    public function getIncreaseByOne($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->increaseByOne($id);
 
-        if (count($cart->items) > 0)
+        if(count($cart->items) > 0)
             Session::put('cart', $cart);
-
-
         return redirect()->route('product.shoppingCart');
     }
 
-    public function getRemoveItem($id) {
+    public function getRemoveItem($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->removeItem($id);
 
-        if (count($cart->items) > 0) {
+        if(count($cart->items) > 0){
             Session::put('cart', $cart);
         } else {
             Session::forget('cart');
         }
-
         return redirect()->route('product.shoppingCart');
     }
 
     public function getCart(){
-        if (!Session::has('cart')) { //if we don't have a cart, then don't show nothing.
+        if(!Session::has('cart')){ //if we don't have a cart, then don't show nothing.
              return view('shop.shopping-cart');
         }
         $oldCart = Session::get('cart'); //or if there is a cart, fetch it.
@@ -80,8 +85,8 @@ class ProductController extends Controller
         return view('shop.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
-    public function getCheckout() {
-        if (!Session::has('cart')) { //if we don't have a cart, then don't show nothing.
+    public function getCheckout(){
+        if(!Session::has('cart')){ //if we don't have a cart, then don't show nothing.
             return view('shop.shopping-cart');
         }
         $oldCart = Session::get('cart');
@@ -90,8 +95,8 @@ class ProductController extends Controller
         return view('shop.checkout', ['total' => $total]);
     }
 
-    public function postCheckout(Request $request) {
-        if (!Session::has('cart')) { //if we don't have a cart, then don't show nothing.
+    public function postCheckout(Request $request){
+        if(!Session::has('cart')){ //if we don't have a cart, then don't show nothing.
             return redirect()->route('shop.shoppingCart');
         }
         $oldCart = Session::get('cart');
@@ -112,10 +117,9 @@ class ProductController extends Controller
             $order->payment_id = $charge->id;
 
             Auth::user()->orders()->save($order);
-        } catch (\Exception $e) {
+        } catch (\Exception $e){
             return redirect()->route('checkout')->with('error', $e->getMessage());
         }
-
         Session::forget('cart');    //forget credit card info after purchase
         return redirect()->route('product.index')->with('success', 'Successfully purchased products!');
     }

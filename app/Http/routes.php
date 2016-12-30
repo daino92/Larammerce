@@ -54,6 +54,11 @@ Route::post('/checkout', [
     'middleware' => 'auth'
 ]);
 
+Route::get('/search', [
+   'uses' => 'ProductController@getResults',
+    'as' => 'shop.results'
+]);
+
 //Route::get('/signup/{confirmationCode}', [
 //    'uses' => 'UserController@getSignup',
 //    'as' => 'mails.email'
