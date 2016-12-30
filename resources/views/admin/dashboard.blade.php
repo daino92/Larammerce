@@ -46,8 +46,8 @@
                                 <i class="fa fa-shopping-cart fa-5x" aria-hidden="true"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">12</div>
-                                <div>Products Sold</div>
+                                <div class="huge">{{ $products->count() }}</div>
+                                <div>Total Products</div>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                                 <i class="fa fa-credit-card  fa-4x" style="padding-top: 10px" aria-hidden="true"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">124</div>
+                                <div class="huge">{{ Auth::user()->orders()->count() }}</div>
                                 <div>Total Transactions</div>
                             </div>
                         </div>
