@@ -3,7 +3,7 @@
     <link rel="stylesheet"href="{{URL::to('src/css/admin.css')}}">
 </head>
 @section('contents')
-    <div id="page-wrapper" class="dashboard" >
+    <div id="page-wrapper" class="dashboard">
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="row">
@@ -20,9 +20,32 @@
             </div>
         </div>
     </div>
-
     <div id="wrapper">
         <div class="container-fluid admin" style="height:auto;background:#EDF1F5;">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr class="bg-info">
+                        <th>Order #</th>
+                        <th>Order date</th>
+                        <th>Order time</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($orders as $order)
+                        <tr>
+                            <td>{{ $order->id }}</td>
+                            <td>{{ $order->created_at->format('Y-m-d') }}</td>
+                            <td>{{ $order->created_at->format('H:i:s') }}</td>
+                            <td>{{ $order->name }}</td>
+                            <td>{{ $order->address }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             <div class="row">
                 <div class="col-lg-6 charts">
                     <div class="Chart-titles">Recent Sales</div>
