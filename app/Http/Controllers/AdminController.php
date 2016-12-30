@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Product;
+use App\Order;
 class adminController extends Controller
 {
     public function adminIndex(){
@@ -14,7 +15,8 @@ class adminController extends Controller
     }
 
     public function adminDashboard(){
-        return view('admin.dashboard');
+        $products = Product::all();
+        return view('admin.dashboard')->withProducts($products);
     }
 
     public function adminCharts(){
@@ -26,10 +28,12 @@ class adminController extends Controller
     }
 
     public function adminTransactions(){
-        return view('admin.transactions');
+        $orders = Order::all();
+        return view('admin.transactions')->withOrders($orders);
     }
 
     public function adminProducts(){
-        return view('admin.adminproducts');
+        $products = Product::all();
+        return view('admin.adminproducts')->withProducts($products);
     }
 }
