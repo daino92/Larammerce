@@ -1,11 +1,11 @@
-@extends('layouts.master')
+@extends('master')
 
 @section('title')
     Locoroco
 @endsection
 
 @section('content')
-    @include('shop.search')
+    @include('includes.search')
 
     @if(Session::has('success'))
         <div class="row">
