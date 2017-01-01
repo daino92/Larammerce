@@ -1,10 +1,39 @@
-@extends('master')
+@extends('master');
+@section('styles')
+    <link rel="stylesheet" href="{{URL::to('src/css/user.css')}}">
+@endsection
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h1>{{ Auth::user()->username }}'s profile</h1>
+   <div id="page-wrapper" class="dashboard" >
+    <div class="container-fluid">
+
+
+
+   <div class="col-lg-2 left_menu_pos">
+     
+<div class="container">
+	<div class="row">
+		
+        <ul class="left_menu">
+  <li class="left_menu"><a class="left_menu" href="#">peos</a></li>
+  <li class="left_menu"><a  class="left_menu"href="#">peos</a></li>
+  <li class="left_menu"><a class="left_menu" href="#">peos</a></li>
+  <li class="left_menu"><a  class="left_menu" href="#">peos</a></li>
+  <li class="left_menu"><a  class="left_menu" href="#">peos</a></li>
+</ul>
+        
+	</div>
+</div>
+
+   
+
+   
+   </div>
+   <div class="col-lg-10">
+       
+              <div class="row">
+            <div class="col-md-8 ">
+                <h1 style="text-align:center;">{{ Auth::user()->username }}'s profile</h1>
                 <hr>
                 <h2><center>Order History</center></h2>
                 @foreach($orders as $order)
@@ -38,7 +67,8 @@
                 @endforeach
             </div>
         </div>
-    </div>
+       
+   </div>
 
     @if (Session::has('cart'))
         <div class="container">
@@ -75,5 +105,11 @@
                 </div>
             </div>
         </div>
+        </div>
     @endif
+    </div>
+
+
+
+
 @endsection

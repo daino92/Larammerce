@@ -97,6 +97,13 @@ Route::group(['prefix' => 'user'], function() {
         ]);
     });
 });
+
+Route::get('/vendor/profile', [
+    'uses' => 'VendorController@getVendorprofile',
+    'as' => 'vendor.profile',
+    'middleware' => 'auth'
+]);
+
 //=========================================================
 
 //============= *** Admin Routes *** =============//

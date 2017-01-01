@@ -48,5 +48,9 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+    "require-dev": {
+    "panique/laravel-sass": "dev-master"
+}
+    
 }

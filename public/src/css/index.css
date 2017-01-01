@@ -1,0 +1,85 @@
+.container-fluid.index {
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    height: 1000px;
+}
+.menu_table td  {
+
+    padding-left: 118px !important;
+    padding-top: 25px !important;
+}
+.menu_img{
+    margin-top: 56px;
+    margin-left: 24px;
+}
+.box
+{
+	display: inline-block;
+        float:left;
+	height:250px;
+	overflow: hidden;
+	width:19%;
+
+	-webkit-transition: width 1s;
+	-moz-transition: width 1s;
+        transition: width 1s;
+}
+
+
+.box.technology      { background-color: #2d89ef; }
+.box.home_garden     { background-color: #00a300; }
+.box.fashion { background-color: #e3a21a; }
+.box.sports  { background-color: #9f00a7; }
+.box.cars   { background-color: #ee1111; }
+
+.box.kids      { background-color: #2d89ef; }
+.box.health     { background-color: #00a300; }
+.box.books { background-color: #e3a21a; }
+.box.bikes  { background-color: #9f00a7; }
+.box.usedparts   { background-color: #ee1111; }
+
+
+
+.box a
+{
+	color:#FFF;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	height:100%;
+	display:block;
+     padding-top: 20px;
+     font-size: 16px;
+
+}
+.box:hover a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+
+}
+
+
+.box span
+{
+    display:block;
+    position:relative;
+    top:100%;
+    text-align: center;
+
+    -webkit-transition: top 1s;
+    -moz-transition: top 1s;
+    transition: top 1s;
+}
+
+.nav:hover .box { width:15%; }
+
+
+
+.nav .box:hover { width: 40%; }
+
+.box:hover span{ top:25%; }
+
