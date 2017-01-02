@@ -87,16 +87,19 @@ Route::group(['prefix' => 'user'], function() {
     });
 
     Route::group(['middleware' => 'auth'], function (){
-        Route::get('/profile', [
-            'uses' =>'UserController@getProfile',
-            'as' => 'user.profile'
-        ]);
+
         Route::get('/logout',[
             'uses' =>'UserController@getLogout',
             'as' => 'user.logout'
         ]);
     });
 });
+
+Route::get('/user/profile', [
+    'uses' =>'UserController@getProfile',
+    'as' => 'user.profile',
+    'middleware' => 'auth'
+]);
 
 Route::get('/vendor/profile', [
     'uses' => 'VendorController@getVendorprofile',
