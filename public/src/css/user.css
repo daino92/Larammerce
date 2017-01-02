@@ -1,4 +1,3 @@
-
 * {
    margin: 0;
    padding: 0;
@@ -6,7 +5,7 @@
 }
 
 .left_menu_pos{
-   margin-top: 50px; 
+   margin-top: 200px;
 }
 ul.left_menu  {
    position: absolute;
@@ -34,8 +33,7 @@ ul.left_menu  {
 ul li:hover .left_menu {
    cursor: pointer;
   }
-  
-  
+
 ul li:before .left_menu{
     display: block;
     height: 50px;
@@ -52,8 +50,7 @@ ul li:before .left_menu{
     z-index: 200;
     line-height: 1.3em;
   }
-    
-  
+
   .left_menu li a  {
      color: #fff;
      display: block;
@@ -159,5 +156,3 @@ ul li:before .left_menu{
   50%  {opacity: 1;}
   100% {opacity: 1;}
 }
-
-
