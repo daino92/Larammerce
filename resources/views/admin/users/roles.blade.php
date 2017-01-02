@@ -15,23 +15,14 @@
                 </div>
             </div>
             <div class="col-sm-12">
-                <form method="POST" action="#/roles" accept-charset="UTF-8" class="form-horizontal panel">
-                    <div class="form-group">
-                        <label for="admin" class="control-label">Title for administrators</label>
-                        <input class="form-control" name="admin" type="text" value="Administrator" id="admin">
-                    </div>
-                    <div class="form-group">
-                        <label for="redac" class="control-label">Title for Vendors</label>
-                        <input class="form-control" name="vendor" type="text" value="Vendor" id="vendor">
-                    </div>
-                    <div class="form-group">
-                        <label for="user" class="control-label">Title for Users</label>
-                        <input class="form-control" name="user" type="text" value="User" id="user">
-                    </div>
-                    <div class="form-group">
-                        <input class="btn btn-default" type="submit" value="Send">
-                    </div>
-                </form>
+                @foreach($roles as $role)
+                    <form class="form-horizontal panel">
+                        <div class="form-group">
+                            <label for="admin" class="control-label">Title for {{ $role->name }}</label>
+                            <input class="form-control" name="{{ $role->name }}" type="text" value="{{ $role->name }}" id="{{ $role->name }}" readonly/>
+                        </div>
+                    </form>
+                @endforeach
             </div>
         </div>
     </div>
