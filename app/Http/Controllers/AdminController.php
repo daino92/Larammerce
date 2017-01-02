@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Order;
+use App\Role;
 class adminController extends Controller
 {
     public function adminIndex(){
@@ -11,7 +12,8 @@ class adminController extends Controller
     }
 
     public function adminManageRoles(){
-        return view('admin.users.roles');
+        $roles = Role::all();
+        return view('admin.users.roles')->withRoles($roles);
     }
 
     public function adminDashboard(){
