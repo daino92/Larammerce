@@ -98,13 +98,15 @@ Route::group(['prefix' => 'user'], function() {
 Route::get('/user/profile', [
     'uses' =>'UserController@getProfile',
     'as' => 'user.profile',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'User']
 ]);
 
 Route::get('/vendor/profile', [
     'uses' => 'VendorController@getVendorprofile',
     'as' => 'vendor.profile',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
 ]);
 
 //=========================================================
@@ -114,44 +116,50 @@ Route::get('/vendor/profile', [
 Route::get('/admin', [ //this leads to dashboard
     'uses' => 'AdminController@adminDashboard',
     'as' => 'admin.dashboard',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::get('/admin/dashboard', [
     'uses' => 'AdminController@adminDashboard',
-    'as' => 'admin.dashboard',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::get('/admin/charts', [
     'uses' => 'AdminController@adminCharts',
     'as' => 'admin.charts',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::get('/admin/activities', [
     'uses' => 'AdminController@adminActivities',
     'as' => 'admin.activities',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::get('/admin/transactions', [
     'uses' => 'AdminController@adminTransactions',
     'as' => 'admin.transactions',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::get('/admin/products', [
     'uses' => 'AdminController@adminProducts',
     'as' => 'admin.products',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 //--------------------------------------------------------------
 Route::get('/admin/users/roles', [
     'uses' => 'AdminController@adminManageRoles',
     'as' => 'admin.users.roles',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 //============= ***  Admin Users *** =============//
@@ -159,43 +167,50 @@ Route::get('/admin/users/roles', [
 Route::get('/admin/users/allusers', [
     'uses' => 'AdminUserController@index',
     'as' => 'admin.users.allusers',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::get('/admin/users/adduser', [
     'uses' => 'AdminUserController@create',
     'as' => 'admin.users.adduser',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::get('/admin/users/{id}/edituser', [
     'uses' => 'AdminUserController@edit',
     'as' => 'admin.users.edituser',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::get('/admin/users/showusers/{id}', [
     'uses' => 'AdminUserController@show',
     'as' => 'admin.users.showusers',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::delete('/admin/users/{id}', [
     'uses' => 'AdminUserController@destroy',
     'as' => 'admin.users.destroyuser',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::patch('/admin/users/{id}', [
     'uses' => 'AdminUserController@update',
     'as' => 'admin.users.update',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 Route::post('/admin/users/{id}', [
     'uses' => 'AdminUserController@store',
     'as' => 'admin.users.store',
-    'middleware' => 'auth'
+    'middleware' => 'roles',
+    'roles' => ['Admin']
 ]);
 
 //Route::group(['middleware' => 'auth'], function() {
