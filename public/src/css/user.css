@@ -9,8 +9,10 @@ ul.profile li{
     font-size: 16px;
     padding-left: 8px;
     height: 28px;
-    padding-top: 4px;
+    padding-top: 10px;
+    padding-bottom: 33px;
 }
+
 
 ul.profile a:hover{
     color:white;
@@ -22,6 +24,7 @@ ul.profile a:hover{
     border-width: 1px;
     margin-top: 50px;
     padding-top: 30px;
+    
 }
 ul.profile li:hover{
 background-color: rgba(38, 84, 189, 0.9) !important;
