@@ -20,13 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('category',30);
             $table->integer('price');
-            $table->integer('quantity');
-            $table->integer('XS');
-            $table->integer('S');
-            $table->integer('M');
-            $table->integer('L');
-            $table->integer('XL');
-            $table->integer('XXL');
+            $table->integer('stock');
         });
     }
 

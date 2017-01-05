@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Elasticquent\ElasticquentTrait;
 class Product extends Model
 {
-    protected $fillable = ['imagePath', 'title', 'description', 'category', 'price', 'quantity', 'XS', 'S', 'M', 'L', 'XL', 'XXL'];
+    protected $fillable = ['imagePath', 'title', 'description', 'category', 'price', 'stock'];
     use ElasticquentTrait;
     function getIndexName(){
         return 'products';
@@ -16,9 +16,9 @@ class Product extends Model
         return $this->belongsToMany('App\Order', 'order_product', 'order_id', 'product_id')->withTimestamps();
     }
 
-    public function carts(){
+    /*public function carts(){
         return $this->belongsToMany('App\Cart', 'cart_product', 'cart_id', 'product_id')->withTimestamps();
-    }
+    }*/
 
     protected $indexSettings = [
         'analysis' => [
@@ -75,24 +75,6 @@ class Product extends Model
         'price' => [
             'type' => 'integer',
             'include_in_all' => false
-        ],
-        'XS' => [
-            'type' => 'integer',
-        ],
-        'S' => [
-            'type' => 'integer',
-        ],
-        'M' => [
-            'type' => 'integer',
-        ],
-        'L' => [
-            'type' => 'integer',
-        ],
-        'XL' => [
-            'type' => 'integer',
-        ],
-        'XXL' => [
-            'type' => 'integer',
         ],
     );
 }
