@@ -16,7 +16,7 @@ class ProductTableSeeder extends Seeder
             'title' => 'Harry Potter 1',
             'description' => 'Harry Potter and the Sorcerer\'s Stone',
             'price' => 19,
-            'quantity' => 12,
+            'stock' => 12,
             'category' => 'book'
         ]);
         $product->save();
@@ -26,7 +26,7 @@ class ProductTableSeeder extends Seeder
             'title' => 'Harry Potter 2',
             'description' => 'Harry Potter and the Chamber of Secrets',
             'price' => 15,
-            'quantity' => 10,
+            'stock' => 10,
             'category' => 'book'
         ]);
         $product->save();
@@ -36,7 +36,7 @@ class ProductTableSeeder extends Seeder
             'title' => 'Harry Potter 3',
             'description' => 'Harry Potter and the Prisoner of Askaban',
             'price' => 20,
-            'quantity' => 6,
+            'stock' => 6,
             'category' => 'book'
         ]);
         $product->save();
@@ -46,7 +46,7 @@ class ProductTableSeeder extends Seeder
             'title' => 'Harry Potter 4',
             'description' => 'Harry Potter and the Goblet of Fire',
             'price' => 15,
-            'quantity' => 9,
+            'stock' => 9,
             'category' => 'book'
         ]);
         $product->save();
@@ -56,7 +56,7 @@ class ProductTableSeeder extends Seeder
             'title' => 'Harry Potter 5',
             'description' => 'Harry Potter and the Order of the Phoenix',
             'price' => 16,
-            'quantity' => 10,
+            'stock' => 10,
             'category' => 'book'
         ]);
         $product->save();
@@ -66,7 +66,7 @@ class ProductTableSeeder extends Seeder
             'title' => 'Harry Potter 6',
             'description' => 'Harry Potter and the Half-Blood Prince',
             'price' => 20,
-            'quantity' => 2,
+            'stock' => 2,
             'category' => 'book'
         ]);
         $product->save();
@@ -76,7 +76,7 @@ class ProductTableSeeder extends Seeder
             'title' => 'Harry Potter 7',
             'description' => 'Harry Potter and the Deathly Hallows',
             'price' => 20,
-            'quantity' => 5,
+            'stock' => 5,
             'category' => 'book'
         ]);
         $product->save();
@@ -86,7 +86,7 @@ class ProductTableSeeder extends Seeder
             'title' => 'Harry Potter 8',
             'description' => 'Fantastic Beasts & Where to Find them',
             'price' => 31,
-            'quantity' => 15,
+            'stock' => 15,
             'category' => 'book'
         ]);
         $product->save();

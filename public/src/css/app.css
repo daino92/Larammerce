@@ -23,9 +23,6 @@
     float: left;
 }
 /* Header */
-.navbar {
-    background-color: #292c2f
-}
 
 /* Footer  */
 .footer-distributed{
@@ -35,28 +32,11 @@
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
-
+    padding-top: 323px !important;
     padding: 55px 50px;
 
 }
-.navbar-default .navbar-nav>li>a {
-    color: #ececec;
-    font-size: 20px;
-}
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-     color: #ececec !important;
-    background-color: #292C2F !important;
-}
-.dropdown-menu li {
-    padding-left: 5px;
-    font-size: 20px;
-    width: 100%;
-}
-.navbar-brand{
-    color: #ececec !important;
-    font-size: 28px!important;
-    margin-top: 4px;
-}
+
 
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
@@ -79,11 +59,7 @@
     font: normal 36px 'Cookie', cursive;
     margin: 0;
 }
-.navbar-default {
 
-    border-color: black;
-    border-radius: 0px;
-}
 /*Search */
 #custom-search-input{
     padding: 3px;
@@ -135,19 +111,12 @@
 /* Shopping cart.blade css */
 
 .algn-center{
-    padding-bottom: 13%;
-    margin:0px auto;  
+
     width: 20%;
-    padding-top: 9%;
+   
 }
-.global-search{
-        height: 350px;
-  
-}
-.navbar{
-    margin-bottom: 0px!important;
-}
-/* Footer links */
+
+
 
 .footer-distributed .footer-links{
     color:  #ffffff;

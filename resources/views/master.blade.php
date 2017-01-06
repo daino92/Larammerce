@@ -11,7 +11,7 @@
     @yield('styles')
 </head>
 <body>
-    @include('includes.header')
+    @include('includes.newheader')
 
     @yield('content')
 
