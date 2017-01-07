@@ -68,6 +68,7 @@
                         <li><a href="{{ route('admin.users.allusers') }}">See all Users</a></li>
                         <li><a href="{{ route('admin.users.adduser') }}">Add new Users</a></li>
                         <li><a href="{{ route('admin.users.roles') }}">Manage Roles</a></li>
+                        <li><a href="{{ route('admin.users.vendors') }}">See all Vendors</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('admin.charts') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
