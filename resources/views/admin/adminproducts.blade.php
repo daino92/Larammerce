@@ -36,7 +36,7 @@
                     @foreach ($products as $product)
                         <tr>
                             <td>{{ $product->id }}</td>
-                            <td>{{ $product->created_at->format('Y-m-d') }}</td>
+                            <td>{{ $product->created_at->format('d-m-Y') }}</td>
                             <td>{{ $product->created_at->format('H:i:s') }}</td>
                             <td>{{ $product->title }}</td>
                             <td>{{ $product->category }}</td>
