@@ -162,6 +162,13 @@ Route::get('/admin/users/roles', [
     'roles' => ['Admin']
 ]);
 
+Route::get('/admin/users/vendors', [
+   'uses' => 'AdminController@adminVendors',
+    'as' => 'admin.users.vendors',
+    'middleware' => 'roles',
+    'roles' => ['Admin']
+]);
+
 //============= ***  Admin Users *** =============//
 
 Route::get('/admin/users/allusers', [
