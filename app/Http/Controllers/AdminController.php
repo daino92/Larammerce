@@ -16,9 +16,14 @@ class adminController extends Controller
         return view('admin.users.roles')->withRoles($roles);
     }
 
+    public function adminVendors(){
+        return view('admin.users.totalvendors');
+    }
+
     public function adminDashboard(){
         $products = Product::all();
-        return view('admin.dashboard')->withProducts($products);
+        $orders = Order::all();
+        return view('admin.dashboard',['orders' => $orders], ['products' => $products]);
     }
 
     public function adminCharts(){
