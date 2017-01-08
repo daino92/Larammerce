@@ -32,6 +32,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role', 'user_role', 'user_id', 'role_id')->withTimestamps();
     }
 
+    public function products() {
+        return $this->hasMany('App\Product');
+    }
+
     public function hasAnyRole($roles){
         if (is_array($roles)){
             foreach ($roles as $role) {
