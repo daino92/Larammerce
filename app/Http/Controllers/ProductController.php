@@ -13,7 +13,7 @@ use Stripe\Charge;
 
 class ProductController extends Controller
 {
-    public function getIndex(){ //get all products. now in products.blade.php
+    public function getIndex(){ //get all products. now in allproducts.blade.php
         $products = Product::all();
         return view('shop.index', ['products' => $products]);
     }
