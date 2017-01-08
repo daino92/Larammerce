@@ -102,6 +102,20 @@ Route::get('/user/profile', [
     'roles' => ['User']
 ]);
 
+Route::get('/user/profile/order-history', [
+    'uses' =>'UserController@OrderHistory',
+    'as' => 'order.history',
+    'middleware' => 'roles',
+    'roles' => ['User']
+]);
+
+Route::get('/user/profile/ongoing-orders', [
+    'uses' =>'UserController@OngoingOrders',
+    'as' => 'ongoing.orders',
+    'middleware' => 'roles',
+    'roles' => ['User']
+]);
+
 //============================================================
 
 //============= *** Vendor Routes *** =============//
