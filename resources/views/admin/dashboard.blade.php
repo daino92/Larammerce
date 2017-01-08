@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">
-                                    {{ Auth::user()->roles->count() }}
+                                    {{ Auth::user()->roles->contains(1) }}
                                 </div>
                                 <div>Total Vendors</div>
                             </div>
