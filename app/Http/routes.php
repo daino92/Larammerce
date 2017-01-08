@@ -99,15 +99,35 @@ Route::get('/user/profile', [
     'uses' =>'UserController@getProfile',
     'as' => 'user.profile',
     'middleware' => 'roles',
-    'roles' => ['Admin', 'User']
+    'roles' => ['User']
 ]);
 
+//============================================================
+
+//============= *** Vendor Routes *** =============//
+
 Route::get('/vendor/profile', [
-    'uses' => 'VendorController@getVendorprofile',
+    'uses' => 'VendorController@VendorProfile',
     'as' => 'vendor.profile',
     'middleware' => 'roles',
     'roles' => ['Admin', 'Vendor']
 ]);
+
+Route::get('/vendor/preferences',[
+    'uses' => 'VendorController@preferences',
+    'as' => 'vendor.preferences',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::get('/vendor/orders',[
+    'uses' => 'VendorController@VendorOrders',
+    'as' => 'vendor.orders',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+
 
 //=========================================================
 
@@ -178,20 +198,6 @@ Route::get('/admin/users/allusers', [
     'roles' => ['Admin']
 ]);
 
-Route::get('/admin/users/adduser', [
-    'uses' => 'AdminUserController@create',
-    'as' => 'admin.users.adduser',
-    'middleware' => 'roles',
-    'roles' => ['Admin']
-]);
-
-Route::get('/admin/users/{id}/edituser', [
-    'uses' => 'AdminUserController@edit',
-    'as' => 'admin.users.edituser',
-    'middleware' => 'roles',
-    'roles' => ['Admin']
-]);
-
 Route::get('/admin/users/showusers/{id}', [
     'uses' => 'AdminUserController@show',
     'as' => 'admin.users.showusers',
@@ -199,16 +205,9 @@ Route::get('/admin/users/showusers/{id}', [
     'roles' => ['Admin']
 ]);
 
-Route::delete('/admin/users/{id}', [
-    'uses' => 'AdminUserController@destroy',
-    'as' => 'admin.users.destroyuser',
-    'middleware' => 'roles',
-    'roles' => ['Admin']
-]);
-
-Route::patch('/admin/users/{id}', [
-    'uses' => 'AdminUserController@update',
-    'as' => 'admin.users.update',
+Route::get('/admin/users/adduser', [
+    'uses' => 'AdminUserController@create',
+    'as' => 'admin.users.adduser',
     'middleware' => 'roles',
     'roles' => ['Admin']
 ]);
@@ -220,6 +219,78 @@ Route::post('/admin/users/{id}', [
     'roles' => ['Admin']
 ]);
 
+Route::get('/admin/users/{id}/edituser', [
+    'uses' => 'AdminUserController@edit',
+    'as' => 'admin.users.edituser',
+    'middleware' => 'roles',
+    'roles' => ['Admin']
+]);
+
+Route::patch('/admin/users/{id}', [
+    'uses' => 'AdminUserController@update',
+    'as' => 'admin.users.update',
+    'middleware' => 'roles',
+    'roles' => ['Admin']
+]);
+
+Route::delete('/admin/users/{id}', [
+    'uses' => 'AdminUserController@destroy',
+    'as' => 'admin.users.destroyuser',
+    'middleware' => 'roles',
+    'roles' => ['Admin']
+]);
+
 //Route::group(['middleware' => 'auth'], function() {
 //    Route::resource('admin/users', 'AdminUserController');
 //});
+
+//============= ***  Vendor CRUD *** =============//
+
+Route::get('/vendor/allproducts',[
+    'uses' => 'ProductCRUD@index',
+    'as' => 'vendor.allproducts',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::get('/vendor/add-products',[
+    'uses' => 'ProductCRUD@create',
+    'as' => 'vendor.addproducts',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::post('/vendor/{id}', [
+    'uses' => 'ProductCRUD@store',
+    'as' => 'vendor.store',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::get('/vendor/showproducts/{id}', [
+    'uses' => 'ProductCRUD@show',
+    'as' => 'vendor.showproduct',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::get('/vendor/{id}/editproduct', [
+    'uses' => 'ProductCRUD@edit',
+    'as' => 'vendor.editproduct',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::patch('/vendor/{id}', [
+    'uses' => 'ProductCRUD@update',
+    'as' => 'vendor.update',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::delete('/vendor/{id}', [
+    'uses' => 'ProductCRUD@destroy',
+    'as' => 'vendor.destroyproduct',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
