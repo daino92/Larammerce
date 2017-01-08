@@ -16,6 +16,10 @@ class Product extends Model
         return $this->belongsToMany('App\Order', 'order_product', 'order_id', 'product_id')->withTimestamps();
     }
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
     /*public function carts(){
         return $this->belongsToMany('App\Cart', 'cart_product', 'cart_id', 'product_id')->withTimestamps();
     }*/
