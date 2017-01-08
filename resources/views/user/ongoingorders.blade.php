@@ -1,36 +1,51 @@
-@if (Session::has('cart'))
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h2><center>Ongoing Orders</center></h2>
-                <div class="panel panel-info">
-                    <div class="panel-body">
-                        @foreach($products as $product)
-                            <div class="row">
-                                <div class="col-xs-2">
-                                    <img class="img-responsive" src="{{ $product['item']['imagePath'] }}">
+@extends('master')
+
+@section('styles')
+    <link rel="stylesheet" href="{{URL::to('src/css/user.css')}}">
+@endsection
+
+@section('content')
+    <div id="page-wrapper" class="dashboard">
+        <div class="container-fluid" style="height:700px;">
+            @include('user.prof')
+            <div class="col-lg-10">
+                @if (Session::has('cart'))
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-1">
+                            <h1 style="text-align:center;">{{ Auth::user()->username }}'s profile</h1>
+                            <hr>
+                            <h2 style="text-align: center">Ongoing Orders</h2>
+                            <div class="panel panel-info">
+                                <div class="panel-body">
+                                    @foreach($products as $product)
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <img class="img-responsive" src="{{ $product['item']['imagePath'] }}">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <h4 class="product-name"><strong>{{ $product['item']['title'] }}</strong></h4><h4><small>{{ $product['item']['description'] }}</small></h4>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-6 text-right pull-right">
+                                                    <h4><strong> {{ $product['price'] }} $ <span class="text-muted">- </span>{{ $product['qty'] }} Units</strong></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    @endforeach
                                 </div>
-                                <div class="col-xs-4">
-                                    <h4 class="product-name"><strong>{{ $product['item']['title'] }}</strong></h4><h4><small>{{ $product['item']['description'] }}</small></h4>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="col-xs-6 text-right pull-right">
-                                        <h4><strong> {{ $product['price'] }} $ <span class="text-muted">- </span>{{ $product['qty'] }} Units</strong></h4>
+                                <div class="panel-footer">
+                                    <div class="row text-center">
+                                        <div class="col-xs-9 pull-right">
+                                            <h4 class="text-right"><strong>Total Price: {{ $totalPrice }} $</strong></h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
-                        @endforeach
-                    </div>
-                    <div class="panel-footer">
-                        <div class="row text-center">
-                            <div class="col-xs-9 pull-right">
-                                <h4 class="text-right"><strong>Total Price: {{ $totalPrice }} $</strong></h4>
-                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>
-@endif
+@endsection
