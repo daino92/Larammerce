@@ -75,15 +75,31 @@ class UserController extends Controller
     }
 //if (Auth::check() && Auth::user()->roles->contains(1))
 
-    public function getProfile(){
+    public function OrderHistory(){
         $orders = Auth::user()->orders; //return completed orders to the profile page
+        $orders->transform(function($order, $key){
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+        return view('user.orderhistory', ['orders' => $orders]);
+    }
+
+    public function OngoingOrders(){
+        $oldCart = Session::get('cart'); //if there is a cart, fetch it.
+        $cart = new Cart($oldCart);
+        return view('user.ongoingorders', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
+
+    public function getProfile(){
+        /*$orders = Auth::user()->orders; //return completed orders to the profile page
         $orders->transform(function($order, $key){
             $order->cart = unserialize($order->cart);
             return $order;
         });
         $oldCart = Session::get('cart'); //if there is a cart, fetch it.
         $cart = new Cart($oldCart);
-        return view('user.profile', ['orders' => $orders], ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+        return view('user.profile', ['orders' => $orders], ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);*/
+        return view('user.profile');
     }
 
     public function getLogout(){
