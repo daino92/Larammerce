@@ -17,7 +17,7 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Sorcerer\'s Stone',
             'price' => 19,
             'stock' => 12,
-            'category' => 'book'
+            'category' => 'Books'
         ]);
         $product->save();
 
@@ -27,7 +27,7 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Chamber of Secrets',
             'price' => 15,
             'stock' => 10,
-            'category' => 'book'
+            'category' => 'Books'
         ]);
         $product->save();
 
@@ -37,7 +37,7 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Prisoner of Askaban',
             'price' => 20,
             'stock' => 6,
-            'category' => 'book'
+            'category' => 'Books'
         ]);
         $product->save();
 
@@ -47,7 +47,7 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Goblet of Fire',
             'price' => 15,
             'stock' => 9,
-            'category' => 'book'
+            'category' => 'Books'
         ]);
         $product->save();
 
@@ -57,7 +57,7 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Order of the Phoenix',
             'price' => 16,
             'stock' => 10,
-            'category' => 'book'
+            'category' => 'Books'
         ]);
         $product->save();
 
@@ -67,7 +67,7 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Half-Blood Prince',
             'price' => 20,
             'stock' => 2,
-            'category' => 'book'
+            'category' => 'Books'
         ]);
         $product->save();
 
@@ -77,7 +77,7 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Deathly Hallows',
             'price' => 20,
             'stock' => 5,
-            'category' => 'book'
+            'category' => 'Books'
         ]);
         $product->save();
 
@@ -87,7 +87,7 @@ class ProductTableSeeder extends Seeder
             'description' => 'Fantastic Beasts & Where to Find them',
             'price' => 31,
             'stock' => 15,
-            'category' => 'book'
+            'category' => 'Books'
         ]);
         $product->save();
     }
