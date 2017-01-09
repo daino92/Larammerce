@@ -11,6 +11,10 @@
     @yield('styles')
 </head>
 <body>
+ 
+
+  
+   </div>
     @include('includes.header')
 
     @yield('content')
