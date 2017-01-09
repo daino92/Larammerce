@@ -134,6 +134,13 @@ Route::get('/vendor/preferences',[
     'roles' => ['Admin', 'Vendor']
 ]);
 
+Route::patch('/vendor/preferences',[
+    'uses' => 'VendorController@update',
+    'as' => 'update.vendor',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
 Route::get('/vendor/orders',[
     'uses' => 'VendorController@VendorOrders',
     'as' => 'vendor.orders',
