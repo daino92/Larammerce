@@ -6,7 +6,7 @@
 
 @section('content')
     @if (Session::has('cart'))
-        <div class="container">
+        <div class="container" style="margin-top:100px;">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-info">
@@ -24,6 +24,7 @@
                         </div>
                         <div class="panel-body">
                             @foreach($products as $product)
+                               <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-xs-2"><img class="img-responsive" src="{{ $product['item']['imagePath'] }}">
                                     </div>
@@ -42,8 +43,10 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                                 <hr>
                             @endforeach
+                         <div class="container-fluid">
                             <div class="row">
                                 <div class="text-center">
                                     <div class="col-xs-9">
@@ -56,6 +59,7 @@
                                     </div>
                                 </div>
                             </div>
+                         </div>
                         </div>
                         <div class="panel-footer">
                             <div class="row text-center">
@@ -72,10 +76,12 @@
             </div>
         </div>
     @else
+       <div class="container-fluid" style="height:350px;">
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <h2>No items in Cart!</h2>
+                <h2 style="text-align:center;">No items in Cart!</h2>
             </div>
         </div>
+    </div>
     @endif
 @endsection
