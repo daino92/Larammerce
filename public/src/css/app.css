@@ -32,8 +32,8 @@
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
-    padding-top: 323px !important;
-    padding: 55px 50px;
+    padding: 30px 50px;
+    margin-top: 150px;
 
 }
 
@@ -113,7 +113,12 @@
 .algn-center{
 
     width: 20%;
-   
+    text-align: center;
+    margin: 0px auto;
+    padding-top: 132px;
+    
+    
+
 }
 
 
