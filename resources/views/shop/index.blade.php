@@ -7,8 +7,12 @@
 @endsection
 
 @section('content')
-   <img src="pictures/header.jpg" alt="" style="width:100%;height:auto;">
-   @include('includes.search')
+  <div class="search_area" style="height:400px; width:auto; background:url('pictures/header.jpg') no-repeat">
+      <div class="search_button">
+            @include('includes.search')
+      </div> 
+  </div>
+  
     @if(Session::has('success'))
         <div class="row">
             <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
