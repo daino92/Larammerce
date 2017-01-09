@@ -1,7 +1,7 @@
  <link rel="stylesheet" href="{{URL::to('src/css/app.css')}}"> 
      <footer class="footer-distributed">
     <div class="footer-left">
-        <h3>Locoroco<img class="img-circle" id="img_logo" src="pictures/locoroco.png"></h3>
+        <h3>Locoroco<img class="img-circle" id="img_logo" src="{{ URL::to('pictures/locoroco.png') }}"> </h3>
         <p class="footer-links">
             <a href="{{ route('product.index') }}">Home</a> ·
             <a href="#">Blog</a> ·
