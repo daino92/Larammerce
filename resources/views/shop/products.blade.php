@@ -6,6 +6,7 @@
 
 @section('content')
     @foreach($products->chunk(4) as $productChunk)
+       <div class="container-fluid">
         <div class="row">
             @foreach($productChunk as $product)
                 <div class="col-sm-6 col-md-3">
@@ -23,5 +24,7 @@
                 </div>
             @endforeach
         </div>
+    </div>
     @endforeach
+    
 @endsection
