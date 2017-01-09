@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+   <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
             <h1>Checkout</h1>
@@ -67,6 +68,7 @@
             </form>
         </div>
     </div>
+</div>
 @endsection
 
 @section('scripts')
