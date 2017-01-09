@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-
+use App\User;
 class VendorController extends Controller
 {
     public function VendorProfile(){
@@ -12,7 +12,14 @@ class VendorController extends Controller
     }
 
     public function preferences(){
-        return view('vendor.preferences');
+        $user = User::all();
+        return view('vendor.preferences')->withUser($user);;
+    }
+
+    public function update(){
+        $user = User::find(auth()->user());
+        $user->update($user);
+        return redirect()->route('vendor.preferences');
     }
 
     public function VendorOrders(){
