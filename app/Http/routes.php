@@ -98,8 +98,7 @@ Route::group(['prefix' => 'user'], function() {
 Route::get('/user/profile', [
     'uses' =>'UserController@getProfile',
     'as' => 'user.profile',
-    'middleware' => 'roles',
-    'roles' => ['User']
+    'middleware' => 'auth' //need fix with CheckRole
 ]);
 
 Route::get('/user/profile/order-history', [
