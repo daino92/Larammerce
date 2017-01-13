@@ -30,6 +30,7 @@
                         <th>Title</th>
                         <th>Category</th>
                         <th>Price</th>
+                        <th>User ID</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -41,6 +42,7 @@
                             <td>{{ $product->title }}</td>
                             <td>{{ $product->category }}</td>
                             <td>{{ $product->price }}$</td>
+                            <td>{{ $product->user_id }}</td>
                         </tr>
                     @endforeach
                     </tbody>
