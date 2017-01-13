@@ -6,10 +6,12 @@ use Request;
 use Session;
 use DB;
 use App\Product;
+use App\User;
+use Auth;
 class ProductCRUD extends Controller
 {
     public function index(){
-        $products = Product::orderBy('id','ASC')->paginate(5); //pagination
+        $products = Product::where('user_id', auth()->user()->id)->paginate(5); //pagination
         return view('vendor.allproducts')->withProducts($products);
     }
 
@@ -24,8 +26,8 @@ class ProductCRUD extends Controller
 
     public function store(){
         $product = Request::all();
-        $product = Product::create($product);
-        //$user->products()->attach($role);
+        User::whereId(Request::input('user'))->first();
+        Auth::user()->products()->create($product);
         return redirect()->route('vendor.allproducts');
     }
 
