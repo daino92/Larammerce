@@ -90,14 +90,7 @@
 }
 
 ul {
-	margin:0 auto;
-	padding:0;
 	list-style:none;
-}
-
-ul li {
-	float:left;
-	margin:20px 25px;
 }
 
 
@@ -229,3 +222,35 @@ ul li {
 		background: #fff;
 		color: #2f3644;				
 	}
+.popular_ven{
+    padding-top: 80px;
+}
+
+@media (max-width:768px){
+    .popular_ven{
+        padding-top: 80px;
+        padding-left: 175px !important;
+}
+    
+}
+@media (max-width:640px){
+    .popular_ven{
+        padding-top: 80px;
+        padding-left: 107px !important;
+}
+    
+}
+@media (max-width:480px){
+    .popular_ven{
+        padding-top: 80px;
+        padding-left: 25px !important;
+}
+    
+}
+@media (max-width:480px){
+    .popular_ven{
+        padding-top: 80px;
+        padding-left: 0px !important;
+}
+    
+}
