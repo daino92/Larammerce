@@ -10,39 +10,5 @@ nav.navbar.navbar-default {
 }
 
 .nav li>a {
-    font-size: 19px;
-}
-ul.nav.navbar-nav {
-    margin-left: 33%;
-}
-
-@media (max-width:1680px){
-    ul.nav.navbar-nav {
-     margin-left: 29%;
-}
-       
-}
-@media (max-width:1366px){
-    ul.nav.navbar-nav {
-     margin-left: 26%;
-}
-       
-}
-@media (max-width:1280px){
-    ul.nav.navbar-nav {
-     margin-left: 24%;
-}
-       
-}
-@media (max-width:1024px){
-    ul.nav.navbar-nav {
-     margin-left: 18%;
-}
-       
-}
-@media (max-width:768px){
-    ul.nav.navbar-nav {
-     margin-left: 7%;
-}
-       
+    font-size: 15px;
 }
