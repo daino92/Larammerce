@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Order;
 use App\Role;
+use App\User;
 class adminController extends Controller
 {
     public function adminIndex(){
@@ -17,13 +18,17 @@ class adminController extends Controller
     }
 
     public function adminVendors(){
-        return view('admin.users.totalvendors');
+        $roles = Role::find(2);
+        $users = User::orderBy('id','ASC')->paginate(5);
+        return view('admin.users.totalvendors')->withUsers($roles->users);
     }
 
     public function adminDashboard(){
         $products = Product::all();
         $orders = Order::all();
-        return view('admin.dashboard',['orders' => $orders], ['products' => $products]);
+        $users = User::all();
+        $roles = Role::find(2);
+        return view('admin.dashboard',['orders' => $orders], ['products' => $products])->withUsers($users)->withRoles($roles);
     }
 
     public function adminCharts(){
