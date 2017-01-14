@@ -177,7 +177,7 @@
 
 
 
-        <div class="col-md-12" style="padding-top: 80px;">
+        <div class="col-md-12 popular_ven">
             <div class="col-md-4">
             <ul>  
                <li> 
