@@ -295,3 +295,50 @@ ul.alert-dropdown {
 .container-fluid.admin{
     padding-bottom: 100px;
 }
+
+
+@media (max-width:1680px){
+    .dashboard{
+    padding-left: 20% !important;
+}
+       
+}
+@media (max-width:1366px){
+.dashboard{
+    padding-left: 19% !important;
+}
+       
+}
+@media (max-width:1280px){
+.dashboard{
+    padding-left: 21% !important;
+}
+       
+}
+@media (max-width:1024px){
+.dashboard{
+    padding-left: 26% !important;
+}
+       
+}
+@media (max-width:768px){
+.dashboard{
+    padding-left: 32% !important;
+}
+}
+@media (max-width:640px){
+.dashboard{
+    padding-left: 0% !important;
+}
+}
+
+@media (max-width:320px){
+   #page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+    padding-top: 28px;
+}
+}    
+       
+}
