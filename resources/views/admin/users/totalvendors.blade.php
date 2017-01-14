@@ -19,11 +19,24 @@
                         <thead>
                         <tr class="bg-info">
                             <th>No.</th>
+                            <th>Name</th>
+                            <th>Surname</th>
                             <th>Username</th>
-                            <th>Role</th>
-                            <th colspan="3"><center>Actions</center></th>
+                            <th>Password</th>
                         </tr>
                         </thead>
+                        <tbody>
+                        @foreach ($users as $user)
+                            <tr>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->surname }}</td>
+                                <td>{{ $user->username }}</td>
+                                <td>{{ $user->password }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                         <!--pagination {! ! $users->render() !!}-->
                     </table>
                 </div>
             </div>
