@@ -24,7 +24,7 @@
                                 <i class="fa fa-users fa-4x" style="padding-top: 5px" aria-hidden="true"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">{{ Auth::user()->count() }}</div>
+                                <div class="huge">{{ $users->count() }}</div>
                                 <div>Total Users</div>
                             </div>
                         </div>
@@ -44,12 +44,9 @@
                         <div class="row">
                             <div class="col-xs-3">
                                 <i class="fa fa-user fa-5x"></i>
-
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">
-                                    {{ Auth::user()->roles->contains(1) }}
-                                </div>
+                                <div class="huge">{{ $roles->users()->count() }}</div>
                                 <div>Total Vendors</div>
                             </div>
                         </div>
