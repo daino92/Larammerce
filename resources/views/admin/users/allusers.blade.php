@@ -25,20 +25,22 @@
                     <thead>
                     <tr class="bg-info">
                         <th>No.</th>
+                        <th>Creation date</th>
                         <th>Username</th>
                         <th>Role</th>
-                        <th colspan="3"><center>Actions</center></th>
+                        <th colspan="3" style="text-align: center;">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($users as $user)
                         <tr>
                             <td>{{ $user->id }}</td>
+                            <td>{{ $user->created_at->format('d-m-Y') }}</td>
                             <td>{{ $user->username }}</td>
                             @foreach ($user->roles as $role)
                                 <td>{{$role->name}}</td>
                             @endforeach
-                            <td><a href="{{route('admin.users.showusers',$user->id)}}" class="btn btn-success btn-block btn">Read</a></td>
+                            <td><a href="{{route('admin.users.showusers',$user->id)}}" class="btn btn-success btn-block btn">Show</a></td>
                             <td><a href="{{route('admin.users.edituser',$user->id)}}" class="btn btn-warning btn-block">Edit</a></td>
                             <td>
                                 {!! Form::open(['method' => 'DELETE', 'route'=>['admin.users.destroyuser', $user->id]]) !!}
@@ -49,7 +51,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                {!! $users->render() !!} <!--pagination-->
+            {!! $users->render() !!} <!--pagination-->
             </div>
         </div>
     </div>
