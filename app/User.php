@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email','username', 'password', 'confirmation_code'
+        'email','username', 'password', 'confirmation_code', 'name', 'surname', 'avatar'
     ];
 
     /**
@@ -35,6 +35,10 @@ class User extends Authenticatable
     public function products() {
         return $this->hasMany('App\Product');
     }
+
+    /*public function cart(){
+        return $this->hasOne('App\Cart');
+    }*/
 
     public function hasAnyRole($roles){
         if (is_array($roles)){
