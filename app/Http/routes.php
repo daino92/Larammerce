@@ -55,16 +55,11 @@ Route::post('/checkout', [
 ]);
 
 Route::get('/search', [
-   'uses' => 'ProductController@getResults',
+    'uses' => 'ProductController@getResults',
     'as' => 'shop.results'
 ]);
 
-//Route::get('/signup/{confirmationCode}', [
-//    'uses' => 'UserController@getSignup',
-//    'as' => 'mails.email'
-//]);
-
-//============= *** User Routes *** =============//
+//=============== *** User Routes *** ===============//
 
 Route::group(['prefix' => 'user'], function() {
     Route::group(['middleware' => 'guest'], function(){
@@ -87,7 +82,6 @@ Route::group(['prefix' => 'user'], function() {
     });
 
     Route::group(['middleware' => 'auth'], function (){
-
         Route::get('/logout',[
             'uses' =>'UserController@getLogout',
             'as' => 'user.logout'
@@ -96,9 +90,18 @@ Route::group(['prefix' => 'user'], function() {
 });
 
 Route::get('/user/profile', [
-    'uses' =>'UserController@getProfile',
+    'uses' => 'UserController@userProfile',
     'as' => 'user.profile',
-    'middleware' => 'auth' //need fix with CheckRole
+    'middleware' => 'auth', //need fix with CheckRole
+    //'middleware' => 'roles',
+    //'roles' => ['User']
+]);
+
+Route::patch('/user/profile/{id}',[
+    'uses' => 'UserController@update',
+    'as' => 'update.user',
+    'middleware' => 'roles',
+    'roles' => ['User']
 ]);
 
 Route::get('/user/profile/order-history', [
@@ -115,43 +118,7 @@ Route::get('/user/profile/ongoing-orders', [
     'roles' => ['User']
 ]);
 
-//============================================================
-
-//============= *** Vendor Routes *** =============//
-
-Route::get('/vendor/profile', [
-    'uses' => 'VendorController@VendorProfile',
-    'as' => 'vendor.profile',
-    'middleware' => 'roles',
-    'roles' => ['Admin', 'Vendor']
-]);
-
-Route::get('/vendor/preferences',[
-    'uses' => 'VendorController@preferences',
-    'as' => 'vendor.preferences',
-    'middleware' => 'roles',
-    'roles' => ['Admin', 'Vendor']
-]);
-
-Route::patch('/vendor/preferences',[
-    'uses' => 'VendorController@update',
-    'as' => 'update.vendor',
-    'middleware' => 'roles',
-    'roles' => ['Admin', 'Vendor']
-]);
-
-Route::get('/vendor/orders',[
-    'uses' => 'VendorController@VendorOrders',
-    'as' => 'vendor.orders',
-    'middleware' => 'roles',
-    'roles' => ['Admin', 'Vendor']
-]);
-
-
-
-//=========================================================
-
-//============= *** Admin Routes *** =============//
+//=============== *** Admin Routes *** ===============//
 
 Route::get('/admin', [ //this leads to dashboard
     'uses' => 'AdminController@adminDashboard',
@@ -194,7 +161,13 @@ Route::get('/admin/products', [
     'roles' => ['Admin']
 ]);
 
-//--------------------------------------------------------------
+Route::get('/admin/users/vendors', [
+    'uses' => 'AdminController@adminVendors',
+    'as' => 'admin.users.vendors',
+    'middleware' => 'roles',
+    'roles' => ['Admin']
+]);
+
 Route::get('/admin/users/roles', [
     'uses' => 'AdminController@adminManageRoles',
     'as' => 'admin.users.roles',
@@ -202,14 +175,7 @@ Route::get('/admin/users/roles', [
     'roles' => ['Admin']
 ]);
 
-Route::get('/admin/users/vendors', [
-   'uses' => 'AdminController@adminVendors',
-    'as' => 'admin.users.vendors',
-    'middleware' => 'roles',
-    'roles' => ['Admin']
-]);
-
-//============= ***  Admin Users *** =============//
+//=============== ***  Admin CRUD Users *** ===============//
 
 Route::get('/admin/users/allusers', [
     'uses' => 'AdminUserController@index',
@@ -260,11 +226,30 @@ Route::delete('/admin/users/{id}', [
     'roles' => ['Admin']
 ]);
 
-//Route::group(['middleware' => 'auth'], function() {
-//    Route::resource('admin/users', 'AdminUserController');
-//});
+//=============== *** Vendor Routes *** ===============//
 
-//============= ***  Vendor CRUD *** =============//
+Route::get('/vendor/profile',[
+    'uses' => 'VendorController@vendorProfile',
+    'as' => 'vendor.profile',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::patch('/vendor/profile/{id}',[
+    'uses' => 'VendorController@update',
+    'as' => 'update.vendor',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+Route::get('/vendor/orders',[
+    'uses' => 'VendorController@VendorOrders',
+    'as' => 'vendor.orders',
+    'middleware' => 'roles',
+    'roles' => ['Admin', 'Vendor']
+]);
+
+//=============== ***  Vendor CRUD *** ===============//
 
 Route::get('/vendor/allproducts',[
     'uses' => 'ProductCRUD@index',
