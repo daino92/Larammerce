@@ -1,12 +1,21 @@
 @extends('master')
 
 <link rel="stylesheet" href="{{ URL::to('src/css/index.css') }}">
-
+<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/style.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/style.css') }}" />
+    <style type="text/css">
+        .shape .overlay.round {
+            background: url(pictures/round.png);		
+        }
+    </style>
 @section('title')
+   
     Locoroco
 @endsection
 
 @section('content')
+
+ 
   <div class="search_area" style="height:450px; width:auto; background:url('pictures/header.jpg') no-repeat">
       <div class="search_button">
             @include('includes.search')
@@ -20,7 +29,7 @@
                     {{ Session::get('success') }}
                 </div>
             </div>
-        </div>8
+        </div>
     @endif
     <div class="container-fluid index">
     <!-- Front Page:: Place to store menu styles, sub menus and other goodies! -->
@@ -135,8 +144,19 @@
              </div>
          </div>
     </div>
+<style>
+#divSocial  img
+{
+    position: relative;
+    border: none;
+}
+    
 
-  <div class="container-fluid">
+</style>
+
+ 
+
+  <div class="container-fluid what_we">
       <div class="row">
           <div class="section_d">
               <div class="skew">
@@ -144,17 +164,43 @@
                       <h1>What we Offer</h1>
                       <div class="col-md-3">
                           <div class="circle">
-                              dads
+                                    <div id="divSocial">
+                                      <img src="{{ URL::to('pictures/qual.png') }}" />
+                                    </div>
+                                    <h4>Top Quality</h4>
+                                    <p>
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius. 
+                                    </p>                             
                           </div>
                       </div>
                       <div class="col-md-3">
-                          asdasdsa
+                
+                                    <div id="divSocial">
+                                      <img src="{{ URL::to('pictures/sales.png') }}" />
+                                    </div>
+                                    
+                                    <h4>Fast Sales</h4>
+                                    <p>
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius. 
+                                    </p>
                       </div>
                       <div class="col-md-3">
-                          asdasdsa
+                                    <div id="divSocial">
+                                      <img src="{{ URL::to('pictures/new.png') }}" />
+                                    </div>                    
+                                    <h4>Management System</h4>
+                                    <p>
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius. 
+                                    </p>
                       </div>
                       <div class="col-md-3">
-                          asdasdsa
+                                    <div id="divSocial">
+                                      <img src="{{ URL::to('pictures/support.png') }}" />
+                                    </div>  
+                                    <h4>24/7 Support</h4>
+                                    <p>
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius. 
+                                    </p>                                    
                       </div>
                   </div>
               </div>
@@ -166,17 +212,7 @@
    <div class="container-fluid index2">
        <!-- Front Page:: Place to store menu styles, sub menus and other goodies! -->
            <div class="row">
-               <h1 style="text-align:center;"> Popular Vendors</h1>
-    <style type="text/css">
-        .shape .overlay.round {
-            background: url(pictures/round.png);		
-        }
-    </style>
-	
-		
-
-
-
+               <h1 style="text-align:center;"> Popular Vendors</h1>		
         <div class="col-md-12 popular_ven">
             <div class="col-md-4">
             <ul>  
@@ -255,33 +291,63 @@
        </div>
     
 
-   <div class="container-fluid">
+   <div class="container-fluid popular_pr">
        <div class="row">
            <div class="section_d1">
                <div class="skew1">
-                   <div class="sec_inner1">
-                       <h1>Popular Products On Sale</h1>
-                       <br>
-                       <br>
-                       <br>
-                       <br>
-                       <div class="col-md-3">
-                           <div class="circle">
-                               dads
-                           </div>
-                       </div>
-                       <div class="col-md-3">
-                           asdasdsa
-                       </div>
-                       <div class="col-md-3">
-                           asdasdsa
-                       </div>
-                       <div class="col-md-3">
-                           asdasdsa
-                       </div>
-                   </div>
+                       <h1 style="text-align:center;">Popular Products On Sale</h1>
+                       <div class="slide_container">
+				<div id="mi-slider" class="mi-slider">
+					<ul>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+
+
+					</ul>
+										<ul>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+
+
+					</ul>
+										<ul>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+
+
+					</ul>
+										<ul>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+						<li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+
+
+					</ul>
+					
+					<nav>
+						<a href="#">Shoes</a>
+						<a href="#">Accessories</a>
+						<a href="#">Watches</a>
+						<a href="#">Bags</a>
+					</nav>
+				</div>
+				</div>
+		</div><!-- /container -->
+
+           </div>
                </div>
            </div>
        </div>
   </div>
+  
+   <script>
+
+
 @endsection
