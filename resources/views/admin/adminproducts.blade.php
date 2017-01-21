@@ -30,6 +30,7 @@
                         <th>Title</th>
                         <th>Category</th>
                         <th>Price</th>
+                        <th>Image</th>
                         <th>User ID</th>
                     </tr>
                     </thead>
@@ -42,6 +43,7 @@
                             <td>{{ $product->title }}</td>
                             <td>{{ $product->category }}</td>
                             <td>{{ $product->price }}$</td>
+                            <td><a href='{{ asset($product->imagePath) }}' target="_blank"><img src='{{ $product->thumbnail }}'></a></td>
                             <td>{{ $product->user_id }}</td>
                         </tr>
                     @endforeach
