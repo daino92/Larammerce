@@ -1,10 +1,10 @@
 <div class="col-lg-2 left_menu_pos">
     <div class="row">
-        <img class="userpic" src="/pictures/userpic.png" alt=""/>
-        <h4 style="text-align:center;">Dionisis Manos</h4>
+        <img src="{{Auth::user()->avatar}}" class="userPic">
+        <h4 style="text-align:center;">{{ Auth::user()->username }}</h4>
         <hr>
         <ul class="profile">
-            <li><a href="{{ route('vendor.preferences') }}">Preferences</a></li>
+            <li><a href="{{ route('vendor.profile') }}">Preferences</a></li>
             <li><a href="{{ route('vendor.orders') }}">Orders</a></li>
             <li><a href="{{ route('vendor.allproducts') }}">See my products</a></li>
             <li><a href="{{ route('vendor.addproducts') }}">Create new products</a></li>
