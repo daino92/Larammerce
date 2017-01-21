@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <h1>Update {{$product->title}}'s information</h1>
-                        {!! Form::model($product,['method' => 'PATCH','route'=>['vendor.update',$product->id]]) !!}
+                        {!! Form::model($product,['method' => 'PATCH','route'=>['vendor.update',$product->id],'files'=>true]) !!}
                         <div class="form-group">
                             {!! Form::label('Title', 'Title:') !!}
                             {!! Form::text('title',null,['class'=>'form-control']) !!}
@@ -49,6 +49,10 @@
                         <div class="form-group">
                             {!! Form::label('Stock', 'Stock:') !!}
                             {!! Form::text('stock',null,['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('File', 'File:') !!}
+                            {!! Form::file('image') !!}
                         </div>
                         <div class="form-group">
                             {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}

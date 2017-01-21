@@ -38,6 +38,7 @@
                                     <th>Category</th>
                                     <th>Price</th>
                                     <th>Stock</th>
+                                    <th>Image</th>
                                     <th colspan="3" style="text-align: center;">Actions</th>
                                 </tr>
                                 </thead>
@@ -50,7 +51,8 @@
                                         <td>{{ $product->category }}</td>
                                         <td>{{ $product->price }}</td>
                                         <td>{{ $product->stock }}</td>
-                                        <td><a href="{{route('vendor.showproduct',$product->id)}}" class="btn btn-success btn-block btn">Read</a></td>
+                                        <td><a href='{{ asset($product->imagePath) }}' target="_blank"><img src='{{ $product->thumbnail }}'></a></td>
+                                        <td><a href="{{route('vendor.showproduct',$product->id)}}" class="btn btn-success btn-block btn">Show</a></td>
                                         <td><a href="{{route('vendor.editproduct',$product->id)}}" class="btn btn-warning btn-block">Edit</a></td>
                                         <td>
                                             {!! Form::open(['method' => 'DELETE', 'route'=>['vendor.destroyproduct', $product->id]]) !!}

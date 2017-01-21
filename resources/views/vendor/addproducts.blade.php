@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <h1>Create new product</h1>
-                        {!! Form::open(['route' => 'vendor.allproducts']) !!}
+                        {!! Form::open(['route' => 'vendor.allproducts', 'files'=>true]) !!}
                         <div class="form-group">
                             {!! Form::label('Title', 'Title:') !!}
                             {!! Form::text('title',null,['class'=>'form-control']) !!}
@@ -49,6 +49,10 @@
                         <div class="form-group">
                             {!! Form::label('Stock', 'Stock:') !!}
                             {!! Form::text('stock',null,['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('File', 'File:') !!}
+                            {!! Form::file('image') !!}
                         </div>
                         <div class="form-group">
                             {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
