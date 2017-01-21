@@ -1,3 +1,4 @@
+
 .footer-distributed{
     background-color: #292c2f;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -10,16 +11,22 @@
 
 }
 
+.slide_container{
+     margin-top: 57px;
+
+}
+	
+
 .container-fluid.index {
 
     padding-top: 50px;
-    padding-bottom: 350px;
+    padding-bottom: 209px;
     background: #eaeaea;
     height: auto;
 }
 .container-fluid.index2 {
-    padding-top: 484px;
-    padding-bottom: 400px;
+    padding-top: 373px;
+    padding-bottom: 311px;
     height: auto;
     background: #eaeaea;
 }
@@ -33,10 +40,10 @@
   content: '';
   position: absolute;
   left: 0;
-    bottom: -460px;
+    bottom: -655px;
     overflow: visible;
     width: 100%;
-    height: 511px;
+    height: 714px;
   background: #00bcd4;
   z-index: -1;
   -webkit-transform: skewY(5deg);
@@ -65,10 +72,10 @@
   content: '';
   position: absolute;
   left: 0;
-    bottom: -460px;
+    bottom: -473px;
     overflow: visible;
     width: 100%;
-    height: 511px;
+    height: 1101px;
   background: #00bcd4;
   z-index: -1;
   -webkit-transform: skewY(-5deg);
@@ -95,6 +102,8 @@ ul {
 
 
 .shape {
+    margin: 0px auto;
+    text-align: center;
 	width: 300px;
 	height: 300px;
 	position: relative;
@@ -223,34 +232,53 @@ ul {
 		color: #2f3644;				
 	}
 .popular_ven{
-    padding-top: 80px;
+    padding-top: 50px;
+}
+.popular_ven .col-md-4{
+    padding-bottom: 50px;
 }
 
 @media (max-width:768px){
-    .popular_ven{
-        padding-top: 80px;
-        padding-left: 175px !important;
+    .mi-slider {
+        height: 385px !important;
+    }
+    .mi-slider nav {
+    top: 300px !important;
+    }
+    .section_d .skew:after {
+    left: 0px;
+    bottom: 0px;
 }
+       .section_d1 .skew1:after {
+    left: 0px;
+    bottom: 0px;
+    height: 0px;
+}
+    .what_we{
+        background: #00bcd4;
+    padding-top: 108px;
+    height: auto;
+    padding-bottom: 100px;
+    }
+    .popular_pr{
+        background: #00bcd4;   
+    padding-top: 108px !important;
+    height: auto !important;
+    padding-bottom: 100px !important;
+    }
     
+    .footer-distributed {
+    padding-top: 108px !important;
+    margin-top: 0px !important;
 }
-@media (max-width:640px){
-    .popular_ven{
-        padding-top: 80px;
-        padding-left: 107px !important;
-}
-    
-}
-@media (max-width:480px){
-    .popular_ven{
-        padding-top: 80px;
-        padding-left: 25px !important;
-}
-    
-}
-@media (max-width:480px){
-    .popular_ven{
-        padding-top: 80px;
-        padding-left: 0px !important;
-}
+    .container-fluid.index2 {
+    padding-top: 108px;
+    height: auto;
+    padding-bottom: 100px;
+    }
+    .container-fluid.index {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    }
     
 }
