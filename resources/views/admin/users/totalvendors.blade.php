@@ -19,24 +19,24 @@
                         <thead>
                         <tr class="bg-info">
                             <th>No.</th>
+                            <th>Creation date</th>
                             <th>Name</th>
                             <th>Surname</th>
                             <th>Username</th>
-                            <th>Password</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
+                                <td>{{ $user->created_at->format('d-m-Y') }}</td>
+                                <td>{{ $user->username }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->surname }}</td>
-                                <td>{{ $user->username }}</td>
-                                <td>{{ $user->password }}</td>
                             </tr>
                         @endforeach
                         </tbody>
-                         <!--pagination {! ! $users->render() !!}-->
+                        <!--pagination {! ! $users->render() !!}-->
                     </table>
                 </div>
             </div>
