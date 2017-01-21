@@ -8,7 +8,6 @@ use App\Cart;
 use App\Role;
 use Auth;
 use Session;
-//use Mail;
 class UserController extends Controller
 {
     public function getSignup(){
@@ -32,10 +31,6 @@ class UserController extends Controller
         ]);
         $user->save();
         $user->roles()->attach(Role::where('name', 'User')->first());
-
-        /*Mail::send('mails.verify', $data, function($message) { //new
-            $message->to($data['email'])->subject('Verify your email address');
-        });*/
 
         //Auth::login($user); //If a new user creates an account, the system automatically logs him in.
 
@@ -67,13 +62,14 @@ class UserController extends Controller
                 return redirect()->to($oldUrl);
             }
             if(Auth::user()->roles->contains(1))
-                return redirect()->route('product.index');
+                return redirect()->route('admin.dashboard');
+            else if (Auth::user()->roles->contains(2))
+                return redirect()->route('vendor.profile');
             else if(Auth::user()->roles->contains(3))
                 return redirect()->route('user.profile');
         }
         return redirect()->back();
     }
-//if (Auth::check() && Auth::user()->roles->contains(1))
 
     public function OrderHistory(){
         $orders = Auth::user()->orders; //return completed orders to the profile page
@@ -90,16 +86,30 @@ class UserController extends Controller
         return view('user.ongoingorders', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
-    public function getProfile(){
-        /*$orders = Auth::user()->orders; //return completed orders to the profile page
-        $orders->transform(function($order, $key){
-            $order->cart = unserialize($order->cart);
-            return $order;
-        });
-        $oldCart = Session::get('cart'); //if there is a cart, fetch it.
-        $cart = new Cart($oldCart);
-        return view('user.profile', ['orders' => $orders], ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);*/
-        return view('user.profile');
+    public function userProfile(){
+        $user = User::all();
+        return view('user.profile')->withUser($user);;
+    }
+
+    public function update(Request $request, $id){
+        $userUpdate = $request->all();
+        $user = User::find($id);
+
+        $this->validate($request, [
+            //   'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if($file = $request->hasFile('avatar')) {
+            $file = $request->file('avatar');
+            $extension = $file->getClientOriginalName();
+            $username = Auth::user()->username;
+            $destinationPath = public_path('/uploads/avatar/' . $username);
+            $file->move($destinationPath, $extension);
+            $user['avatar'] = '/uploads/avatar/'. $username . '/' . $extension;
+        }
+
+        $user->update($userUpdate);
+        return redirect()->route('user.profile');
     }
 
     public function getLogout(){
