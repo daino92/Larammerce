@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 use Session;
+use Auth;
 use DB;
 use App\Product;
-use App\User;
-use Auth;
+use Intervention\Image\ImageManagerStatic as Image;
 class ProductCRUD extends Controller
 {
     public function index(){
@@ -24,9 +24,27 @@ class ProductCRUD extends Controller
         return view('vendor.addproducts');
     }
 
-    public function store(){
-        $product = Request::all();
-        User::whereId(Request::input('user'))->first();
+    public function store(Request $request){
+        $product = $request->all();
+
+        $this->validate($request, [
+            //   'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if($file = $request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $username = Auth::user()->username;
+            $thumb = Image::make($file->getRealPath())->resize(100, 100, function ($constraint) {
+                $constraint->aspectRatio(); //maintain image ratio
+            });
+            $destinationPath = public_path('/uploads/products/' . $username);
+            $file->move($destinationPath, $extension);
+            $thumb->save($destinationPath.'/thumb_'.$extension);
+            $product['imagePath'] = '/uploads/products/'. $username . '/' . $extension;
+            $product['thumbnail'] = '/uploads/products/'. $username . '/thumb_' . $extension;
+        }
+
         Auth::user()->products()->create($product);
         return redirect()->route('vendor.allproducts');
     }
@@ -36,15 +54,34 @@ class ProductCRUD extends Controller
         return view('vendor.editproduct')->withProduct($product);
     }
 
-    public function update($id){
-        $productUpdate = Request::all();
+    public function update(Request $request, $id){
+        $productUpdate = $request->all();
         $product = Product::find($id);
+
+        $this->validate($request, [
+            //   'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if($file = $request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $username = Auth::user()->username;
+            $thumb = Image::make($file->getRealPath())->resize(100, 100, function ($constraint) {
+                $constraint->aspectRatio(); //maintain image ratio
+            });
+            $destinationPath = public_path('/uploads/products/' . $username);
+            $file->move($destinationPath, $extension);
+            $thumb->save($destinationPath.'/thumb_'.$extension);
+            $product['imagePath'] = '/uploads/products/'. $username . '/' . $extension;
+            $product['thumbnail'] = '/uploads/products/'. $username . '/thumb_' . $extension;
+        }
+
         $product->update($productUpdate);
         return redirect()->route('vendor.allproducts');
     }
 
     public function destroy($id){
-        Product::find($id)->delete();
+        Product::destroy($id);
         Session::flash('flash_message', 'Product successfully deleted.');
         return redirect()->back();
     }
