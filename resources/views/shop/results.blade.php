@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div id="container">
+    <div class="container">
         <h2 style="text-align: center">You searched for: {{ Request::input('query') }} </h2>
         @if (!$products->count())
             <p>No Details found. Try searching again!</p>
