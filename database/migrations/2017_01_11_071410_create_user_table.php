@@ -20,6 +20,7 @@ class CreateUserTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('password');
+            $table->string('avatar')->default('/uploads/avatar/default.png');
             $table->rememberToken();
             $table->boolean('confirmed')->default(0);       //for confirmation mail.
             $table->string('confirmation_code')->nullable();// -//-
