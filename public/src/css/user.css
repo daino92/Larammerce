@@ -1,7 +1,10 @@
-.userpic{
+.userPic{
     text-align: center;
-    margin: 0px auto;
+    margin: auto;
     display: block;
+    width:175px;
+    height:175px;
+    border-radius: 50%;
 }
 
 ul.profile li{
