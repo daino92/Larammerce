@@ -9,8 +9,15 @@
 body {
     margin-top: 100px;
     background-color: #222;
+    max-width: 1680px;
+    margin: 0px auto;
 }
-
+.navbar-inverse {
+    background-color: #222;
+    border-color: #080808;
+    max-width: 1680px;
+    margin: 0px auto;
+}
 @media(min-width:768px) {
     body {
         margin-top: 50px;
@@ -145,14 +152,14 @@ ul.alert-dropdown {
 }
 
 /* Side Navigation */
-
+  .side-nav {
+    margin: 0px auto;
+}
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
         top: 51px;
-        left: 225px;
         width: 225px;
-        margin-left: -225px;
         border: none;
         border-radius: 0;
         overflow-y: auto;
