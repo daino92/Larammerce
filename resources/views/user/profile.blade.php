@@ -6,7 +6,7 @@
 
 @section('content')
     <div id="page-wrapper" class="dashboard">
-        <div class="container-fluid" style="height:700px;">
+        <div class="container-fluid" style="height:auto;">
             @include('user.prof')
             <div class="col-lg-10">
                 <div id="page-wrapper" class="dashboard">
@@ -21,9 +21,16 @@
                                 </ol>
                             </div>
                         </div>
-                        <h1>Update {{Auth::user()->username}}'s information</h1>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-2">
+                                        
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <h1>Update {{Auth::user()->username}}'s information</h1>
                         {!! Form::model($user,['method' => 'PATCH','route'=>['update.user',Auth::user()->id],'files'=>true]) !!}
-                        <fieldset style="margin-right: 600px;">
+                        <fieldset>
                             <div class="form-group">
                                 {!! Form::label('Name', 'Name:') !!}
                                 {!! Form::text('name',Auth::user()->name,['class'=>'form-control']) !!}
@@ -53,6 +60,14 @@
                             </div>
                         </fieldset>
                         {!! Form::close() !!}
+                                    </div>
+                                    <div class="col-lg-2">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
