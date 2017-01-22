@@ -39,3 +39,6 @@ background-color: rgba(38, 84, 189, 0.9) !important;
 ul.profile {
     padding-left: 0px;
 }
+ul.profile li:hover a{
+    color: white;
+    }
