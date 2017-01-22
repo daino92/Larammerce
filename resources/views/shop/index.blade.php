@@ -2,7 +2,6 @@
 
 <link rel="stylesheet" href="{{ URL::to('src/css/index.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/style.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/style.css') }}" />
     <style type="text/css">
         .shape .overlay.round {
             background: url(pictures/round.png);		
@@ -16,7 +15,7 @@
 @section('content')
 
  
-  <div class="search_area" style="height:450px; width:auto; background:url('pictures/header.jpg') no-repeat">
+  <div class="search_area" style="height:500px; width:auto; center; 0; background:url('pictures/header.jpg') no-repeat">
       <div class="search_button">
             @include('includes.search')
       </div> 
@@ -44,13 +43,69 @@
 			
 				<li>
 					<figure>
-						<div><img src="pictures/images/5.png" alt="img05"></div>
+						<div><img src="pictures/images/1.png" alt="img05"></div>
 						<figcaption>
-							<h3>Technology</h3>
+							<h3>Electronics</h3>
 							<br>
 							<div class="cat_men">
-								<a href="#">item 1</a><br>
-								<a href="#">item 2</a>
+								<a href="#">Smart Phones</a><br>
+								<a href="#">Computers</a><br>
+								<a href="#">Televisions</a><br>
+								<a href="#">Gadgets</a>
+							</div>
+							<div class="take_a_look">
+							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							</div>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<div><img src="pictures/images/2.png" alt="img05"></div>
+						<figcaption>
+							<h3>Books</h3>
+							<br>
+							<div class="cat_men">
+								<a href="#">Action</a><br>
+								<a href="#">Drama</a><br>
+								<a href="#">Romance</a><br>
+								<a href="#">Biography</a>
+							</div>
+							<div class="take_a_look">
+							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							</div>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<div><img src="pictures/images/3.png" alt="img05"></div>
+						<figcaption>
+							<h3>Fashion</h3>
+							<br>
+							<div class="cat_men">
+								<a href="#">Hoodies</a><br>
+								<a href="#">T-shirts</a><br>
+								<a href="#">Pants</a><br>
+								<a href="#">Underwear</a>
+							</div>
+							<div class="take_a_look">
+							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							</div>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<div><img src="pictures/images/4.png" alt="img05"></div>
+						<figcaption>
+							<h3>Sports</h3>
+							<br>
+							<div class="cat_men">
+								<a href="#">Snowboards</a><br>
+								<a href="#">Bikes</a><br>
+								<a href="#">Tennis</a><br>
+								<a href="#">Skate</a>
 							</div>
 							<div class="take_a_look">
 							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
@@ -62,11 +117,12 @@
 					<figure>
 						<div><img src="pictures/images/5.png" alt="img05"></div>
 						<figcaption>
-							<h3>Technology</h3>
+							<h3>Toys</h3>
 							<br>
 							<div class="cat_men">
-								<a href="#">item 1</a><br>
-								<a href="#">item 2</a>
+								<a href="#">Babies</a><br>
+								<a href="#">Kids</a><br>
+								<a href="#">Adults</a><br>
 							</div>
 							<div class="take_a_look">
 							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
@@ -76,61 +132,15 @@
 				</li>
 				<li>
 					<figure>
-						<div><img src="pictures/images/5.png" alt="img05"></div>
+						<div><img src="pictures/images/6.png" alt="img05"></div>
 						<figcaption>
-							<h3>Technology</h3>
+							<h3>Games</h3>
 							<br>
 							<div class="cat_men">
-								<a href="#">item 1</a><br>
-								<a href="#">item 2</a>
-							</div>
-							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
-							</div>
-						</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure>
-						<div><img src="pictures/images/5.png" alt="img05"></div>
-						<figcaption>
-							<h3>Technology</h3>
-							<br>
-							<div class="cat_men">
-								<a href="#">item 1</a><br>
-								<a href="#">item 2</a>
-							</div>
-							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
-							</div>
-						</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure>
-						<div><img src="pictures/images/5.png" alt="img05"></div>
-						<figcaption>
-							<h3>Technology</h3>
-							<br>
-							<div class="cat_men">
-								<a href="#">item 1</a><br>
-								<a href="#">item 2</a>
-							</div>
-							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
-							</div>
-						</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure>
-						<div><img src="pictures/images/5.png" alt="img05"></div>
-						<figcaption>
-							<h3>Technology</h3>
-							<br>
-							<div class="cat_men">
-								<a href="#">item 1</a><br>
-								<a href="#">item 2</a>
+								<a href="#">Action</a><br>
+								<a href="#">FPS</a><br>
+								<a href="#">RPG</a><br>
+								<a href="#">MMO</a>
 							</div>
 							<div class="take_a_look">
 							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
