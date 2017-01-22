@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "stripe/stripe-php": "3.*",
         "elasticquent/elasticquent": "dev-master",
-        "laravelcollective/html": "^5.2.0"
+        "laravelcollective/html": "^5.2.0",
+        "intervention/image": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
@@ -48,9 +49,5 @@
     },
     "config": {
         "preferred-install": "dist"
-    },
-    "require-dev": {
-    "panique/laravel-sass": "dev-master"
-}
-    
+    }
 }
