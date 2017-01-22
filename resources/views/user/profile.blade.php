@@ -24,10 +24,10 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-3">
                                         
                                     </div>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-6">
                                         <h1>Update {{Auth::user()->username}}'s information</h1>
                         {!! Form::model($user,['method' => 'PATCH','route'=>['update.user',Auth::user()->id],'files'=>true]) !!}
                         <fieldset>
@@ -61,7 +61,7 @@
                         </fieldset>
                         {!! Form::close() !!}
                                     </div>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-3">
                                         
                                     </div>
                                 </div>
