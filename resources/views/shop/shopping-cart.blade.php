@@ -78,8 +78,9 @@
     @else
        <div class="container-fluid" style="height:350px;">
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <h2 style="text-align:center;">No items in Cart!</h2>
+            <div class="col-md-12">
+                <h2 style="text-align:center;padding-top: 50px; text-decoration:underline;">Cart is Empty</h2>
+                <img src="{{URL::to('pictures/empty_cart.jpg')}}" style="display:block;text-align:center;margin: 0px auto;">
             </div>
         </div>
     </div>
