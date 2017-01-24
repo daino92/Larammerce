@@ -10,53 +10,57 @@
 |
 */
 
-//============= *** Product Routes *** =============///
+//============= *** Product Routes *** =============//
 
 Route::get('/', [
     'uses' => 'ProductController@getIndex',
     'as' => 'product.index'
 ]);
 
+Route::get('/search', [
+    'uses' => 'ProductController@getResults',
+    'as' => 'shop.results'
+]);
+
+//=============== *** Cart Routes *** ===============//
+
 Route::get('/add-to-cart/{id}', [
-    'uses' => 'ProductController@getAddToCart',
+    'uses' => 'CartController@getAddToCart',
     'as' => 'product.addToCart'
 ]);
 
 Route::get('/reduce/{id}', [
-    'uses' => 'ProductController@getReduceByOne',
+    'uses' => 'CartController@getReduceByOne',
     'as' => 'product.reduceByOne'
 ]);
 
 Route::get('/increase/{id}', [
-    'uses' => 'ProductController@getIncreaseByOne',
+    'uses' => 'CartController@getIncreaseByOne',
     'as' => 'product.increaseByOne'
 ]);
 
 Route::get('/remove/{id}', [
-    'uses' => 'ProductController@getRemoveItem',
+    'uses' => 'CartController@getRemoveItem',
     'as' => 'product.remove'
 ]);
 
 Route::get('/shopping-cart', [
-    'uses' => 'ProductController@getCart',
+    'uses' => 'CartController@getCart',
     'as' => 'product.shoppingCart'
 ]);
 
+//=============== *** Order Routes *** ===============//
+
 Route::get('/checkout', [
-    'uses' => 'ProductController@getCheckout',
+    'uses' => 'OrderController@getCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'
 ]);
 
 Route::post('/checkout', [
-    'uses' => 'ProductController@postCheckout',
+    'uses' => 'OrderController@postCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'
-]);
-
-Route::get('/search', [
-    'uses' => 'ProductController@getResults',
-    'as' => 'shop.results'
 ]);
 
 //=============== *** User Routes *** ===============//
