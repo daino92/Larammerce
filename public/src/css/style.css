@@ -302,10 +302,10 @@
 	}
 }
 
-@media screen and (max-width: 490px){ 
+@media screen and (max-width: 480px){
 	.mi-slider {
 		text-align: center;
-		height: auto;
+		height: auto !important;
 	}
 
 	.mi-slider ul {
