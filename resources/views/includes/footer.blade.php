@@ -23,7 +23,7 @@
         </div>
         <div>
             <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@.com">support@locoroco.com</a></p>
+            <p><a href="mailto:support@.com">info@locoroco.com</a></p>
         </div>
     </div>
     <div class="footer-right">
@@ -36,11 +36,7 @@
             <a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
             <a href="http://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
             <a href="http://www.github.com" target="_blank"><i class="fa fa-github"></i></a>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row" style="padding-top:25px;">
-            <p style="text-align:center;color:white;"> Want To Become a Ventor? Contact us : 210 220 3223</p>
+            <p class="footer-company-about"> Join us by sending a message: info@locoroco.com</p>
         </div>
     </div>
 </footer>
