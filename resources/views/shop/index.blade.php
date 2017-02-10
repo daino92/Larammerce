@@ -54,7 +54,7 @@
 								<a href="#">Gadgets</a>
 							</div>
 							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							<a href="{{URL::to('/categories')}}">Take a look</a>
 							</div>
 						</figcaption>
 					</figure>
@@ -72,7 +72,7 @@
 								<a href="#">Biography</a>
 							</div>
 							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							<a href="{{URL::to('/categories')}}">Take a look</a>
 							</div>
 						</figcaption>
 					</figure>
@@ -90,7 +90,7 @@
 								<a href="#">Underwear</a>
 							</div>
 							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							<a href="{{URL::to('/categories')}}">Take a look</a>
 							</div>
 						</figcaption>
 					</figure>
@@ -108,7 +108,7 @@
 								<a href="#">Skate</a>
 							</div>
 							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							<a href="{{URL::to('/categories')}}">Take a look</a>
 							</div>
 						</figcaption>
 					</figure>
@@ -125,7 +125,7 @@
 								<a href="#">Adults</a><br>
 							</div>
 							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							<a href="{{URL::to('/categories')}}">Take a look</a>
 							</div>
 						</figcaption>
 					</figure>
@@ -143,7 +143,7 @@
 								<a href="#">MMO</a>
 							</div>
 							<div class="take_a_look">
-							<a href="http://dribbble.com/shots/1116775-Safari">Take a look</a>
+							<a href="{{URL::to('/categories')}}">Take a look</a>
 							</div>
 						</figcaption>
 					</figure>
