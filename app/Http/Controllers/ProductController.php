@@ -28,4 +28,14 @@ class ProductController extends Controller
             return view('shop.results')->with('products',$products);
         }
     }
+    
+    
+   public function getCategories(){
+    return view('shop.categories');   
+   }
+       public function getProductdetails(){
+    return view('shop.productdetails');   
+   }
+    
+    
 }
