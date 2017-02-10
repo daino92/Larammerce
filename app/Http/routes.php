@@ -62,6 +62,14 @@ Route::post('/checkout', [
     'as' => 'checkout',
     'middleware' => 'auth'
 ]);
+Route::get('/categories', [
+    'uses' => 'ProductController@getCategories',
+    'as' => 'shop.categories'
+]);
+Route::get('/productdetails', [
+    'uses' => 'ProductController@getProductdetails',
+    'as' => 'shop.productdetails'
+]);
 
 //=============== *** User Routes *** ===============//
 
