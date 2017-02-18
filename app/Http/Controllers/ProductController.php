@@ -9,7 +9,7 @@ use Auth;
 
 class ProductController extends Controller
 {
-    public function getIndex(){ //get all products. now in allproducts.blade.php
+    public function getIndex(){ //get all products
         $products = Product::all();
         return view('shop.index', ['products' => $products]);
     }
