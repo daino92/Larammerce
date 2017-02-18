@@ -257,7 +257,7 @@
                             <div class="thumbnail">
                                 <img src="{{ $product->imagePath }}" alt="...">
                                 <div class="caption">
-                                    <h3>{{ $product->title }}</h3>
+                                    <a href="{{route('shop.preview_product',$product->id)}}"> <h3>{{ $product->title }}</h3></a>
                                     <p class="description">{{ $product->description }}</p>
                                     <div class="clearfix">
                                         <div class="pull-left price">$ {{ $product->price }}</div>
