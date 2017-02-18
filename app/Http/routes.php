@@ -22,6 +22,16 @@ Route::get('/search', [
     'as' => 'shop.results'
 ]);
 
+Route::get('/categories', [
+    'uses' => 'ProductController@getCategories',
+    'as' => 'shop.categories'
+]);
+
+Route::get('/product-details/{id}', [
+    'uses' => 'ProductController@preview_product',
+    'as' => 'shop.preview_product'
+]);
+
 //=============== *** Cart Routes *** ===============//
 
 Route::get('/add-to-cart/{id}', [
@@ -61,14 +71,6 @@ Route::post('/checkout', [
     'uses' => 'OrderController@postCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'
-]);
-Route::get('/categories', [
-    'uses' => 'ProductController@getCategories',
-    'as' => 'shop.categories'
-]);
-Route::get('/productdetails', [
-    'uses' => 'ProductController@getProductdetails',
-    'as' => 'shop.productdetails'
 ]);
 
 //=============== *** User Routes *** ===============//
