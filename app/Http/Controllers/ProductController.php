@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Cart;
 use App\Product;
-use App\Order;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
-use Stripe\Stripe;
-use Stripe\Charge;
 
 class ProductController extends Controller
 {
@@ -28,14 +24,13 @@ class ProductController extends Controller
             return view('shop.results')->with('products',$products);
         }
     }
-    
-    
-   public function getCategories(){
-    return view('shop.categories');   
+
+    public function getCategories(){
+        return view('shop.categories');
    }
-       public function getProductdetails(){
-    return view('shop.productdetails');   
+
+   public function preview_product($id){
+       $product = Product::find($id);
+       return view('shop.preview_product')->withProduct($product);
    }
-    
-    
 }
