@@ -13,32 +13,21 @@
 		<div class="item-container">	
 			<div class="container">	
 				<div class="col-md-12">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="product col-md-3 service-image-left" style="text-align: center;">
-                                    <img id="item-display" src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt="">
+                                    <img id="item-display" src="{{$product->imagePath}}" alt="">
                                 </div>
-                                <a id="item-1" class="service1-item" style="text-align: center;">
-                                    <img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt="">
-                                </a>
-                                <a id="item-2" class="service1-item" style="text-align: center;">
-                                    <img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt="">
-                                </a>
-                                <a id="item-3" class="service1-item" style="text-align: center;">
-                                    <img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt="">
-                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="product-title">{{$product->title}}</div>
+                    <div class="col-md-8">
+                        <div class="product-title"><h3>{{$product->title}} </h3> </div>
+                        <div class="product-stock">In Stock</div>
                         <div class="product-desc"></div>
                         <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
-                        <hr>
-                        <div class="product-price">$ {{$product->price}}</div>
-                        <div class="product-stock">In Stock</div>
-                        <hr>
+                        <h3>${{$product->price}}</h3>
                         <div class="btn-group cart">
                             <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success pull-right" role="button">Add to Cart</a>
                         </div>
