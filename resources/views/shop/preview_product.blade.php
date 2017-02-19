@@ -24,10 +24,12 @@
                     </div>
                     <div class="col-md-8">
                         <div class="product-title"><h3>{{$product->title}} </h3> </div>
+                        <div class="product-desc">{{$product->short_desc}}</div>
+                        <hr>
                         <div class="product-stock">In Stock</div>
-                        <div class="product-desc"></div>
                         <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
                         <h3>${{$product->price}}</h3>
+                        <hr>
                         <div class="btn-group cart">
                             <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success pull-right" role="button">Add to Cart</a>
                         </div>
