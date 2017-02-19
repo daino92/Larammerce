@@ -26,6 +26,7 @@
 
 .product-desc{
     font-size: 14px;
+    text-align: justify;
 }
 
 .product-price{
@@ -40,6 +41,7 @@
 
 .product-info{
     margin-top: 50px;
+    text-align: justify;
 }
 
 /*************	VIEW  *************/
