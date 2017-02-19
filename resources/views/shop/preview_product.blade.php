@@ -26,7 +26,15 @@
                         <div class="product-title"><h3>{{$product->title}} </h3> </div>
                         <div class="product-desc">{{$product->short_desc}}</div>
                         <hr>
-                        <div class="product-stock">In Stock</div>
+                        <div class="product-stock">
+                            @if ($product->stock == 0)
+                               <div class="out-of-stock"> {{'Out of Stock'}}</div>
+                            @elseif ($product->stock <= 5)
+                                <div class="low-in-stock"> {{'Low in Stock'}} - {{$product->stock}} left</div>
+                            @elseif ($product->stock > 5)
+                                <div class="in-stock"> {{ 'In Stock' }} - {{$product->stock}} left</div>
+                            @endif
+                        </div>
                         <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
                         <h3>${{$product->price}}</h3>
                         <hr>
