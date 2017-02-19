@@ -5,5 +5,7 @@ Homestead.yaml
 Homestead.json
 .env
 .idea/workspace.xml
+.idea/codeStyleSettings.xml
+/idea
 ./idea
 /public/uploads/
