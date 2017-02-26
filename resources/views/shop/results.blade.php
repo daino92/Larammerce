@@ -62,6 +62,10 @@
 	   .behclick-panel a:active {
 		    text-decoration:none;
 	   }
+
+       .show-read-more .more-text{
+           display: none;
+       }
    </style>
 
    <div class="container-fluid">
@@ -166,8 +170,10 @@
 						   </div>
 					   </div>
 				   </div>
-    
-				   <div class="col-md-9"  style="padding-top:20px;">
+
+
+
+                   <div class="col-md-9"  style="padding-top:20px;">
 					   @foreach($products->chunk(4) as $productChunk)
 						   <div class="row">
 							   @foreach($productChunk as $product)
@@ -176,7 +182,7 @@
 										   <img src="{{ $product->imagePath }}" alt="...">
 										   <div class="caption">
 											   <a href="{{route('shop.preview_product',$product->id)}}"> <h3>{{ $product->title }}</h3></a>
-											   <p class="description">{{ $product->short_desc }}</p>
+											   <p class="description show-read-more">{{ $product->short_desc }}</p>
 											   <div class="clearfix">
 												   <div class="pull-left price">$ {{ $product->price }}</div>
 												   <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success pull-right" role="button">Add to Cart</a>
@@ -189,19 +195,38 @@
 					   @endforeach
 				   @endif
 				   </div>
-		   </div>
-	   </div>
-    </div>
-</div>
+           </div>
+       </div>
+   </div>
 
-    <script>
-        function toggleChevron(e) {
-		$(e.target)
-				.prev('.panel-heading')
-				.find("i.indicator")
-				.toggleClass('fa-caret-down fa-caret-right');
-        }
-		$('#accordion').on('hidden.bs.collapse', toggleChevron);
-		$('#accordion').on('shown.bs.collapse', toggleChevron);
-	</script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+   <script>
+       $(document).ready(function(){
+           var maxLength = 50;
+           $(".show-read-more").each(function(){
+               var myStr = $(this).text();
+               if($.trim(myStr).length > maxLength){
+                   var newStr = myStr.substring(0, maxLength);
+                   var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                   $(this).empty().html(newStr);
+                   $(this).append('<a href="javascript:void(0);" class="read-more">read more...</a>');
+                   $(this).append('<span class="more-text">' + removedStr + '</span>');
+               }
+           });
+           $(".read-more").click(function(){
+               $(this).siblings(".more-text").contents().unwrap();
+               $(this).remove();
+           });
+       });
+
+       function toggleChevron(e) {
+           $(e.target)
+                   .prev('.panel-heading')
+                   .find("i.indicator")
+                   .toggleClass('fa-caret-down fa-caret-right');
+       }
+       $('#accordion').on('hidden.bs.collapse', toggleChevron);
+       $('#accordion').on('shown.bs.collapse', toggleChevron);
+   </script>
 @endsection
