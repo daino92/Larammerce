@@ -28,11 +28,11 @@
                         <hr>
                         <div class="product-stock">
                             @if ($product->stock == 0)
-                               <div class="out-of-stock"> {{'Out of Stock'}}</div>
+                                <span class="badge badge-danger"><div class="out-of-stock"> {{'Out of Stock'}}</div></span>
                             @elseif ($product->stock <= 5)
-                                <div class="low-in-stock"> {{'Low in Stock'}} - {{$product->stock}} left</div>
+                                <span class="badge badge-warning"><div class="low-in-stock"> {{'Low in Stock'}} - {{$product->stock}} left</div></span>
                             @elseif ($product->stock > 5)
-                                <div class="in-stock"> {{ 'In Stock' }} - {{$product->stock}} left</div>
+                                <span class="badge badge-success"><div class="in-stock"> {{ 'In Stock' }} - {{$product->stock}} left</div></span>
                             @endif
                         </div>
                         <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
@@ -64,4 +64,26 @@
 		</div>
 	</div>
 </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var maxLength = 50;
+            $(".show-read-more").each(function(){
+                var myStr = $(this).text();
+                if($.trim(myStr).length > maxLength){
+                    var newStr = myStr.substring(0, maxLength);
+                    var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                    $(this).empty().html(newStr);
+                    $(this).append('<a href="javascript:void(0);" class="read-more">read more...</a>');
+                    $(this).append('<span class="more-text">' + removedStr + '</span>');
+                }
+            });
+            $(".read-more").click(function(){
+                $(this).siblings(".more-text").contents().unwrap();
+                $(this).remove();
+            });
+        });
+    </script>
 @endsection
