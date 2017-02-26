@@ -30,6 +30,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="short_desc" class="col-sm-2 control-label">Short Description</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="short_desc" placeholder={{$product->short_desc}} readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="Description" class="col-sm-2 control-label">Description</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="Description" placeholder={{$product->description}} readonly>

@@ -28,6 +28,10 @@
                             {!! Form::text('title',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
+                            {!! Form::label('short_desc', 'Short Description:') !!}
+                            {!! Form::text('short_desc',null,['class'=>'form-control']) !!}
+                        </div>
+                        <div class="form-group">
                             {!! Form::label('Description', 'Description:') !!}
                             {!! Form::text('description',null,['class'=>'form-control']) !!}
                         </div>

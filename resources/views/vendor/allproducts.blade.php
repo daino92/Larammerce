@@ -34,6 +34,7 @@
                                 <tr class="bg-info">
                                     <th>No.</th>
                                     <th>Title</th>
+                                    <th>Short Description</th>
                                     <th>Description</th>
                                     <th>Category</th>
                                     <th>Price</th>
@@ -47,6 +48,7 @@
                                     <tr>
                                         <td>{{ $product->id }}</td>
                                         <td>{{ $product->title }}</td>
+                                        <td>{{ $product->short_desc }}</td>
                                         <td>{{ $product->description }}</td>
                                         <td>{{ $product->category }}</td>
                                         <td>{{ $product->price }}</td>
