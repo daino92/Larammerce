@@ -6,7 +6,7 @@
 
 @section('content')
     <div id="page-wrapper" class="dashboard">
-        <div class="container-fluid" style="height:700px;">
+        <div class="container-fluid" style="height:auto;">
             @include('vendor.prof')
             <div class="col-lg-10">
                 <div id="page-wrapper" class="dashboard">
@@ -21,7 +21,8 @@
                                 </ol>
                             </div>
                         </div>
-                        <h1>Create new product</h1>
+                        <h1 style="text-align:center;">Create new product</h1>
+                        <div class="form_center">    
                         {!! Form::open(['route' => 'vendor.allproducts', 'files'=>true]) !!}
                         <div class="form-group">
                             {!! Form::label('Title', 'Title:') !!}
@@ -63,6 +64,7 @@
                             <a href="{{ route('vendor.allproducts')}}" class="btn btn-primary">Back</a>
                         </div>
                         {!! Form::close() !!}
+                    </div>
                     </div>
                 </div>
             </div>
