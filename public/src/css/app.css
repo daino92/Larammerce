@@ -3,13 +3,13 @@
     max-height: 200px;
 }
 .thumbnail{
-    height: 435px!important;
+    min-height: 450px!important;
+    height: auto;
 }
 .thumbnail .description {
     color: #a8a3a6;
 }
 .description{
-    height: 56px;
     overflow: hidden;
     white-space: normal;
 }
