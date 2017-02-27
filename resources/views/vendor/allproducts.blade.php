@@ -6,7 +6,7 @@
 
 @section('content')
     <div id="page-wrapper" class="dashboard">
-        <div class="container-fluid" style="height:700px;">
+        <div class="container-fluid" style="height:auto;">
             @include('vendor.prof')
             <div class="col-lg-10">
                 <div id="page-wrapper" class="dashboard">
