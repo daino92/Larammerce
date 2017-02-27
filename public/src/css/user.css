@@ -42,3 +42,8 @@ ul.profile {
 ul.profile li:hover a{
     color: white;
     }
+.form_center{
+      width: 50%;
+    margin-left: 25%;
+    
+}
