@@ -15,7 +15,9 @@ class ProductController extends Controller
     }
 
     public function getResults(Request $request){ //Search results
-        $query = $request->input('query');
+        //$query = $request->input('query');
+	    // Remove leading spaces and . , ! ( ) as a naive input sanitization
+	    $query = preg_replace('/[\.\,\!\(\)]/', '', ltrim($request->input('query')));
         if(!$query){
             return redirect()->route('product.index');
         } else{
@@ -27,7 +29,7 @@ class ProductController extends Controller
 
     public function getCategories(){
         return view('shop.categories');
-   }
+    }
 
    public function preview_product($id){
        $product = Product::find($id);
