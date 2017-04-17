@@ -24,6 +24,7 @@ class CreateUserTable extends Migration
             $table->rememberToken();
             $table->boolean('confirmed')->default(0);       //for confirmation mail.
             $table->string('confirmation_code')->nullable();// -//-
+	        $table->string('stripe_api_key')->nullable();
         });
     }
 
