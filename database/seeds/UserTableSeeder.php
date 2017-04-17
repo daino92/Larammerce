@@ -16,8 +16,17 @@ class UserTableSeeder extends Seeder
         $user->username = 'book';
         $user->email = 'book@gmail.com';
         $user->password = bcrypt('book');
+	    $user->stripe_api_key = "sk_test_aHu2guahO3zRUEmokSKuwujG";
         $user->save();
         $user->roles()->attach(Role::where('name', 'Vendor')->first());
+
+	    $user = new User();
+	    $user->username = 'rouxa';
+	    $user->email = 'rouxa@gmail.com';
+	    $user->password = bcrypt('rouxa');
+	    $user->stripe_api_key = "sk_test_bTTnqhKrzDv2Jo9lWgn1sxrC";
+	    $user->save();
+	    $user->roles()->attach(Role::where('name', 'Vendor')->first());
 
         $user = new User();
         $user->username = 'admin';
