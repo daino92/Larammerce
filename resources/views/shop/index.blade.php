@@ -33,103 +33,20 @@
                 <script src="{{ URL::to('src/js/modernizr.custom.js') }}"></script>
                 <div class="container demo-3">
                     <ul class="grid cs-style-4">
+                        @foreach($SubCategories as $SubCategory)
                         <li>
                             <figure>
-                                <div><img src="pictures/images/1.png" alt="img05"></div>
+                                <div><img src="pictures/images/{{ $SubCategory->image }}" alt="img05"></div>
                                 <figcaption>
-                                    <h3>Electronics</h3>
+                                    <h3>{{ $SubCategory->category }}</h3>
                                     <br>
-                                    <div class="cat_men">
-                                        <a href="#">Smart Phones</a><br>
-                                        <a href="#">Computers</a><br>
-                                        <a href="#">Televisions</a><br>
-                                        <a href="#">Gadgets</a>
-                                    </div>
-                                    <div class="take_a_look">
-                                        <a href="{{URL::to('/categories')}}">Take a look</a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <div><img src="pictures/images/2.png" alt="img05"></div>
-                                <figcaption>
-                                    <h3>Books</h3>
-                                    <br>
-                                    <div class="cat_men">
-                                        <a href="#">Action</a><br>
-                                        <a href="#">Drama</a><br>
-                                        <a href="#">Romance</a><br>
-                                        <a href="#">Biography</a>
-                                    </div>
+                                    {{  $SubCategory->subcategory }}
+
                                     <div class="take_a_look"><a href="{{URL::to('/categories')}}">Take a look</a></div>
                                 </figcaption>
                             </figure>
                         </li>
-                        <li>
-                            <figure>
-                                <div><img src="pictures/images/3.png" alt="img05"></div>
-                                <figcaption>
-                                    <h3>Fashion</h3>
-                                    <br>
-                                    <div class="cat_men">
-                                        <a href="#">Hoodies</a><br>
-                                        <a href="#">T-shirts</a><br>
-                                        <a href="#">Pants</a><br>
-                                        <a href="#">Underwear</a>
-                                    </div>
-                                    <div class="take_a_look"><a href="{{URL::to('/categories')}}">Take a look</a></div>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <div><img src="pictures/images/4.png" alt="img05"></div>
-                                <figcaption>
-                                    <h3>Sports</h3>
-                                    <br>
-                                    <div class="cat_men">
-                                        <a href="#">Snowboards</a><br>
-                                        <a href="#">Bikes</a><br>
-                                        <a href="#">Tennis</a><br>
-                                        <a href="#">Skate</a>
-                                    </div>
-                                    <div class="take_a_look"><a href="{{URL::to('/categories')}}">Take a look</a></div>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <div><img src="pictures/images/5.png" alt="img05"></div>
-                                <figcaption>
-                                    <h3>Toys</h3>
-                                    <br>
-                                    <div class="cat_men">
-                                        <a href="#">Babies</a><br>
-                                        <a href="#">Kids</a><br>
-                                        <a href="#">Adults</a><br>
-                                    </div>
-                                    <div class="take_a_look"><a href="{{URL::to('/categories')}}">Take a look</a></div>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <div><img src="pictures/images/6.png" alt="img05"></div>
-                                <figcaption>
-                                    <h3>Games</h3>
-                                    <br>
-                                    <div class="cat_men">
-                                        <a href="#">Action</a><br>
-                                        <a href="#">FPS</a><br>
-                                        <a href="#">RPG</a><br>
-                                        <a href="#">MMO</a>
-                                    </div>
-                                    <div class="take_a_look"><a href="{{URL::to('/categories')}}">Take a look</a></div>
-                                </figcaption>
-                            </figure>
-                        </li>
+                        @endforeach 
                     </ul>
                 </div><!-- /container -->
                 <script src="{{ URL::to('src/js/toucheffects.js') }}"></script>
@@ -138,7 +55,8 @@
     </div>
     <style>
         #divSocial  img {
-            position: relative;  border: none;
+            position: relative;  
+            border: none;
         }
     </style>
     <div class="container-fluid what_we">
@@ -155,19 +73,25 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div id="divSocial"><img src="{{ URL::to('pictures/sales.png') }}"/></div>
-                            <h4>Fast Sales</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                            <div class="circle">
+                                <div id="divSocial"><img src="{{ URL::to('pictures/sales.png') }}"/></div>
+                                <h4>Fast Sales</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                            </div>
                         </div>
                         <div class="col-md-3">
-                            <div id="divSocial"><img src="{{ URL::to('pictures/new.png') }}"/></div>
-                            <h4>Management System</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                            <div class="circle">
+                                <div id="divSocial"><img src="{{ URL::to('pictures/new.png') }}"/></div>
+                                <h4>Management System</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                            </div>
                         </div>
                         <div class="col-md-3">
-                            <div id="divSocial"><img src="{{ URL::to('pictures/support.png') }}"/></div>
-                            <h4>24/7 Support</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                            <div class="circle">
+                                <div id="divSocial"><img src="{{ URL::to('pictures/support.png') }}"/></div>
+                                <h4>24/7 Support</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,7 +99,6 @@
         </div>
     </div>
     <div class="container-fluid index2">
-        <!-- Front Page:: Place to store menu styles, sub menus and other goodies! -->
         <div class="row">
             <h1 style="text-align:center;"> Popular Vendors</h1>
             <div class="col-md-12 popular_ven">
@@ -183,10 +106,9 @@
                     <ul>
                         <li>
                             <div class="shape">
-                                <a href="#"  class="overlay round"></a>
+                                <a href="#" class="overlay round"></a>
                                 <div class="details">
-                                    <span class="heading">Lora Bob</span>
-                                    <hr>
+                                    <span class="heading">Lora Bob</span><hr>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                     <a href="#" class="button">VIEW</a>
                                 </div>
@@ -200,18 +122,14 @@
                     <ul>
                         <li>
                             <div class="shape">
-                                <a href="#"  class="overlay round"></a>
+                                <a href="#" class="overlay round"></a>
                                 <div class="details">
-                                    <span class="heading">Bard Lagard</span>
-                                    <hr>
+                                    <span class="heading">Bard Lagard</span><hr>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                     <a href="#" class="button">VIEW</a>
                                 </div>
-                                <div class="bg">
-                                </div>
-                                <div class="base">
-                                    <div class="base"><img src="pictures/img/2.jpg" alt=""/></div>
-                                </div>
+                                <div class="bg"></div>
+                                <div class="base"><img src="pictures/img/2.jpg" alt=""/></div>
                             </div>
                         </li>
                     </ul>
@@ -222,8 +140,7 @@
                             <div class="shape">
                                 <a href="#"  class="overlay round"></a>
                                 <div class="details">
-                                    <span class="heading">Julia Kaula</span>
-                                    <hr>
+                                    <span class="heading">Julia Kaula</span><hr>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                     <a href="#" class="button">VIEW</a>
                                 </div>
