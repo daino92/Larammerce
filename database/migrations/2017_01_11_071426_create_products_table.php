@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('short_desc');
             $table->text('description');
             $table->string('category',30);
+            $table->string('subcategory',30);
             $table->integer('price');
             $table->integer('stock');
             $table->integer('rating_count');
