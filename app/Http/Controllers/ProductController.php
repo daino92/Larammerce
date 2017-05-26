@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Subcategories;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
@@ -10,8 +11,8 @@ use Auth;
 class ProductController extends Controller
 {
     public function getIndex(){ //get all products
-        $products = Product::all();
-        return view('shop.index', ['products' => $products]);
+        $SubCategories = SubCategories::all();
+        return view('shop.index')->with('SubCategories',$SubCategories);
     }
 
     public function getResults(Request $request){ //Search results
