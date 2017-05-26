@@ -19,6 +19,7 @@ class ProductTableSeeder extends Seeder
             'price' => 19,
             'stock' => 0,
             'category' => 'Books',
+            'subcategory' =>'Action',
             'user_id' => '1'
         ]);
         $product->save();
@@ -30,7 +31,8 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Chamber of Secrets begins when Harry is spending a miserable summer with his only remaining family, the Dursleys. During a dinner party hosted by his uncle and aunt, Harry is visited by Dobby, a house-elf. Dobby warns Harry not to return to Hogwarts, the magical school for wizards that Harry attended the previous year. Harry politely disregards the warning, and Dobby wreaks havoc in the kitchen, infuriating the Dursleys. The Dursleys angrily imprison Harry in his room for the rest of the summer. Luckily, Harry\'s friend Ron Weasley steals Harry away in a flying car, and Harry happily spends the rest of the summer at the Weasley home. While shopping for school supplies with the Weasleys, Harry has two unfortunate encounters. He first encounters Lockhart, one of his teachers, who demands to be in a photo shoot with Harry. Harry then encounters Lucius Malfoy, the evil father of one of Harry\'s enemies, who almost starts a fight with Mr. Weasley. As Harry prepares to return to Hogwarts, he finds that he and Ron are unable to enter the magically invisible train platform, so they fly the Weasley car to Hogwarts. They land messily, and both boys are given detentions. Lockhart, who believes Harry flew the car to get attention, lectures Harry.',
             'price' => 15,
             'stock' => 10,
-            'category' => 'Books',
+            'category' => 'Book',
+            'subcategory' =>'Drama',
             'user_id' => '1'
         ]);
         $product->save();
@@ -42,7 +44,8 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter is having a tough time with his relatives (yet again). He runs away after using magic to inflate Uncle Vernon\'s sister Marge who was being offensive towards Harry\'s parents. Initially scared for using magic outside the school, he is pleasantly surprised that he won\'t be penalized after all. However, he soon learns that a dangerous criminal and Voldemort\'s trusted aide Sirius Black has escaped from the Azkaban prison and wants to kill Harry to avenge the Dark Lord. To worsen the conditions for Harry, vile creatures called Dementors are appointed to guard the school gates and inexplicably happen to have the most horrible effect on him. Little does Harry know that by the end of this year, many holes in his past (whatever he knows of it) will be filled up and he will have a clearer vision of what the future has in store...',
             'price' => 20,
             'stock' => 6,
-            'category' => 'Books',
+            'category' => 'Electronics',
+            'subcategory' =>'smartphone',
             'user_id' => '1'
         ]);
         $product->save();
@@ -54,7 +57,8 @@ class ProductTableSeeder extends Seeder
             'description' => 'Harry Potter and the Goblet of Fire takes us deeper into the characters\' minds and the darkness of the Wizarding World. At the Quidditch World Cup, Voldemort\'s followers gather and wreak havoc. Then, at Hogwarts, a legendary event takes place. The Triwizard Tournament! The Goblet of Fire judges who gets in and who doesn\'t. On the fateful night, three champions are selected. But then the Goblet spits out one other. Harry\'s. These two major events point to the return of Lord Voldemort. Dumbledore and the other teachers sense it, but it is inevitable. And Harry is no longer safe at Hogwarts. This fourth installment is the most dramatic, and also the scariest. Let me just say that all does not necessarily end well...',
             'price' => 15,
             'stock' => 9,
-            'category' => 'Books',
+            'category' => 'Sports',
+            'subcategory' =>'Bikes',
             'user_id' => '1'
         ]);
         $product->save();
@@ -66,7 +70,8 @@ class ProductTableSeeder extends Seeder
             'description' => 'As another year begins for Harry, at Hogwarts school of Witchcraft and Wizardry so does the never-ending articles stating that he and Dumbledore are insane. As the ministry starts to invent new and malicious lies about Harry\'s account on Voldemort\'s return, Hogwarts begins to change for the worse as the ministry sends in their cure for all the insanity, Professor Dolores Jane Umbridge. As she begins to inflict her rules and regulations on the students at Hogwarts they begin to find that with her as their teacher, they\'ll never be ready for the outside world. So Harry along with his friends decides to take things into their own hands and begin to learn magic the real way. As Harry starts having visions of terrible events happening with the Ministries very walls he decides to take action, leading himself and his friends into battle, ultimately teaching them what friendship, loyalty and sacrifice really means.',
             'price' => 16,
             'stock' => 10,
-            'category' => 'Books',
+            'category' => 'Book',
+            'subcategory' =>'Action',
             'user_id' => '1'
         ]);
         $product->save();
@@ -78,7 +83,8 @@ class ProductTableSeeder extends Seeder
             'description' => 'Lord Voldemort\'s forces are causing havoc both in the Wizarding and Muggle societies. Harry Potter is in his 6th year at Hogwarts and taking private lessons with Professor Dumbledore to found out what might be the Dark Lords only weakness. But hormones in Harry\'s body are changing extremely fast as he starts to fall in love with Ginny Weasley. What is Voldemort\'s Weakness? Will Harry Express His Feelings Towards Ginny? And Most Importantly, Who Kills Dumbledore?',
             'price' => 20,
             'stock' => 2,
-            'category' => 'Books',
+            'category' => 'Book',
+            'subcategory' =>'Romance',
             'user_id' => '1'
         ]);
         $product->save();
@@ -90,7 +96,8 @@ class ProductTableSeeder extends Seeder
             'description' => 'Voldemort\'s power is growing stronger. He now has control over the Ministry of Magic and Hogwarts. Harry, Ron, and Hermione decide to finish Dumbledore\'s work and find the rest of the Horcruxes to defeat the Dark Lord. But little hope remains for the Trio, and the rest of the Wizarding World, so everything they do must go as planned. Harry, Ron, and Hermione continue to find the rest of Voldemort\'s Horecruxes, until Harry discovers that one is at Hogwarts, they flee there as soon as possible but Voldemort instantly finds out about there mission. The battle is drawn at Hogwarts as many people fight to protect Harry Potter. Harry then realises that people are dying constantly for his mistakes and then eventually fights Voldemort for the last time. Along the way, crucial secrets are unraveled, and the mysterious but legendary Deathly Hallows reappear.',
             'price' => 20,
             'stock' => 5,
-            'category' => 'Books',
+            'category' => 'Book',
+            'subcategory' =>'Action',
             'user_id' => '1'
         ]);
         $product->save();
@@ -102,7 +109,8 @@ class ProductTableSeeder extends Seeder
             'description' => 'Holding a mysterious leather suitcase in his hand, Newt Scamander, a young activist wizard from England, visits New York while he is on his way to Arizona. Inside his expanding suitcase hides a wide array of diverse, magical creatures that exist among us, ranging from tiny, twig-like ones, to majestic and humongous ones. It is the middle of the 20s and times are troubled since the already fragile equilibrium of secrecy between the unseen world of wizards and the ordinary or "No-Maj" people that the MACUSA Congress struggles to maintain, is at risk of being unsettled. In the meantime, the voices against wizardry keep growing with daily protests led by Mary Lou Barebone and fuelled by the increasing disasters ascribed to a dark wizard, Gellert Grindelwald. At the same time, by a twist of fate, Newt\'s precious suitcase will be switched with the identical one of an aspiring No-Maj baker, Jacob Kowalski, while demoted Auror, Tina Goldstein, arrests Newt for being an unregistered wizard. To make matters worse, with the suitcase in the wrong hands, several creatures manage to escape to unknown directions. Before long, this situation will catch Senior Auror Percival Graves\' attention who will target both Tina and Newt amid panic caused by an invisible, devastating and utterly unpredictable menace that still wreaks havoc in New York\'s 5th Avenue. Is there a hidden agenda behind Graves\' intentions and ultimately, what will happen to the remaining magical creatures still loose in the streets?',
             'price' => 31,
             'stock' => 15,
-            'category' => 'Books',
+            'category' => 'Book',
+            'subcategory' =>'Action',
             'user_id' => '1'
         ]);
         $product->save();
