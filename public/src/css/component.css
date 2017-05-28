@@ -1,6 +1,6 @@
 .cat_men a{
     color: #bed2ff;
-    font-size: 17px;
+    font-size: 16px;
     text-decoration: none !important;
 }
 .grid {
@@ -342,7 +342,7 @@
 	-webkit-transition: opacity 0.3s, height 0.3s, box-shadow 0.3s;
 	-moz-transition: opacity 0.3s, height 0.3s, box-shadow 0.3s;
 	transition: opacity 0.3s, height 0.3s, box-shadow 0.3s;
-	box-shadow: 0 0 0 0px #2c3f52;
+	box-shadow: 0 0 0 0 #2c3f52;
 }
 
 .no-touch .cs-style-7 figure:hover figcaption,
