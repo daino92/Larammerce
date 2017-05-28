@@ -4,8 +4,11 @@
 Homestead.yaml
 Homestead.json
 .env
+.idea/php.xml
 .idea/workspace.xml
 .idea/codeStyleSettings.xml
+.idea/misc.xml
 /idea
 ./idea
+
 /public/uploads/
