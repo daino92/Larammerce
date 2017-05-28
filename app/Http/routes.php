@@ -27,6 +27,16 @@ Route::get('/categories', [
     'as' => 'shop.categories'
 ]);
 
+Route::get('/categories/{category}', [
+    'uses' => 'ProductController@getSubCategories',
+    'as' => 'shop.subcategories'
+]);
+/* alternative, only this
+ *
+ * Route::get('/categories/{category}', [
+    'uses' => 'ProductController@getSubCategories',
+    'as' => 'shop.categories'
+]);*/
 Route::get('/product-details/{id}', [
     'uses' => 'ProductController@preview_product',
     'as' => 'shop.preview_product'
