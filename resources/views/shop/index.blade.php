@@ -36,17 +36,21 @@
                         @foreach($SubCategories as $SubCategory)
                         <li>
                             <figure>
-                                <div><img src="pictures/images/{{ $SubCategory->image }}" alt="img05"></div>
+                                <div><img src="pictures/images/{{$SubCategory->image}}" alt="img05"></div>
                                 <figcaption>
-                                    <h3>{{ $SubCategory->category }}</h3>
+                                    <h3>{{$SubCategory->category}}</h3>
                                     <br>
-                                    {{  $SubCategory->subcategory }}
-
-                                    <div class="take_a_look"><a href="{{URL::to('/categories')}}">Take a look</a></div>
+                                    {{--here we decode the json and we slice the array in order to only show 4 subcategories only--}}
+                                    @foreach(array_slice(json_decode($SubCategory->subcategory,true),0,4) as $sub)
+                                        <div class="cat_men">
+                                            <a href="#">{{$sub}}</a>
+                                        </div>
+                                    @endforeach
+                                    <div class="take_a_look"><a href="{{route('shop.categories',$SubCategory->category)}}">Take a look</a></div>
                                 </figcaption>
                             </figure>
                         </li>
-                        @endforeach 
+                        @endforeach
                     </ul>
                 </div><!-- /container -->
                 <script src="{{ URL::to('src/js/toucheffects.js') }}"></script>
