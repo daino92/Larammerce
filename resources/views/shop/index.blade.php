@@ -36,7 +36,7 @@
                         @foreach($SubCategories as $SubCategory)
                         <li>
                             <figure>
-                                <div><img src="pictures/images/{{$SubCategory->image}}" alt="img05"></div>
+                                <div><img src="pictures/categories/{{$SubCategory->image}}" alt="img05"></div>
                                 <figcaption>
                                     <h3>{{$SubCategory->category}}</h3>
                                     <br>
