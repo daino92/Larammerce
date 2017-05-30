@@ -46,7 +46,7 @@
                                             <a href="#">{{$sub}}</a>
                                         </div>
                                     @endforeach
-                                    <div class="take_a_look"><a href="{{route('shop.categories',$SubCategory->category)}}">Take a look</a></div>
+                                    <div class="take_a_look"><a href="{{route('shop.categories','cat='.$SubCategory->category)}}">Take a look</a></div>
                                 </figcaption>
                             </figure>
                         </li>
