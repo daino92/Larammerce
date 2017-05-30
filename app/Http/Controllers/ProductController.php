@@ -7,6 +7,7 @@ use App\Subcategories;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
+use Illuminate\Support\Facades\Input;
 
 class ProductController extends Controller
 {
@@ -28,24 +29,20 @@ class ProductController extends Controller
         }
     }
 
-    public function getCategories(){
-        $SubCategories = SubCategories::all();
-        return view('shop.categories')->with('SubCategories',$SubCategories);
-    }
 
-    public function getSubCategories($category){
-        $SubCategories = SubCategories::find($category);
-        return view('shop.subcategories')->with('SubCategories',$SubCategories);
-    }
-
-   public function preview_product($id){
+    public function preview_product($id){
        $product = Product::find($id);
        return view('shop.preview_product')->withProduct($product);
-   }/*  alternative
+   }  
 
-    public function getSubCategories($category){
-        $SubCategory = SubCategories::find($category); //only this
-        return view('shop.categories')->with('SubCategories',$SubCategory);
-    }    */
+    public function getCategories(){
+        $cat = Input::get('cat');
+        $SubCategories = SubCategories::where('category','=', $cat)->get();
+        /*$subset = $SubCategories->map(function ($SubCategory) {
+            return collect($SubCategory->toArray())->only(['subcategory'])->all();
+        });
+        dd($subset);*/
+        return view('shop.categories')->with('SubCategories',$SubCategories);
+    }
 }
 
