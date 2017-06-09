@@ -1,40 +1,36 @@
+/*  =============== START: CSS Regarding the Search area =============== */
+
+.thumbnail {
+    min-height: 450px!important;
+    height: auto;
+}
 
 .thumbnail img {
     max-height: 200px;
 }
-.thumbnail{
-    min-height: 450px!important;
-    height: auto;
+
+.thumbnail .caption h3 {
+    height: 78px;
+    text-align: center;
 }
+
 .thumbnail .description {
     color: #a8a3a6;
-}
-.description{
     overflow: hidden;
     white-space: normal;
 }
+
 .price {
     font-weight: bold;
     font-size: 16px;
 }
-.caption h3 {
-    height: 78px;
-    text-align: center;
-}
-/* center search */
-.global-search {
-    padding:4px;
-    float: left;
-}
 
-.global-search .form-control {
-    width: 340px;
-    float: left;
-}
-/* Header */
+/*  =============== END: CSS Regarding the Footer area =============== */
 
-/* Footer  */
-.footer-distributed{
+
+/*  =============== START: CSS Regarding the Footer area =============== */
+
+.footer-distributed {
     background-color: #292c2f;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
@@ -43,122 +39,54 @@
     font: bold 16px sans-serif;
     padding: 30px 50px;
     margin-top: 150px;
-
 }
 
-
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
-    display: inline-block;
-    vertical-align: top;
-}
-
-/* Footer left */
-
-.footer-distributed .footer-left{
-    width: 40%;
-}
-
-
-/* The company logo */
-
-.footer-distributed h3{
+.footer-distributed h3 { /* The company logo */
     color:  #ffffff;
     font: normal 36px 'Cookie', cursive;
     margin: 0;
 }
 
-/*Search */
-#custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
+.footer-distributed h3 span {
+    color: #5383d3;
 }
 
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
 }
 
-#custom-search-input button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
+.footer-distributed .footer-left {
+    width: 40%;
 }
 
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 23px;
-}
-
-
-.footer-distributed h3 span{
-    color:  #5383d3;
-}
-
-/* Shopping cart.blade css */
-.input-sm {
-    width: 140px !important;
-    text-align: center !important;
-    font-size: 10pt !important;
-}
-.delete-item{
-
-    font-size: 17px;
-}
-/* Shopping cart.blade css */
-
-.algn-center{
-
-    width: 31%;
-    text-align: center;
-    margin: 0px auto;
-    padding-top: 14%;
-
-
-
-}
-
-
-
-.footer-distributed .footer-links{
+.footer-distributed .footer-links {
     color:  #ffffff;
     margin: 20px 0 12px;
     padding: 0;
 }
 
-.footer-distributed .footer-links a{
+.footer-distributed .footer-links a {
     display:inline-block;
     line-height: 1.8;
     text-decoration: none;
     color:  inherit;
 }
 
-.footer-distributed .footer-company-name{
+.footer-distributed .footer-company-name {
     color:  #8f9296;
     font-size: 14px;
     font-weight: normal;
     margin: 0;
 }
 
-/* Footer Center */
-
-.footer-distributed .footer-center{
+.footer-distributed .footer-center {
     width: 35%;
 }
 
-.footer-distributed .footer-center i{
+.footer-distributed .footer-center i {
     background-color:  #33383b;
     color: #ffffff;
     font-size: 25px;
@@ -171,38 +99,35 @@
     vertical-align: middle;
 }
 
-.footer-distributed .footer-center i.fa-envelope{
+.footer-distributed .footer-center i.fa-envelope {
     font-size: 17px;
     line-height: 38px;
 }
 
-.footer-distributed .footer-center p{
+.footer-distributed .footer-center p {
     display: inline-block;
     color: #ffffff;
     vertical-align: middle;
-    margin:0;
+    margin: 0;
 }
 
-.footer-distributed .footer-center p span{
+.footer-distributed .footer-center p span {
     display:block;
     font-weight: normal;
     font-size:14px;
     line-height:2;
 }
 
-.footer-distributed .footer-center p a{
+.footer-distributed .footer-center p a {
     color:  #5383d3;
-    text-decoration: none;;
+    text-decoration: none;
 }
 
-
-/* Footer Right */
-
-.footer-distributed .footer-right{
+.footer-distributed .footer-right {
     width: 20%;
 }
 
-.footer-distributed .footer-company-about{
+.footer-distributed .footer-company-about {
     line-height: 20px;
     color:  #92999f;
     font-size: 13px;
@@ -210,7 +135,7 @@
     margin: 0;
 }
 
-.footer-distributed .footer-company-about span{
+.footer-distributed .footer-company-about span {
     display: block;
     color:  #ffffff;
     font-size: 14px;
@@ -218,11 +143,11 @@
     margin-bottom: 20px;
 }
 
-.footer-distributed .footer-icons{
+.footer-distributed .footer-icons {
     margin-top: 25px;
 }
 
-.footer-distributed .footer-icons a{
+.footer-distributed .footer-icons a {
     display: inline-block;
     width: 40px;
     cursor: pointer;
@@ -234,25 +159,91 @@
     height: 44px;
 }
 
-/* For footer responsiveness */
-
 @media (max-width: 880px) {
-    .footer-distributed{
+    .footer-distributed {
         font: bold 14px sans-serif;
     }
     .footer-distributed .footer-left,
     .footer-distributed .footer-center,
-    .footer-distributed .footer-right{
+    .footer-distributed .footer-right {
         display: block;
         width: 100%;
         margin-bottom: 40px;
         text-align: center;
     }
-    .footer-distributed .footer-center i{
+    .footer-distributed .footer-center i {
         margin-left: 0;
     }
 }
 
-.btn{
-    border-radius:3px!important;
+/*  =============== END: CSS Regarding the Footer area =============== */
+
+
+/*  =============== START: CSS Regarding the Search button =============== */
+
+.align-center {
+    width: 31%;
+    text-align: center;
+    margin: 0px auto;
+    padding-top: 14%;
 }
+
+#custom-search-input {
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input {
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button {
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover {
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search {
+    font-size: 23px;
+}
+
+/*  =============== END: CSS Regarding the Search button =============== */
+
+
+/*  =============== START: CSS Regarding the Shoppping Cart area =============== */
+
+.input-sm {
+    width: 140px;
+    text-align: center;
+    font-size: 10pt;
+}
+.delete-item {
+    font-size: 17px;
+}
+
+/*  =============== END: CSS Regarding the Shoppping Cart area =============== */
+
+/* center search */
+.global-search {
+    padding:4px;
+    float: left;
+}
+
+.global-search .form-control {
+    width: 340px;
+    float: left;
+}
+/* Header */
