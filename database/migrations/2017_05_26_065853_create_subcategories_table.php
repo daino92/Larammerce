@@ -17,7 +17,7 @@ class CreateSubcategoriesTable extends Migration
             $table->timestamps();
             $table->string('image');
             $table->string('category');
-            $table->string('subcategory');
+            $table->text('subcategory');
         });
     }
 
