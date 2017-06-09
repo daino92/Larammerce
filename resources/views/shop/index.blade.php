@@ -38,12 +38,12 @@
                             <figure>
                                 <div><img src="pictures/categories/{{$SubCategory->image}}" alt="img05"></div>
                                 <figcaption>
-                                    <h3>{{$SubCategory->category}}</h3>
+                                    <h3><?=str_replace('_', ' & ', $SubCategory->category)?></h3>
                                     <br>
-                                    {{--here we decode the json and we slice the array in order to only show 4 subcategories only--}}
+                                    <!--We decode the json and slice the array in order to show 4 Subcategories only-->
                                     @foreach(array_slice(json_decode($SubCategory->subcategory,true),0,4) as $sub)
                                         <div class="cat_men">
-                                            <a href="#">{{$sub}}</a>
+                                            <a href="#">{{$sub['name']}}</a>
                                         </div>
                                     @endforeach
                                     <div class="take_a_look"><a href="{{route('shop.categories','cat='.$SubCategory->category)}}">Take a look</a></div>
@@ -52,7 +52,7 @@
                         </li>
                         @endforeach
                     </ul>
-                </div><!-- /container -->
+                </div>
                 <script src="{{ URL::to('src/js/toucheffects.js') }}"></script>
             </div>
         </div>
@@ -71,30 +71,30 @@
                         <h1>What we Offer</h1>
                         <div class="col-md-3">
                             <div class="circle">
-                                <div id="divSocial"><img src="{{ URL::to('pictures/qual.png') }}"/></div>
+                                <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Quality.png') }}"/></div>
                                 <h4>Top Quality</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                                <p class="Offer">We give priority to quality and trust our vendors. The packages are always double checked and packed nicely!</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="circle">
-                                <div id="divSocial"><img src="{{ URL::to('pictures/sales.png') }}"/></div>
+                                <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Sales.png') }}"/></div>
                                 <h4>Fast Sales</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                                <p class="Offer">This platform provides an easy to use and fast system regarding to sales! </p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="circle">
-                                <div id="divSocial"><img src="{{ URL::to('pictures/new.png') }}"/></div>
+                                <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Management.png') }}"/></div>
                                 <h4>Management System</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                                <p class="Offer">A simple but functional management system is provided to both vendors and buyers.</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="circle">
-                                <div id="divSocial"><img src="{{ URL::to('pictures/support.png') }}"/></div>
+                                <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Support.png') }}"/></div>
                                 <h4>24/7 Support</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio quas facere natus magnam unde nesciunt voluptas sequi aspernatur eum enim aperiam numquam repudiandae fugit, perspiciatis, tempore ex soluta eius.</p>
+                                <p class="Offer">We provide 24/7 e-mail or 10h/week phone support to our loyal customers for any problem that might occur.</p>
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                                     <a href="#" class="button">VIEW</a>
                                 </div>
                                 <div class="bg"></div>
-                                <div class="base"><img src="pictures/img/1.jpg" alt=""/></div>
+                                <div class="base"><img src="pictures/top_vendor/1.jpg" alt=""/></div>
                             </div>
                         </li>
                     </ul>
@@ -133,7 +133,7 @@
                                     <a href="#" class="button">VIEW</a>
                                 </div>
                                 <div class="bg"></div>
-                                <div class="base"><img src="pictures/img/2.jpg" alt=""/></div>
+                                <div class="base"><img src="pictures/top_vendor/2.jpg" alt=""/></div>
                             </div>
                         </li>
                     </ul>
@@ -149,7 +149,7 @@
                                     <a href="#" class="button">VIEW</a>
                                 </div>
                                 <div class="bg"></div>
-                                <div class="base"><img src="pictures/img/3.jpg" alt="" /></div>
+                                <div class="base"><img src="pictures/top_vendor/3.jpg" alt="" /></div>
                             </div>
                         </li>
                     </ul>
@@ -165,28 +165,28 @@
                     <div class="slide_container">
                         <div id="mi-slider" class="mi-slider">
                             <ul>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
-                                <li><a href="#"><img src="{{ URL::to('picturesslider/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
+                                <li><a href="#"><img src="{{ URL::to('/pictures/top_products/1.png') }}" alt="img01"><h4>Boots</h4></a></li>
                             </ul>
                             <nav>
                                 <a href="#">Shoes</a>
@@ -196,7 +196,7 @@
                             </nav>
                         </div>
                     </div>
-                </div><!-- /container -->
+                </div>
             </div>
         </div>
     </div>
