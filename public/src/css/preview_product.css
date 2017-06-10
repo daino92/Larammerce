@@ -1,39 +1,39 @@
-.gold{
+.gold {
     color: #FFBF00;
 }
 
 /*************	PRODUCTS  *************/
 
-.product{
+.product {
     border: 1px solid #dddddd;
     height: auto;
     width: 300px;
     padding: 20px;
 }
 
-.product>img{
+.product>img {
     max-width: 230px;
 }
 
-.product-rating{
+.product-rating {
     font-size: 20px;
     margin-bottom: 25px;
 }
 
-.product-title{
+.product-title {
     font-size: 20px;
 }
 
-.product-desc{
+.product-desc {
     font-size: 14px;
     text-align: justify;
 }
 
-.product-price{
+.product-price {
     font-size: 22px;
 }
 
-.product-stock{
+.product-stock {
     margin-top: 10px;
 }
 
@@ -49,7 +49,7 @@
     background-color: #449D44;
 }
 
-.product-info{
+.product-info {
     margin-top: 50px;
     text-align: justify;
 }
@@ -59,11 +59,9 @@
 .content-wrapper {
     max-width: 1140px;
     background: #fff;
-    margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    border: 0px;
-    border-radius: 0px;
+    margin: 25px auto 10px;
+    border: 0;
+    border-radius: 0;
 }
 
 .view-wrapper {
@@ -73,15 +71,15 @@
 }
 
 .container {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
     max-width: 100%;
 }
 
 /*************	ITEM  *************/
 
 .service1-items {
-    padding: 0px 0 0px 0;
+    padding: 0;
     float: left;
     position: relative;
     overflow: hidden;
@@ -121,6 +119,6 @@
     padding-left: 50px;
 }
 
-.service-image-left > center > img,.service-image-right > center > img{
+.service-image-left > center > img,.service-image-right > center > img {
     max-height: 155px;
 }

@@ -90,11 +90,11 @@ ul {
 }
 
 .shape {
-  margin: 0px auto;
-  text-align: center;
-	width: 300px;
-	height: 300px;
-	position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    position: relative;
 }
 		
 .shape .overlay {
@@ -163,9 +163,9 @@ ul {
 	left:0;
 	opacity:0;
 	-webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;				
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 	display:block;  
 }		
 
@@ -200,13 +200,12 @@ ul {
 	-o-border-radius: 20px;
 	border-radius: 20px;
 	background: #2f3644;
-	text-decoration:none;
-	color:#fff;
-	display:block;
-	width:50px;
-	margin:0 auto;
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	width: 50px;
+	margin: 15px auto 0;
 	text-align:center;
-	margin-top:15px;
 }
 
 .shape a.button:hover {
@@ -221,45 +220,45 @@ ul {
 }
 
 @media (max-width:768px) {
-  .mi-slider {
-    height: 385px !important;
-  }
-  .mi-slider nav {
-    top: 300px !important;
-  }
-  .section_d .skew:after {
-    left: 0px;
-    bottom: 0px;
-  }
-  .section_d1 .skew1:after {
-    left: 0px;
-    bottom: 0px;
-    height: 0px;
-  }
-  .what_we {
-    background: #00bcd4;
-    padding-top: 108px;
-    height: auto;
-    padding-bottom: 100px;
-  }
-  .popular_pr {
-    background: #00bcd4;   
-    padding-top: 108px !important;
-    height: auto !important;
-    padding-bottom: 100px !important;
-  }
+    .mi-slider {
+        height: 385px !important;
+    }
+    .mi-slider nav {
+        top: 300px !important;
+    }
+    .section_d .skew:after {
+        left: 0;
+        bottom: 0;
+    }
+    .section_d1 .skew1:after {
+        left: 0;
+        bottom: 0;
+        height: 0;
+    }
+    .what_we {
+        background: #00bcd4;
+        padding-top: 108px;
+        height: auto;
+        padding-bottom: 100px;
+    }
+    .popular_pr {
+        background: #00bcd4;
+        padding-top: 108px !important;
+        height: auto !important;
+        padding-bottom: 100px !important;
+    }
 
-  .footer-distributed {
-    padding-top: 108px !important;
-    margin-top: 0px !important;
-  }
-  .container-fluid.index2 {
-    padding-top: 108px;
-    height: auto;
-    padding-bottom: 100px;
-  }
-  .container-fluid.index {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+    .footer-distributed {
+        padding-top: 108px !important;
+        margin-top: 0 !important;
+    }
+    .container-fluid.index2 {
+        padding-top: 108px;
+        height: auto;
+        padding-bottom: 100px;
+    }
+    .container-fluid.index {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }

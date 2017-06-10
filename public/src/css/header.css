@@ -1,15 +1,15 @@
-.collapse.navbar-collapse{
+.collapse.navbar-collapse {
     background: white;
 
 }
 nav.navbar.navbar-default {
-    margin-bottom: 0px !important;
+    margin-bottom: 0 !important;
 }
-.container-fluid.navb{
-    padding: 0px !important;
+.container-fluid.navb {
+    padding: 0 !important;
 }
 
-.nav li>a {
+.nav li > a {
     font-size: 15px;
 }
 

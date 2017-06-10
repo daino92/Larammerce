@@ -112,21 +112,18 @@
 	border: solid transparent;
 	height: 0;
 	width: 0;
-	position: absolute;
 	pointer-events: none;
 }
 
 .mi-slider nav a.mi-selected:after {
-	border-color: transparent;
-	border-width: 20px;
+	border: 20px transparent;
 	left: 50%;
 	margin-left: -20px;
 }
 
 .mi-slider nav a.mi-selected:before {
-	border-color: transparent;
+	border: 27px transparent;
 	border-top-color: #333;
-	border-width: 27px;
 	left: 50%;
 	margin-left: -27px;
 }
