@@ -11,10 +11,6 @@
     @yield('styles')
 </head>
 <body>
- 
-
-  
-   </div>
     @include('includes.header')
 
     @yield('content')
@@ -23,33 +19,29 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="{{ URL::to('src/js/jquery.catslider.js') }}"></script>
-		<script src="{{ URL::to('src/js/modernizr.custom.63321.js') }}"></script>
-		<script>
+    <script src="{{ URL::to('src/js/jquery.catslider.js') }}"></script>
+    <script src="{{ URL::to('src/js/modernizr.custom.63321.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $("#divSocial  img").hover(
+                function () {
+                    $(this).animate({ top: "-15" });
+                    },
+                function () {
+                    $(this).animate({ top: "0" });
+                }
+            );
+        });
+    </script>
 
-                $(document).ready(function(){
-                 $("#divSocial  img").hover(
-                        function () {
-                                        $(this).animate({ top: "-15" });
-                        }, 
-                        function () {
-                                        $(this).animate({ top: "0" });
-                        }
-                    );
-            });
-
-        </script>
-           
-           
-    		<script>
-			$(function() {
-
-				$( '#mi-slider' ).catslider();
-
-			});
-		</script>
+    <script>
+        $(function() {
+            $( '#mi-slider' ).catslider();
+        });
+    </script>
 
     @yield('scripts')
+
     @include('includes.footer')
 </body>
 </html>
