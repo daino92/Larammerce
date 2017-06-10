@@ -1,19 +1,15 @@
 @extends('master')
 
-@section('styles')
-    <link rel="stylesheet" href="{{URL::to('src/css/user.css')}}">
-@endsection
-
 @section('content')
     <div id="page-wrapper" class="dashboard">
-        <div class="container-fluid" style="height:700px;">
+        <div class="container-fluid user">
             @include('user.prof')
             <div class="col-lg-10">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-1">
-                        <h1 style="text-align:center;">{{ Auth::user()->username }}'s profile</h1>
+                        <h1 class="username">{{ Auth::user()->username }}'s profile</h1>
                         <hr>
-                        <h2 style="text-align: center">Order History</h2>
+                        <h2 class="user section">Order History</h2>
                         @foreach($orders as $order)
                             <div class="panel panel-info">
                                 <div class="panel-body">
