@@ -7,6 +7,7 @@ use Session;
 use Auth;
 use DB;
 use App\Product;
+use App\SubCategories;
 use Intervention\Image\ImageManagerStatic as Image;
 class ProductCRUD extends Controller
 {
@@ -21,7 +22,8 @@ class ProductCRUD extends Controller
     }
 
     public function create(){
-        return view('vendor.addproducts');
+        $SubCategories = SubCategories::all();
+        return view('vendor.addproducts')->with('SubCategories',$SubCategories);
     }
 
     public function store(Request $request){
@@ -51,7 +53,8 @@ class ProductCRUD extends Controller
 
     public function edit($id){
         $product = Product::find($id);
-        return view('vendor.editproduct')->withProduct($product);
+        $SubCategories = SubCategories::all();
+        return view('vendor.editproduct')->withProduct($product)->with('SubCategories',$SubCategories);
     }
 
     public function update(Request $request, $id){
