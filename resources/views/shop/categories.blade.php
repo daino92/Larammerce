@@ -34,14 +34,14 @@
 @section('content')
 
 @foreach($SubCategories as $SubCategory)
-	<h2 style="text-align:center; margin-bottom:50px;"> Sub-Categories about <?=str_replace('_', ' & ', $SubCategory->category)?></h2>
+	<h2 style="text-align:center; margin-bottom:50px;"> Sub-Categories about {{str_replace('_', ' & ', $SubCategory->category)}}</h2>
 	<div class="container">
 	    <div class="col-md-12">
 	        <div class="row">
 	            @foreach(json_decode($SubCategory->subcategory,true) as $sub)
 	                <div class="col-sm-6 col-md-3">
 	                    <div class="cat_Box">
-	                        <a href="#"><img src="{{$sub['img']}}" alt="img05"></a>
+	                        <a href="#"><img src="{{$sub['img']}}" alt="{{$sub['name']}}"></a>
 	                        <div class="cat_Descr"><h4>{{$sub['name']}}</h4></div>
 	                    </div>
 	                </div>

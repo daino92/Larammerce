@@ -38,7 +38,7 @@
                             <figure>
                                 <div><img src="pictures/categories/{{$SubCategory->image}}" alt="img05"></div>
                                 <figcaption>
-                                    <h3><?=str_replace('_', ' & ', $SubCategory->category)?></h3>
+                                    <h3>{{str_replace('_', ' & ', $SubCategory->category)}}</h3>
                                     <br>
                                     <!--We decode the json and slice the array in order to show 4 Subcategories only-->
                                     @foreach(array_slice(json_decode($SubCategory->subcategory,true),0,4) as $sub)
