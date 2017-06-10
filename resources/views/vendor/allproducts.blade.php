@@ -1,12 +1,8 @@
 @extends('master')
 
-@section('styles')
-    <link rel="stylesheet" href="{{URL::to('src/css/user.css')}}">
-@endsection
-
 @section('content')
     <div id="page-wrapper" class="dashboard">
-        <div class="container-fluid" style="height:auto;">
+        <div class="container-fluid user">
             @include('vendor.prof')
             <div class="col-lg-10">
                 <div id="page-wrapper" class="dashboard">
@@ -37,10 +33,11 @@
                                     <th>Short Description</th>
                                     <th>Description</th>
                                     <th>Category</th>
+                                    <th>Subcategory</th>
                                     <th>Price</th>
                                     <th>Stock</th>
                                     <th>Image</th>
-                                    <th colspan="3" style="text-align: center;">Actions</th>
+                                    <th colspan="3" class="center">Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -51,6 +48,7 @@
                                         <td>{{ $product->short_desc }}</td>
                                         <td>{{ $product->description }}</td>
                                         <td>{{ $product->category }}</td>
+                                        <td>{{ $product->subcategory }}</td>
                                         <td>{{ $product->price }}</td>
                                         <td>{{ $product->stock }}</td>
                                         <td><a href='{{ asset($product->imagePath) }}' target="_blank"><img src='{{ $product->thumbnail }}'></a></td>
@@ -65,7 +63,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                        {!! $products->render() !!} <!--pagination-->
+                            {!! $products->render() !!} <!--pagination-->
                         </div>
                     </div>
                 </div>

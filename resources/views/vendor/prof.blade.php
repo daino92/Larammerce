@@ -1,7 +1,7 @@
 <div class="col-lg-2 left_menu_pos">
     <div class="row">
         <img src="{{Auth::user()->avatar}}" class="userPic">
-        <h4 style="text-align:center;">{{ Auth::user()->username }}</h4>
+        <h4 class="username">{{ Auth::user()->username }}</h4>
         <hr>
         <ul class="profile">
             <li><a href="{{ route('vendor.profile') }}">Preferences</a></li>

@@ -1,12 +1,8 @@
 @extends('master')
 
-@section('styles')
-    <link rel="stylesheet" href="{{URL::to('src/css/user.css')}}">
-@endsection
-
 @section('content')
     <div id="page-wrapper" class="dashboard">
-        <div class="container-fluid" style="height:auto;">
+        <div class="container-fluid user">
             @include('vendor.prof')
             <div class="col-lg-10">
                 <div id="page-wrapper" class="dashboard">
@@ -42,18 +38,19 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($orders as $order)
-                                    <tr>
-                                        <td>{{ $order->id }}</td>
-                                        <td>{{ $order->created_at }}</td>
-                                        <td>{{ $order->address }}</td>
-                                        <td>$order->user->name </td>
-                                        <td>$order->user->surname</td>
-                                    </tr>
-                                @endforeach
+                                    @foreach ($orders as $order)
+                                        <tr>
+                                            <td>{{ $order->id }}</td>
+                                            <td>{{ $order->created_at }}</td>
+                                            <td>{{ $order->address }}</td>
+                                            <td>@if(isset($order->user->name)){{($order->user->name)}}@endif </td>
+                                            <td>@if(isset($order->user->name)){{($order->user->surname)}}@endif </td>
+                                            <td>@if(isset($order->user->price)){{($order->user->price)}}@endif </td>
+                                            <td>@if(isset($order->user->quantity)){{($order->user->quantity)}}@endif </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
