@@ -32,6 +32,11 @@ Route::get('/product-details/{id}', [
     'as' => 'shop.preview_product'
 ]);
 
+Route::get('/category', [
+    'uses' => 'ProductController@products',
+    'as' => 'shop.products'
+]);
+
 //=============== *** Cart Routes *** ===============//
 
 Route::get('/add-to-cart/{id}', [
