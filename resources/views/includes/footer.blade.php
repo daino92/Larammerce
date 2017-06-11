@@ -1,5 +1,5 @@
- <link rel="stylesheet" href="{{URL::to('src/css/app.css')}}"> 
-     <footer class="footer-distributed">
+<link rel="stylesheet" href="{{URL::to('src/css/app.css')}}">
+<footer class="footer-distributed">
     <div class="footer-left">
         <h3>Locoroco<img class="img-circle" id="img_logo" src="{{ URL::to('pictures/locoroco.png') }}"> </h3>
         <p class="footer-links">
@@ -28,8 +28,7 @@
     </div>
     <div class="footer-right">
         <p class="footer-company-about">
-            <span>About Locoroco</span>
-            A multi-purpose e-commerce application.
+            <span>About Locoroco</span> A multi-purpose e-commerce application.
         </p>
         <div class="footer-icons">
             <a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>

@@ -1,5 +1,4 @@
 {!! Form::open(['route' => 'shop.results', 'method' => 'GET', 'role' => 'search']) !!}
-    {{ csrf_field() }}
         <div class="align-center">
             <div id="custom-search-input">
                 <div class="input-group col-md-12">

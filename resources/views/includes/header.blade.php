@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="{{ URL::to('src/css/header.css') }}">
-
 <nav class="navbar navbar-default">
     <div class="container-fluid navb">
         <!-- Brand and toggle get grouped for better mobile display -->
