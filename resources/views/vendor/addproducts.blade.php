@@ -37,14 +37,14 @@
                                 <select class="form-control" id="category" name="category" required>
                                     <option selected value="">Please Select a category</option>
                                     @foreach($SubCategories as $SubCategory)
-                                        <option value="{{$SubCategory->category}}">{{str_replace('_', ' & ', $SubCategory->category)}}</option>
+                                        <option value="{{str_replace('_', ' & ', $SubCategory->category)}}">{{str_replace('_', ' & ', $SubCategory->category)}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 {!! Form::label('Subcategory', 'Subcategory:') !!}
                                 <select class="form-control" id="subcategory" name="subcategory" required>
-                                    <option selected value="none">Please Select a Subcategory</option>
+                                    <option selected value="">Please Select a Subcategory</option>
                                     @foreach($SubCategories as $SubCategory)
                                         @foreach(json_decode($SubCategory->subcategory,true) as $sub)
                                             <option value="{{$sub['name']}}">{{$sub['name']}}</option>
