@@ -5,26 +5,71 @@
 @endsection
 
 @section('content')
-    @foreach($products->chunk(4) as $productChunk)
-       <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
-            @foreach($productChunk as $product)
-                <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img src="{{ $product->imagePath }}" alt="...">
-                        <div class="caption">
-                            <h3>{{ $product->title }}</h3>
-                            <p class="description">{{ $product->description }}</p>
-                            <div class="clearfix">
-                                <div class="pull-left price">$ {{ $product->price }}</div>
-                                <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success pull-right" role="button">Add to Cart</a>
+            <div class="col-md-12">
+                @if (!$products->count())
+                    <p class="noProducts">No products were found. Try searching again!</p>
+                    <img class="Frog" src="{{URL::to('pictures/frog.png')}}">
+                @else
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8" style="padding-top:20px;">
+                        <h2 class="category_name"> Products from lala Sub-category</h2>
+                        @foreach($products->chunk(4) as $productChunk)
+                            <div class="row">
+                                @foreach($productChunk as $product)
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="thumbnail">
+                                            <img src="{{ $product->imagePath }}" alt="{{ $product->title }}">
+                                            <div class="caption">
+                                                <a href="{{route('shop.preview_product',$product->id)}}">
+                                                    <h3>{{ $product->title }}</h3></a>
+                                                <p class="description show-read-more">{{ $product->short_desc }}</p>
+                                                <div class="clearfix">
+                                                    <div class="pull-left price">$ {{ $product->price }}</div>
+                                                    <a href="{{ route('product.addToCart', ['id' => $product->id]) }}"
+                                                       class="btn btn-success pull-right" role="button">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
-                        </div>
+                        @endforeach
+                @endif
                     </div>
-                </div>
-            @endforeach
+                    <div class="col-md-2"></div>
+            </div>
         </div>
     </div>
-    @endforeach
-    
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var maxLength = 50;
+            $(".show-read-more").each(function () {
+                var myStr = $(this).text();
+                if ($.trim(myStr).length > maxLength) {
+                    var newStr = myStr.substring(0, maxLength);
+                    var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                    $(this).empty().html(newStr);
+                    $(this).append('<a href="javascript:void(0);" class="read-more"><br>read more...</a>');
+                    $(this).append('<span class="more-text">' + removedStr + '</span>');
+                }
+            });
+            $(".read-more").click(function () {
+                $(this).siblings(".more-text").contents().unwrap();
+                $(this).remove();
+            });
+        });
+
+        function toggleChevron(e) {
+            $(e.target)
+                .prev('.panel-heading')
+                .find("i.indicator")
+                .toggleClass('fa-caret-down fa-caret-right');
+        }
+        $('#accordion').on('hidden.bs.collapse', toggleChevron);
+        $('#accordion').on('shown.bs.collapse', toggleChevron);
+    </script>
 @endsection

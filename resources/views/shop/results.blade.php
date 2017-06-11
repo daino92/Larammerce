@@ -7,32 +7,42 @@
 @section('content')
    <style>
 	   .behclick-panel  .list-group {
-		   margin-bottom: 0px;
+		   margin-bottom: 0;
 	   }
 	   .behclick-panel .list-group-item:first-child {
-		   border-top-left-radius:0px; border-top-right-radius:0px;
+		   border-top-left-radius:0;
+		   border-top-right-radius:0;
 	   }
 	   .behclick-panel .list-group-item {
-			border-right:0px;  border-left:0px;
+		   border-right:0;
+		   border-left:0;
 	   }
 	   .behclick-panel .list-group-item:last-child{
-			border-bottom-right-radius:0px;  border-bottom-left-radius:0px;
+		   border-bottom-right-radius:0;
+		   border-bottom-left-radius:0;
 	   }
 	   .behclick-panel .list-group-item {
 			padding: 5px;
 	   }
 	   .behclick-panel .panel-heading {
 			/* 	padding: 10px 15px; border-bottom: 1px solid transparent; */
-			border-top-right-radius: 0px;  border-top-left-radius: 0px;  border-bottom: 1px solid darkslategrey;
+		   border-top-right-radius: 0;
+		   border-top-left-radius: 0;
+		   border-bottom: 1px solid darkslategrey;
 	   }
 	   .behclick-panel .panel-heading:last-child{
-			/* border-bottom: 0px; */
+			/* border-bottom: 0; */
 	   }
 	   .behclick-panel {
-			border-radius: 0px;  border-right: 0px;  border-left: 0px;  border-bottom: 0px;  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+		   border-radius: 0;
+		   border-right: 0;
+		   border-left: 0;
+		   border-bottom: 0;
+		   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 	   }
 	   .behclick-panel .radio, .checkbox {
-			margin: 0px;  padding-left: 10px;
+		   margin: 0;
+		   padding-left: 10px;
 	   }
 	   .behclick-panel .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {
 			outline: none;
@@ -41,7 +51,7 @@
 			padding:10px 10px;
 	   }
 	   .behclick-panel .panel-body {
-			padding: 0px;
+			padding: 0;
 	   }
 		 /* unvisited link */
 	   .behclick-panel a:link {
@@ -62,10 +72,6 @@
 	   .behclick-panel a:active {
 		    text-decoration:none;
 	   }
-
-       .show-read-more .more-text{
-           display: none;
-       }
    </style>
 
    <div class="container-fluid">
@@ -74,11 +80,8 @@
 			   <h2 style="text-align: center;padding-top: 25px;">
 				   You searched for: {{ Request::input('query') }} </h2>
 			   @if (!$products->count())
-				   <h2><p style="text-align: center; height: auto; padding-bottom: 38px; color: red;">
-						   No Details found. Try searching again!</p></h2>
-				   <img src="{{URL::to('pictures/frog.png')}}" style="display: block;
-    margin: 0px auto;
-    text-align: center;">
+				   <p class="noProducts">No products were found. Try searching again!</p>
+				   <img class="Frog" src="{{URL::to('pictures/frog.png')}}">
 			   @else
 				   <div class="col-md-3" style="padding-top:20px;">
 					   <div id="accordion" class="panel panel-primary behclick-panel">
@@ -171,15 +174,13 @@
 					   </div>
 				   </div>
 
-
-
                    <div class="col-md-9"  style="padding-top:20px;">
 					   @foreach($products->chunk(4) as $productChunk)
 						   <div class="row">
 							   @foreach($productChunk as $product)
 								   <div class="col-sm-6 col-md-3">
 									   <div class="thumbnail">
-										   <img src="{{ $product->imagePath }}" alt="...">
+										   <img src="{{ $product->imagePath }}" alt="{{ $product->title }}">
 										   <div class="caption">
 											   <a href="{{route('shop.preview_product',$product->id)}}"> <h3>{{ $product->title }}</h3></a>
 											   <p class="description show-read-more">{{ $product->short_desc }}</p>
@@ -200,7 +201,6 @@
    </div>
 
    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-
    <script>
        $(document).ready(function(){
            var maxLength = 50;
