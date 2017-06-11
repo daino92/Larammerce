@@ -4,51 +4,23 @@
     Locoroco
 @endsection
 
-<style>
-    .cat_Box {
-        width: 250px;
-        height: auto;
-        border-radius: 13px;
-        -webkit-box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
-        -moz-box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
-        box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
-    .cat_Box:hover {
-        -webkit-box-shadow: 0 0 17px 0 rgba(223,194,153,1.4);
-        -moz-box-shadow:0 0 17px 0 rgba(223,194,153,1.4);
-        box-shadow:0 0 17px 0 rgba(223,194,153,1.4);
-    }
-    .cat_Box img {
-        text-align: center;
-        margin: 0 auto;
-        display: block;
-        padding-bottom: 5px;
-    }
-    .cat_Descr h4 {
-        text-align: center;
-    }
-</style>
-
 @section('content')
-
-@foreach($SubCategories as $SubCategory)
-	<h2 style="text-align:center; margin-bottom:50px;"> Sub-Categories about {{str_replace('_', ' & ', $SubCategory->category)}}</h2>
-	<div class="container">
-	    <div class="col-md-12">
-	        <div class="row">
-	            @foreach(json_decode($SubCategory->subcategory,true) as $sub)
-	                <div class="col-sm-6 col-md-3">
-	                    <div class="cat_Box">
-	                        <a href="#"><img src="{{$sub['img']}}" alt="{{$sub['name']}}"></a>
-	                        <div class="cat_Descr"><h4>{{$sub['name']}}</h4></div>
-	                    </div>
-	                </div>
-	            @endforeach
-	        </div>
-	    </div>
-	</div>
-@endforeach
-
+<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/component.css') }}" />
+<div class="container demo-3">
+    <ul class="grid cs-style-4">
+        @foreach($SubCategories as $SubCategory)
+            <h2 class="category_name"> Sub-Categories about {{str_replace('_', ' & ', $SubCategory->category)}}</h2>
+            @foreach(json_decode($SubCategory->subcategory,true) as $sub)
+                <li>
+                    <div class="category">
+                        <a href="{{route('shop.products','cat='.$SubCategory->category.'&'.'subCat='.$sub['name'])}}">
+                            <img src="{{$sub['img']}}" alt="{{$sub['name']}}">
+                        </a>
+                        <div class="cat_Descr">{{$sub['name']}}</div>
+                    </div>
+                </li>
+            @endforeach
+        @endforeach
+    </ul>
+</div>
 @endsection

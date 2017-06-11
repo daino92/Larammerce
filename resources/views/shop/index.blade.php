@@ -10,10 +10,8 @@
 @endsection
 
 @section('content')
-    <div class="search_area" style="height:500px; width:auto; background:url('pictures/header.jpg') no-repeat">
-        <div class="search_button">
-            @include('includes.search')
-        </div>
+    <div class="search_area" style="background:url('pictures/header.jpg');">
+        @include('includes.search')
     </div>
 
     @if(Session::has('success'))
@@ -25,8 +23,8 @@
             </div>
         </div>
     @endif
-    <div class="container-fluid index">
-        <!-- Front Page:: Place to store menu styles, sub menus and other goodies! -->
+    <!-- Front Page:: Place to store menu styles, sub menus and other goodies! -->
+    <div class="container-fluid categories">
         <div class="container">
             <div class="row">
                 <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/component.css') }}" />
@@ -36,14 +34,14 @@
                         @foreach($SubCategories as $SubCategory)
                         <li>
                             <figure>
-                                <div><img src="pictures/categories/{{$SubCategory->image}}" alt="img05"></div>
+                                <div><img src="pictures/categories/{{$SubCategory->image}}" alt="{{$SubCategory->category}}"></div>
                                 <figcaption>
                                     <h3>{{str_replace('_', ' & ', $SubCategory->category)}}</h3>
                                     <br>
                                     <!--We decode the json and slice the array in order to show 4 Subcategories only-->
                                     @foreach(array_slice(json_decode($SubCategory->subcategory,true),0,4) as $sub)
                                         <div class="cat_men">
-                                            <a href="#">{{$sub['name']}}</a>
+                                            <a href="{{route('shop.products','cat='.$SubCategory->category.'&'.'subCat='.$sub['name'])}}">{{$sub['name']}}</a>
                                         </div>
                                     @endforeach
                                     <div class="take_a_look"><a href="{{route('shop.categories','cat='.$SubCategory->category)}}">Take a look</a></div>
@@ -57,12 +55,6 @@
             </div>
         </div>
     </div>
-    <style>
-        #divSocial  img {
-            position: relative;  
-            border: none;
-        }
-    </style>
     <div class="container-fluid what_we">
         <div class="row">
             <div class="section_d">
@@ -80,7 +72,7 @@
                             <div class="circle">
                                 <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Sales.png') }}"/></div>
                                 <h4>Fast Sales</h4>
-                                <p class="Offer">This platform provides an easy to use and fast system regarding to sales! </p>
+                                <p class="Offer">This platform provides a fast and easy to use system, regarding to sales! </p>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -102,7 +94,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid index2">
+    <div class="container-fluid vendors">
         <div class="row">
             <h1 style="text-align:center;"> Popular Vendors</h1>
             <div class="col-md-12 popular_ven">
