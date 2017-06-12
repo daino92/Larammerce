@@ -47,7 +47,7 @@
                                     <option selected value="">Please Select a Subcategory</option>
                                     @foreach($SubCategories as $SubCategory)
                                         @foreach(json_decode($SubCategory->subcategory,true) as $sub)
-                                            <option value="{{$sub['name']}}">{{$sub['name']}}</option>
+                                            <option data-options="{{str_replace('_', ' & ', $SubCategory->category)}}" value="{{$sub['name']}}">{{$sub['name']}}</option>
                                         @endforeach
                                     @endforeach
                                 </select>
@@ -78,12 +78,5 @@
 @endsection
 
 @section('scripts')
-    <script>
-        $('#category').change(function(e){
-            $('#subcategory').prop('disabled', !$(this).val());
-        });
-        $(function(){
-            $('#subcategory').prop('disabled', true);
-        });
-    </script>
+    <script type="text/javascript" src="{{ URL::to('src/js/dropdown.js') }}"></script>
 @endsection
