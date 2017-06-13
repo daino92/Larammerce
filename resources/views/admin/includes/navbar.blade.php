@@ -63,7 +63,7 @@
             <ul class="nav navbar-nav side-nav">
                 <li class="active"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
                 <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> User Management <i class="fa fa-fw fa-caret-down"></i></a>
+                    <a href="javascript:" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> User Management <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo" class="collapse">
                         <li><a href="{{ route('admin.users.allusers') }}">See all Users</a></li>
                         <li><a href="{{ route('admin.users.adduser') }}">Add new Users</a></li>
@@ -71,6 +71,7 @@
                         <li><a href="{{ route('admin.users.vendors') }}">See all Vendors</a></li>
                     </ul>
                 </li>
+                <li><a href="{{ route('admin.AdminIndex') }}"><i class="fa fa-home"></i> Index Page</a></li>
                 <li><a href="{{ route('admin.charts') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
                 <li><a href="{{ route('admin.products') }}"><i class="fa fa-fw fa-table"></i> Product Management</a></li>
                 <li><a href="{{ route('admin.transactions') }}"><i class="fa fa-fw fa-money"></i> Transactions Management</a></li>
