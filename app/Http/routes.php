@@ -173,6 +173,13 @@ Route::get('/admin/transactions', [
     'roles' => ['Admin']
 ]);
 
+Route::get('/admin/IndexPage', [
+    'uses' => 'AdminController@getIndexPage',
+    'as' => 'admin.AdminIndex',
+    'middleware' => 'roles',
+    'roles' => ['Admin']
+]);
+
 Route::get('/admin/products', [
     'uses' => 'AdminController@adminProducts',
     'as' => 'admin.products',
