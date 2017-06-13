@@ -6,6 +6,7 @@ use App\Product;
 use App\Order;
 use App\Role;
 use App\User;
+use App\SubCategories;
 class adminController extends Controller
 {
     public function adminIndex(){
@@ -47,5 +48,10 @@ class adminController extends Controller
     public function adminProducts(){
         $products = Product::all();
         return view('admin.adminproducts')->withProducts($products);
+    }
+
+    public function getIndexPage() {
+        $SubCategories = SubCategories::all();
+        return view('admin.AdminIndex')->with('SubCategories',$SubCategories);
     }
 }
