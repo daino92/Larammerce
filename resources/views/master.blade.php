@@ -20,24 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="{{ URL::to('src/js/jquery.catslider.js') }}"></script>
     <script src="{{ URL::to('src/js/modernizr.custom.63321.js') }}"></script>
-    <script>
-        $(document).ready(function(){
-            $("#divSocial img").hover(
-                function () {
-                    $(this).animate({ top: "-15" });
-                    },
-                function () {
-                    $(this).animate({ top: "0" });
-                }
-            );
-        });
-    </script>
-
-    <script>
-        $(function() {
-            $( '#mi-slider' ).catslider();
-        });
-    </script>
+    <script src="{{ URL::to('src/js/index.js') }}"></script>
 
     @yield('scripts')
 

@@ -1,4 +1,5 @@
-{!! Form::open(['route' => 'shop.results', 'method' => 'GET', 'role' => 'search']) !!}
+<div class="search_area">
+    {!! Form::open(['route' => 'shop.results', 'method' => 'GET', 'role' => 'search']) !!}
         <div class="align-center">
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
@@ -9,4 +10,5 @@
                 </div>
             </div>
         </div>
-{!! Form::close() !!}
+    {!! Form::close() !!}
+</div>
