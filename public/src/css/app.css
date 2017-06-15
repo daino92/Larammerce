@@ -37,7 +37,7 @@ body {
     font-size: 16px;
 }
 
-/*  =============== END: CSS Regarding the Footer area =============== */
+/*  =============== END: CSS Regarding the Search area =============== */
 
 
 /*  =============== START: CSS Regarding the Footer area =============== */
@@ -185,7 +185,7 @@ body {
     .footer-distributed {
         font: bold 14px sans-serif;
         padding-top: 108px;
-        margin-top: 0;
+        /*margin-top: 0;*/
     }
     .footer-distributed .footer-left,
     .footer-distributed .footer-center,
