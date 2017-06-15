@@ -45,7 +45,7 @@ body {
 .black { /* extra div block for index footer! */
     background-color: #292c2f;
     width: 100%;
-    height: 375px;
+    height: 367px;
     margin-bottom: -150px;
 } 
 .footer-distributed {
@@ -629,10 +629,13 @@ nav.navbar.navbar-default {
 }
 
 @media (max-width:768px) {
+    .align-center {
+        width: 80%;
+    }
     .black {
         /* extra div block for index footer! */
         width: 0;
-        height: 0;
+        height: 60px;
     }
     .container.demo-3 .grid li {
         width: 338px;
@@ -667,6 +670,10 @@ nav.navbar.navbar-default {
     }
 }
 @media (width:768px) {
+    .align-center {
+        width: 65%;
+        padding-top: 11%;
+    }
     .mi-slider {
         height: 385px;
     }
@@ -680,6 +687,10 @@ nav.navbar.navbar-default {
 @media (width:1024px) {
     .container.demo-3 .grid li {
         width: 463px;
+    }
+    .align-center {
+        width: 49%;
+        padding-top: 15%;
     }
 }
 
