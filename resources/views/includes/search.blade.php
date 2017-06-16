@@ -64,13 +64,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="input-group" id="adv-search">
-                         {!! Form::open(['route' => 'shop.results', 'method' => 'GET', 'role' => 'search','class'=>'form-horizontal']) !!}
+                        
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">      
                                 <input type="text" name="query" class="form-control" placeholder="Search by title" />
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                                     <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                     {!! Form::open(['route' => 'shop.results', 'method' => 'GET', 'role' => 'search','class'=>'form-horizontal searchFormUltimate']) !!}
                                        <div class="form-group">
                                            {!! Form::label('Category', 'Filter by Category:') !!}
                                             <select class="form-control" id="category" name="category">
@@ -92,27 +93,27 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="pricefrom" class="control-label">Min Price</label>
+                                            {!! Form::label('MinPrice', 'Min Price:') !!}
                                             <div class="input-group">
                                                 <div class="input-group-addon" id="minPrice">$</div>
                                                 <input type="text" class="form-control" id="pricefrom">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="priceto" class="control-label">Max Price</label>
+                                            {!! Form::label('MaxPrice', 'Max Price:') !!}
                                             <div class="input-group">
                                                 <div class="input-group-addon" id="maxPrice">$</div>
                                                 <input type="text" class="form-control" id="priceto"">
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                                 <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-info btn-md"><span class="glyphicon glyphicon-search"></span></button>
+                                    <button type="button" class="btn btn-info btn-md" id="searchThis"><span class="glyphicon glyphicon-search"></span></button>
                                 </span>
                             </div>
                         </div>
-                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
@@ -122,4 +123,10 @@
 
 @section('scripts')
     <script type="text/javascript" src="{{ URL::to('src/js/dropdown.js') }}"></script>
+
+    <script>
+        $("#searchThis").click(function() {
+            $(".searchFormUltimate").submit();
+        });
+    </script>
 @endsection

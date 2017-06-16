@@ -16,7 +16,8 @@ class ProductController extends Controller
 
     public function getResults(Request $request){
 	    // Remove leading spaces and . , ! ( ) as a naive input sanitization
-	    $query = preg_replace('/[\.\,\!\(\)]/', '', ltrim($request->input('query')));
+	    $query = preg_replace('/[\.\,\!\(\)]/', '', ltrim($request->input('category','query')));
+        dd($request);
         if(!$query){
             return redirect()->route('product.index');
         } else {
