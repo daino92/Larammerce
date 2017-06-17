@@ -382,7 +382,7 @@ nav.navbar.navbar-default {
     font-size: 15px;
 }
 
-@media (min-width: 360px) {
+@media (min-width: 320px) {
     .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
         margin-right: 0;
         margin-left: 0;
@@ -419,7 +419,9 @@ nav.navbar.navbar-default {
     position: relative;
     border: none;
 }
-
+.cs-style-4 figcaption {
+    width: 54%;
+}
 /* top vendors start */
 .container-fluid.vendors {
     padding-top: 373px;
@@ -628,14 +630,14 @@ nav.navbar.navbar-default {
     margin-bottom: 200px;
 }
 
-@media (max-width:768px) {
+@media  (max-width:768px) {
     .align-center {
-        width: 80%;
+        width: 73%;
     }
     .black {
         /* extra div block for index footer! */
         width: 0;
-        height: 60px;
+        height: 0;
     }
     .container.demo-3 .grid li {
         width: 338px;
@@ -667,6 +669,39 @@ nav.navbar.navbar-default {
     .container-fluid.categories {
         padding-top: 50px;
         padding-bottom: 50px;
+    }
+}
+
+@media (width: 320px) {
+    .container.demo-3 .grid li {
+        width: 300px;
+    }
+    .popular_vendors {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .popular_vendors .col-md-4 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .shape {
+        width: auto;
+    }
+    .shape .overlay.round {
+        left: 0;
+        width: 308px;
+    }
+    .base {
+        width: 320px;
+        height: 320px;
+    }
+    .shape .bg, .shape .details {
+        width: auto;
+    }
+    .shape .base img {
+        height: 300px;
+        width: 292px;
     }
 }
 @media (width:768px) {
