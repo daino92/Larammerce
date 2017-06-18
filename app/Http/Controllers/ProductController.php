@@ -14,15 +14,40 @@ class ProductController extends Controller
         return view('shop.index')->with('SubCategories',$SubCategories);
     }
 
-    public function getResults(Request $request){
-	    // Remove leading spaces and . , ! ( ) as a naive input sanitization
-	    $query = preg_replace('/[\.\,\!\(\)]/', '', ltrim($request->input('category','query')));
-        dd($request);
-        if(!$query){
+    //complex search functionality
+    public function getResults(Request $request) {
+        // Remove leading spaces and . , ! ( ) as a naive input sanitization
+        $category = $request->input('category');
+        $subcategory = $request->input('subcategory');
+        $priceFrom = preg_replace('/[^.0-9]/', '', ltrim($request->input('priceFrom')));
+        $priceTo = preg_replace('/[^.0-9]/', '', ltrim($request->input('priceTo')));
+        $title = preg_replace('/[\.\,\!\(\)]/', '', ltrim($request->input('title')));
+
+        if ($title == "" && $category == "" && $subcategory == "" && $priceFrom == "" && $priceTo == "") {
             return redirect()->route('product.index');
         } else {
-            $products = Product::where('title', 'LIKE', "%{$query}%")->orWhere('description', 'LIKE', "%{$query}%")->get();
-            return view('shop.results')->with('products',$products);
+            $conditions = array();
+            if ($title != "") {
+                $conditions[] = array('title', 'LIKE', "%{$title}%");
+            }
+            if ($category != "") {
+                $conditions[] = array('category', '=', "{$category}");
+            }
+            if ($subcategory != ""&&$subcategory != "0") {
+                $conditions[] = array('subcategory', '=', "{$subcategory}");
+            }
+            if ($priceFrom != "") {
+                $conditions[] = array('price', '>=', "{$priceFrom}");
+            }
+            if ($priceTo != "") {
+                $conditions[] = array('price', '<=', "{$priceTo}");
+            }
+            if ($title != "") {
+                $products = Product::where($conditions)->orWhere('description', 'LIKE', "%{$title}%")->get();
+            } else {
+                $products = Product::where($conditions)->get();
+            }
+            return view('shop.results')->with('products', $products);
         }
     }
 
