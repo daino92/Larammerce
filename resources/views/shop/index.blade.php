@@ -53,28 +53,28 @@
                 <h1>What we Offer</h1>
                 <div class="col-md-3">
                     <div class="circle">
-                        <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Quality.png') }}"/></div>
+                        <div class="divSocial"><img src="{{ URL::to('pictures/Offer/Quality.png') }}"/></div>
                         <h4>Top Quality</h4>
                         <p class="Offer">We give priority to quality and trust our vendors. The packages are always double checked and packed nicely!</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="circle">
-                        <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Sales.png') }}"/></div>
+                        <div class="divSocial"><img src="{{ URL::to('pictures/Offer/Sales.png') }}"/></div>
                         <h4>Fast Sales</h4>
                         <p class="Offer">This platform provides a fast and easy to use system, regarding to sales! </p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="circle">
-                        <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Management.png') }}"/></div>
+                        <div class="divSocial"><img src="{{ URL::to('pictures/Offer/Management.png') }}"/></div>
                         <h4>Management System</h4>
                         <p class="Offer">A simple but functional management system is provided to both vendors and buyers.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="circle">
-                        <div id="divSocial"><img src="{{ URL::to('pictures/Offer/Support.png') }}"/></div>
+                        <div class="divSocial"><img src="{{ URL::to('pictures/Offer/Support.png') }}"/></div>
                         <h4>24/7 Support</h4>
                         <p class="Offer">We provide 24/7 e-mail or 10h/week phone support to our loyal customers for any problem that might occur.</p>
                     </div>
