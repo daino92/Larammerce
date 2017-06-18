@@ -1,6 +1,6 @@
 /* What we offer js trick */
 $(document).ready(function(){
-    $("#divSocial img").hover(
+    $(".divSocial img").hover(
         function () {
             $(this).animate({top: "-15"});
             },
