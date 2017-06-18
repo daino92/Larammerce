@@ -5,9 +5,6 @@
 @endsection
 
 @section('content')
-
-    <link rel="stylesheet" href="{{ URL::to('src/css/preview_product.css') }}">
-
 <div class="container-fluid">
     <div class="content-wrapper">
 		<div class="item-container">	
@@ -16,14 +13,14 @@
                     <div class="col-md-4">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="product col-md-3 service-image-left" style="text-align: center;">
-                                    <img id="item-display" src="{{$product->imagePath}}" alt="">
+                                <div class="product col-md-3 service-image-left">
+                                    <img id="item-display" src="{{$product->imagePath}}" alt="{{$product->title}}">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <div class="product-title"><h3>{{$product->title}} </h3> </div>
+                        <div class="product-title"><h3>{{$product->title}}</h3></div>
                         <div class="product-desc">{{$product->short_desc}}</div>
                         <hr>
                         <div class="product-stock">

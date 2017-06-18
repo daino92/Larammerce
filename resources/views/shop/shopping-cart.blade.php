@@ -147,9 +147,7 @@
                                         <h6 class="text-right">Added items?</h6>
                                     </div>
                                     <div class="col-xs-3">
-                                        <button type="button" class="btn btn-default btn-sm btn-block">
-                                            Update cart
-                                        </button>
+                                        <button type="button" class="btn btn-default btn-sm btn-block"> Update cart </button>
                                     </div>
                                 </div>
                             </div>
@@ -170,11 +168,11 @@
             </div>
         </div>
     @else
-       <div class="container-fluid" style="height:350px;">
+       <div class="container-fluid emptyCart">
         <div class="row">
             <div class="col-md-12">
-                <h2 style="text-align:center;padding-top: 50px; text-decoration:underline;">Cart is Empty</h2>
-                <img src="{{URL::to('pictures/empty_cart.jpg')}}" style="display:block;text-align:center;margin: 0px auto;">
+                <h2>Cart is Empty</h2>
+                <img src="{{URL::to('pictures/empty_cart.jpg')}}" class="emptyCart">
             </div>
         </div>
     </div>
