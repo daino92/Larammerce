@@ -8,46 +8,44 @@ body {
 
 /*  =============== END: GLOBAL CSS =============== */
 
-/*  =============== START: CSS Regarding the Search area =============== */
+/*  =============== START: CSS Regarding the Header area =============== */
 
-.thumbnail {
-    min-height: 450px;
-    height: auto;
+.collapse.navbar-collapse {
+    background: white;
 }
 
-.thumbnail img {
-    max-height: 200px;
+nav.navbar.navbar-default {
+    margin-bottom: 0;
 }
 
-.thumbnail .caption h3 {
-    height: 50px;
-    text-align: left;
-    font-size: 20px;
+.container-fluid.navb {
+    padding: 0;
 }
 
-.thumbnail .description {
-    color: #a8a3a6;
-    overflow: hidden;
-    white-space: normal;
-    margin-bottom: 15px;
+.nav li > a {
+    font-size: 15px;
 }
 
-.price {
-    font-weight: bold;
-    font-size: 16px;
+@media (min-width: 320px) {
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: 0;
+        margin-left: 0;
+    }
 }
 
-/*  =============== END: CSS Regarding the Search area =============== */
+.profPic {
+    width:40px;
+    height:40px;
+    margin: auto;
+    border-radius: 50%;
+    position: static;
+    top:-5px;
+}
 
+/*  =============== END: CSS Regarding the Header area =============== */
 
 /*  =============== START: CSS Regarding the Footer area =============== */
 
-.black { /* extra div block for index footer! */
-    background-color: #292c2f;
-    width: 100%;
-    height: 367px;
-    margin-bottom: -150px;
-} 
 .footer-distributed {
     background-color: #292c2f;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -58,10 +56,6 @@ body {
     padding: 30px 50px;
     margin-top: 150px;
 }
-
-/* .footer-distributed {
-  padding: 323px 50px 30px !important;
-} */
 
 .footer-distributed h3 { /* The company logo */
     color:  #ffffff;
@@ -202,211 +196,102 @@ body {
 
 /*  =============== END: CSS Regarding the Footer area =============== */
 
+/*  =============== START: CSS Regarding the Search area =============== */
 
-/*  =============== START: CSS Regarding the Search button =============== */
-
-.align-center {
-    width: 31%;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 14%;
-}
-
-#custom-search-input {
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-#custom-search-input input {
-    border: 0;
-    box-shadow: none;
-}
-
-#custom-search-input button {
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover {
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search {
-    font-size: 23px;
-}
-
-/*  =============== END: CSS Regarding the Search button =============== */
-
-
-/*  =============== START: CSS Regarding the Shopping Cart area =============== */
-
-.input-sm {
-    width: 140px;
-    text-align: center;
-    font-size: 10pt;
-}
-.delete-item {
-    font-size: 17px;
-}
-
-/*  =============== END: CSS Regarding the Shopping Cart area =============== */
-
-/*  =============== START: CSS Regarding the User Profile area =============== */
-
-.username, .bg-info .center {
-    text-align:center;
-}
-
-.userPic {
-    text-align: center;
-    margin: auto;
-    display: block;
-    width:175px;
-    height:175px;
-    border-radius: 50%;
-}
-
-ul.profile li {
-    list-style-type: none;
-    font-size: 16px;
-    padding-left: 8px;
-    height: 28px;
-    padding-top: 10px;
-    padding-bottom: 33px;
-}
-
-ul.profile a:hover {
-    color:white;
-    text-decoration: none;
-}
-.col-lg-2.left_menu_pos {
-    margin-top: 50px;
-    padding-top: 30px;
-    border: 1px solid rgba(0,0,0,0.08);
-}
-ul.profile li:hover {
-    background-color: rgba(38, 84, 189, 0.9);
-    -moz-transition: .4s ease;
-    -webkit-transition: .4s ease;
-    -o-transition: .4s ease;
-}
-
-ul.profile {
-    padding-left: 0;
-}
-
-ul.profile li:hover a {
-    color: white;
-}
-
-.user.section {
-    text-align: center;
-}
-
-.container.login { /* Login / Sign up*/
-    height: 381px;
-    padding-top: 80px;
-}
-
-.container-fluid.user {
+.thumbnail {
+    min-height: 450px;
     height: auto;
 }
 
-.form_center {
-    width: 50%;
-    margin-left: 25%;
+.thumbnail img {
+    max-height: 200px;
 }
 
-/*  =============== END: CSS Regarding the User Profile area =============== */
-
-/*  =============== START: CSS Regarding Categories area =============== */
-
-.category_name {
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.category {
-    border-radius: 13px;
-    -webkit-box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
-    -moz-box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
-    box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
-    padding: 10px 4px 2px 4px;
-}
-
-.category:hover {
-    -webkit-box-shadow: 0 0 17px 0 rgba(223,194,153,1.4);
-    -moz-box-shadow:0 0 17px 0 rgba(223,194,153,1.4);
-    box-shadow:0 0 17px 0 rgba(223,194,153,1.4);
-}
-
-.category a img {
-    max-width: 100%;
-    display: block;
-    position: relative;
-    border-radius: 5px;
-}
-
-.cat_Descr {
-    text-align: center;
+.thumbnail .caption h3 {
+    height: 50px;
+    text-align: left;
     font-size: 20px;
-    padding: 6px 0 5px 0;
 }
 
-/*  =============== END: CSS Regarding Categories area =============== */
-
-/*  =============== START: CSS Regarding the Header area =============== */
-
-.collapse.navbar-collapse {
-    background: white;
+.thumbnail .description {
+    color: #a8a3a6;
+    overflow: hidden;
+    white-space: normal;
+    margin-bottom: 15px;
 }
 
-nav.navbar.navbar-default {
-    margin-bottom: 0;
+.price {
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.container-fluid.navb {
-    padding: 0;
-}
+/*  =============== END: CSS Regarding the Search area =============== */
 
-.nav li > a {
-    font-size: 15px;
-}
-
-@media (min-width: 320px) {
-    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
-        margin-right: 0;
-        margin-left: 0;
-    }
-}
-
-.profPic {
-    width:40px;
-    height:40px;
-    margin: auto;
-    border-radius: 50%;
-    position: static;
-    top:-5px;
-}
-
-/*  =============== END: CSS Regarding the Header area =============== */
-
-/*  =============== START: CSS Regarding the Index area =============== */
+/*  =============== START: CSS Regarding the Search button =============== */
 
 .search_area {
     height:500px;
     width:auto;
     background:url('../../pictures/header.jpg') no-repeat;
 }
+
+.align-center {
+    width: 31%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+
+.input-group-btn .btn-group {
+    display: flex;
+}
+
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.btn-group .form-horizontal .btn[type="submit"] {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    #adv-search {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .dropdown.dropdown-lg {
+        position: static;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+}
+
+/*  =============== END: CSS Regarding the Search button =============== */
+
+/*  =============== START: CSS Regarding the Index area =============== */
 
 .container-fluid.categories {
     padding-top: 50px;
@@ -415,7 +300,7 @@ nav.navbar.navbar-default {
     height: auto;
 }
 
-#divSocial img {
+.divSocial img {
     position: relative;
     border: none;
 }
@@ -478,8 +363,8 @@ nav.navbar.navbar-default {
 }
 /* different shapes */
 
-.shape .overlay.round {  
-    background: url('../../pictures/round.png');  
+.shape .overlay.round {
+    background: url('../../pictures/round.png');
 }
 
 .shape:hover .overlay { /* hover effect */
@@ -630,6 +515,13 @@ nav.navbar.navbar-default {
     margin-bottom: 200px;
 }
 
+.black { /* extra div block for index footer! */
+    background-color: #292c2f;
+    width: 100%;
+    height: 367px;
+    margin-bottom: -150px;
+}
+
 @media  (max-width:768px) {
     .align-center {
         width: 73%;
@@ -728,10 +620,142 @@ nav.navbar.navbar-default {
         padding-top: 15%;
     }
 }
-
 /* what we offer/popular products end */
 
 /*  =============== END: CSS Regarding the Index area =============== */
+
+/*  =============== START: CSS Regarding the Shopping Cart area =============== */
+
+.input-sm {
+    width: 140px;
+    text-align: center;
+    font-size: 10pt;
+}
+
+.delete-item {
+    font-size: 17px;
+}
+.container-fluid.emptyCart {
+    height: auto;
+}
+
+.container-fluid.emptyCart h2 {
+    text-align:center;
+    padding-top: 50px;
+    text-decoration:underline;
+}
+
+.emptyCart {
+    display:block;
+    text-align:center;
+    margin: 0 auto;
+}
+
+/*  =============== END: CSS Regarding the Shopping Cart area =============== */
+
+/*  =============== START: CSS Regarding the User Profile area =============== */
+
+.username, .bg-info .center {
+    text-align:center;
+}
+
+.userPic {
+    text-align: center;
+    margin: auto;
+    display: block;
+    width:175px;
+    height:175px;
+    border-radius: 50%;
+}
+
+ul.profile li {
+    list-style-type: none;
+    font-size: 16px;
+    padding-left: 8px;
+    height: 28px;
+    padding-top: 10px;
+    padding-bottom: 33px;
+}
+
+ul.profile a:hover {
+    color:white;
+    text-decoration: none;
+}
+.col-lg-2.left_menu_pos {
+    margin-top: 50px;
+    padding-top: 30px;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+ul.profile li:hover {
+    background-color: rgba(38, 84, 189, 0.9);
+    -moz-transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+ul.profile {
+    padding-left: 0;
+}
+
+ul.profile li:hover a {
+    color: white;
+}
+
+.user.section {
+    text-align: center;
+}
+
+.container.login { /* Login / Sign up*/
+    height: 381px;
+    padding-top: 80px;
+}
+
+.container-fluid.user {
+    height: auto;
+}
+
+.form_center {
+    width: 50%;
+    margin-left: 25%;
+}
+
+/*  =============== END: CSS Regarding the User Profile area =============== */
+
+/*  =============== START: CSS Regarding Categories area =============== */
+
+.category_name {
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.category {
+    border-radius: 13px;
+    -webkit-box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
+    -moz-box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
+    box-shadow: 0 0 7px 0 rgba(153,153,153,0.4);
+    padding: 10px 4px 2px 4px;
+}
+
+.category:hover {
+    -webkit-box-shadow: 0 0 17px 0 rgba(223,194,153,1.4);
+    -moz-box-shadow:0 0 17px 0 rgba(223,194,153,1.4);
+    box-shadow:0 0 17px 0 rgba(223,194,153,1.4);
+}
+
+.category a img {
+    max-width: 100%;
+    display: block;
+    position: relative;
+    border-radius: 5px;
+}
+
+.cat_Descr {
+    text-align: center;
+    font-size: 20px;
+    padding: 6px 0 5px 0;
+}
+
+/*  =============== END: CSS Regarding Categories area =============== */
 
 /*  =============== START: CSS Regarding the Products/results area =============== */
 .noProducts {
@@ -863,6 +887,10 @@ nav.navbar.navbar-default {
 
 .service-image-right {
     padding-left: 50px;
+}
+
+.service-image-left {
+    text-align: center;
 }
 
 .service-image-left > center > img,.service-image-right > center > img {
