@@ -16,7 +16,8 @@ class UserTableSeeder extends Seeder
         $user->username = 'book';
         $user->email = 'book@gmail.com';
         $user->password = bcrypt('book');
-	    $user->stripe_api_key = "sk_test_aHu2guahO3zRUEmokSKuwujG";
+	    $user->stripe_api_key = "sk_test_sP0hF5aZqhYUT7iSUsFpuaqA";
+	    $user->stripe_public_key = "pk_test_sTUTjjJLxwf8amhi1BHUZZWt";
         $user->save();
         $user->roles()->attach(Role::where('name', 'Vendor')->first());
 
@@ -24,7 +25,8 @@ class UserTableSeeder extends Seeder
 	    $user->username = 'rouxa';
 	    $user->email = 'rouxa@gmail.com';
 	    $user->password = bcrypt('rouxa');
-	    $user->stripe_api_key = "sk_test_bTTnqhKrzDv2Jo9lWgn1sxrC";
+	    $user->stripe_api_key = "sk_test_vEzeaxJ98d7Iax7MGeo191yP";
+        $user->stripe_public_key = "pk_test_gc1IcOaKWuA6WbhQdlMGp6Xn";
 	    $user->save();
 	    $user->roles()->attach(Role::where('name', 'Vendor')->first());
 

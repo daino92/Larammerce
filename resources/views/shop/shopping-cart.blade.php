@@ -6,6 +6,7 @@
 
 @section('content')
     @if (Session::has('cart'))
+
        <style>
            .inc a{
                    font-size: 19px;
@@ -126,11 +127,12 @@
                                         <h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
                                     </div>
                                     <div class="col-xs-6">
-                                        <a href="{{ route('product.index') }}" type="button" class="btn btn-primary btn-sm btn-block btn-cont"><span class="glyphicon glyphicon-share-alt"></span>Continue shopping</a>
+                                        <a href="{{ route('indexPage') }}" type="button" class="btn btn-primary btn-sm btn-block btn-cont"><span class="glyphicon glyphicon-share-alt"></span>Continue shopping</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="panel-body">
                             @foreach($products as $product)
                                <div class="container-fluid">
@@ -143,12 +145,12 @@
                                     <div class="col-xs-12 col-md-6 downsec">
                                         <div class="text-right">
                                             <h4> <span class="text-muted">x</span> <strong>{{ $product['price'] }} $ </strong></h4>
-                                        </div>
+                                        </div>                                          
                                         <div class="col-xs-5 col-md-9">
-                                        <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm plus_minus"><span class="glyphicon glyphicon-minus "> </span></a>
+                                        <a href="{{ route('DecreaseProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-minus"> </span></a>
                                         <input type="text" class="input-sm" value="{{ $product['qty'] }}">
-                                        <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm plus_minus"><span class="glyphicon glyphicon-plus "> </span></a><br>
-                                        <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item plus_minus"><span class="glyphicon glyphicon-trash"> </span></a>                                            
+                                        <a href="{{ route('IncreaseProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> </span></a><br>
+                                        <a href="{{ route('RemoveProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item"><span class="glyphicon glyphicon-trash"> </span></a>
                                         </div>
                                     </div>
                                 </div>

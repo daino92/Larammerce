@@ -24,7 +24,7 @@ class Product extends Model
         return $this->belongsToMany('App\Cart', 'cart_product', 'cart_id', 'product_id')->withTimestamps();
     }*/
 
-    protected $indexSettings = [
+    /*protected $indexSettings = [
         'analysis' => [
             'char_filter' => [
                 'replace' => [
@@ -80,5 +80,5 @@ class Product extends Model
             'type' => 'integer',
             'include_in_all' => false
         ],
-    );
+    );*/
 }

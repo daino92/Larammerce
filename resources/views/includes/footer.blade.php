@@ -3,7 +3,7 @@
     <div class="footer-left">
         <h3>Locoroco<img class="img-circle" id="img_logo" src="{{ URL::to('pictures/locoroco.png') }}"> </h3>
         <p class="footer-links">
-            <a href="{{ route('product.index') }}">Home</a> ·
+            <a href="{{ route('indexPage') }}">Home</a> ·
             <a href="#">Blog</a> ·
             <a href="#">Pricing</a> ·
             <a href="#">About us</a> ·

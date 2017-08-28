@@ -10,7 +10,7 @@
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                                     <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                        {!! Form::open(['route' => 'shop.results', 'method' => 'GET', 'role' => 'search','class'=>'form-horizontal searchFormUltimate']) !!}
+                                        {!! Form::open(['route' => 'results', 'method' => 'GET', 'role' => 'search', 'class' => 'form-horizontal searchFormUltimate']) !!}
                                         <input type="hidden" name="title" id="realTitle"/>
                                         <div class="form-group">
                                             {!! Form::label('Category', 'Filter by Category:') !!}

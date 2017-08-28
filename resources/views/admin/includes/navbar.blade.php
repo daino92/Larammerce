@@ -13,7 +13,7 @@
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
-            <li><a href="{{ route('product.index') }}"><i class="fa fa-arrow-circle-left"></i> Return to Site</a></li>
+            <li><a href="{{ route('indexPage') }}"><i class="fa fa-arrow-circle-left"></i> Return to Site</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                 <ul class="dropdown-menu message-dropdown">

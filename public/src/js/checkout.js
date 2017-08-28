@@ -1,5 +1,6 @@
-Stripe.setPublishableKey('pk_test_i9rY0PordF8ulQ3MCX7dycn6');
-//Stripe.setPublishableKey('pk_test_VLrL5jVWsbrWF5M0GHTVXHJy');
+var public_key = $("#pk").val();
+
+Stripe.setPublishableKey(public_key);
 
 var $form = $('#checkout-form'); //Grab the form
 
