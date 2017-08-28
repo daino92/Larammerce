@@ -72,7 +72,7 @@ class UserController extends Controller
     }
 
     public function OrderHistory(){
-        $orders = Auth::user()->orders; //return completed orders to the profile page
+        $orders = Auth::user()->orders; // Return completed orders to the profile page
         $orders->transform(function($order, $key){
             $order->cart = unserialize($order->cart);
             return $order;
@@ -81,9 +81,9 @@ class UserController extends Controller
     }
 
     public function OngoingOrders(){
-        $oldCart = Session::get('cart'); //if there is a cart, fetch it.
-        $cart = new Cart($oldCart);
-        return view('user.ongoingorders', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+        $emptyCart = Session::get('cart'); // If there is a cart, fetch it.
+        $cart = new Cart($emptyCart);
+        return view('user.ongoingorders', ['products' => $cart->products, 'totalPrice' => $cart->totalPrice]);
     }
 
     public function userProfile(){
@@ -114,6 +114,6 @@ class UserController extends Controller
 
     public function getLogout(){
         Auth::Logout();
-        return redirect()->route('product.index');
+        return redirect()->route('indexPage');
     }
 }
