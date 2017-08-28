@@ -24,7 +24,7 @@ class ProductController extends Controller
         $title = preg_replace('/[\.\,\!\(\)]/', '', ltrim($request->input('title')));
 
         if ($title == "" && $category == "" && $subcategory == "" && $priceFrom == "" && $priceTo == "") {
-            return redirect()->route('product.index');
+            return redirect()->route('indexPage');
         } else {
             $conditions = array();
             if ($title != "") {
