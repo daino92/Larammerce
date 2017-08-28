@@ -8,72 +8,74 @@ use App\Product;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
+use DB;
 use Stripe\Stripe;
 use Stripe\Charge;
 
 class OrderController extends Controller
 {
     public function getCheckout(){
-        if(!Session::has('cart')){ //if we don't have a cart, then don't show nothing.
+        if(!Session::has('cart')){ // If we don't have a cart, then don't show nothing.
             return view('shop.shopping-cart');
         }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
+        $emptyCart = Session::get('cart');
+        $cart = new Cart($emptyCart);
         $total = $cart->totalPrice;
-        return view('shop.checkout', ['total' => $total]);
+
+        foreach ($cart->products as $product){
+            if(isset($shops[$product['user_id']]))
+                $shops[$product['user_id']][0] += $product['price'];
+            else
+                $shops[$product['user_id']][0] = $product['price'];
+        }
+
+        foreach ($shops as $shop_id => $shop) { // Specific query to bring for every shop the correct ID
+            $key = DB::select('SELECT stripe_public_key FROM users WHERE id = ?', [$shop_id]);
+
+            //print_r($key[0]->stripe_public_key); //prints public key
+            $shops[$shop_id][1] = $key[0]->stripe_public_key;
+        }
+        return view('shop.checkout', ['total' => $total, 'shops' => $shops]);
     }
 
     public function postCheckout(Request $request){
-        if(!Session::has('cart')){ //if we don't have a cart, then don't show nothing.
-            return redirect()->route('shop.shoppingCart');
+        if(!Session::has('cart')){ // If we don't have a cart, then don't show nothing.
+            return redirect()->route('shoppingCart');
         }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
+        $emptyCart = Session::get('cart');
+        $cart = new Cart($emptyCart);
 
+        $shop = NULL;
+        foreach($cart->products as $item) {
+            // We get the product id in order to query the database for it. This will perform N queries where N is the number of products.
+            $product_id = $item["item"]->id;
+            $product = Product::find($product_id);
 
-	    // We are going to perform a single API request to stripe for each of the items inside the cart.
-        // This is done in order to pay each product separately and support a cart with products from multiple shops.
-        foreach($cart->items as $item) {
-		    try {
-			    // We get the product id in order to query the database for it. This will perform N queries where N is the number of products.
-			    $product_id = $item["item"]->id;
-			    $product = Product::find($product_id);
+            if(isset($shop[$product->user_id]))
+                $shop[$product->user_id] += $product->price;
+            else
+                $shop[$product->user_id] = $product->price;
+        }
 
-			    // We fetch the user(shop) from the product in order to get the proper stripe api key.
-			    $api_key = $product->user->stripe_api_key;
-			    Stripe::setApiKey($api_key);
-
-			    // We issue an HTTP request to Stripe in order to perform the charge.
-			    // This will lead to creating a single order for each Product!!!
-			    $charge = Charge::create(array(
-				    "amount" => $item["price"] * 100,
-				    "currency" => "usd",
-				    "source" => $request->input('stripeToken'),
-				    "description" => "Test Charge..."
-			    ));
-
-			    $order = new Order(); //here we store order in the database, so we make a new order
-			    $order->cart = serialize($cart); //we serialize the cart in order to put it as a string in the database
-			    $order->address = $request->input('address');
-			    $order->name = $request->input('name');
-			    $order->payment_id = $charge->id;
-
-			    Auth::user()->orders()->save($order);
-		    } catch (\Exception $e){
-			    return redirect()->route('checkout')->with('error', $e->getMessage());
-		    }
-	    }
-
-        /*Stripe::setApiKey('sk_test_aHu2guahO3zRUEmokSKuwujG');  //create a charge
         try {
+            // We fetch the user(shop) from the product in order to get the proper stripe secret key.
+            $stripe_secret_key = $product->user->stripe_api_key;
+            Stripe::setApiKey($stripe_secret_key);
+
+            $total_amount = reset($shop);
+
+            $token = $request->input('stripeToken');  //Token received from stripe.js
+
+            // Stripe creates the charge
             $charge = Charge::create(array(
-                "amount" => $cart->totalPrice * 100,
+                "amount" => $total_amount * 100,
                 "currency" => "usd",
-                "source" => $request->input('stripeToken'), // obtained with Stripe.js
-                "description" => "Test Charge..."
+                "source" => $token,
+                "description" => "Test Charge"
             ));
-            $order = new Order(); //here we store order in the database, so we make a new order
-            $order->cart = serialize($cart); //we serialize the cart in order to put it as a string in the database
+
+            $order = new Order();
+            $order->cart = serialize($cart); // Cart serialization in order to insert it as a string in the database
             $order->address = $request->input('address');
             $order->name = $request->input('name');
             $order->payment_id = $charge->id;
@@ -81,8 +83,9 @@ class OrderController extends Controller
             Auth::user()->orders()->save($order);
         } catch (\Exception $e){
             return redirect()->route('checkout')->with('error', $e->getMessage());
-        }*/
-        Session::forget('cart');    //forget credit card info after purchase
-        return redirect()->route('product.index')->with('success', 'Successfully purchased products!');
+        }
+
+        Session::forget('cart'); //forget credit card info after purchase
+        return redirect()->route('indexPage')->with('success', 'Successfully purchased products!');
     }
 }
