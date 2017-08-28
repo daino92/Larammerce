@@ -36,7 +36,7 @@
                         <h3>${{$product->price}}</h3>
                         <hr>
                         <div class="btn-group cart">
-                            <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success pull-right" role="button">Add to Cart</a>
+                            <a href="{{ route('addToCart', ['id' => $product->id]) }}" class="btn btn-success pull-right" role="button">Add to Cart</a>
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@
             @foreach(json_decode($SubCategory->subcategory,true) as $sub)
                 <li>
                     <div class="category">
-                        <a href="{{route('shop.products','cat='.$SubCategory->category.'&'.'subCat='.$sub['name'])}}">
+                        <a href="{{route('products','cat='.$SubCategory->category.'&'.'subCat='.$sub['name'])}}">
                             <img src="{{$sub['img']}}" alt="{{$sub['name']}}">
                         </a>
                         <div class="cat_Descr">{{$sub['name']}}</div>

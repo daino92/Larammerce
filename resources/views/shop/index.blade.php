@@ -32,10 +32,10 @@
                                 <!--We decode the json and slice the array in order to show 4 Subcategories only-->
                                 @foreach(array_slice(json_decode($SubCategory->subcategory,true),0,4) as $sub)
                                     <div class="cat_men">
-                                        <a href="{{route('shop.products','cat='.$SubCategory->category.'&'.'subCat='.$sub['name'])}}">{{$sub['name']}}</a>
+                                        <a href="{{route('products','cat='.$SubCategory->category.'&'.'subCat='.$sub['name'])}}">{{$sub['name']}}</a>
                                     </div>
                                 @endforeach
-                                <div class="take_a_look"><a href="{{route('shop.categories','cat='.$SubCategory->category)}}">Take a look</a></div>
+                                <div class="take_a_look"><a href="{{route('categories','cat='.$SubCategory->category)}}">Take a look</a></div>
                             </figcaption>
                         </figure>
                     </li>
