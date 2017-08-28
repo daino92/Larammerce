@@ -25,7 +25,8 @@
                     @foreach($SubCategories as $SubCategory)
                     <li>
                         <figure>
-                            <div><img src="pictures/categories/{{$SubCategory->image}}" alt="{{$SubCategory->category}}"></div>
+                            <div class="categ"><img src="pictures/categories/{{$SubCategory->image}}" alt="{{$SubCategory->category}}" style="    width: auto;
+    height: 100%;"></div>
                             <figcaption>
                                 <h3>{{str_replace('_', ' & ', $SubCategory->category)}}</h3>
                                 <br>
