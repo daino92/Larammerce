@@ -42,10 +42,6 @@
            .text-right{
                display:inline-block;
            }
-           @media (max-width: 1024px) {
-                      .pull-right {
-                   float:left !important;
-                  }
 
 }
     </style>
@@ -93,16 +89,16 @@
                                         <p class="title">{{ $product['item']['title'] }}</p>
                                         <div class="pull-right inc">
                                             <span style="font-weight:bold;">{{ $product['price'] }}$  </span>
-                                            <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']]) }}"> + </a>
-                                            <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}"> - </a>
-                                            <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}"> X </a>
+                                            <a href="{{ route('IncreaseProduct', ['id' => $product['item']['id']]) }}"> + </a>
+                                            <a href="{{ route('DecreaseProduct', ['id' => $product['item']['id']]) }}"> - </a>
+                                            <a href="{{ route('RemoveProduct', ['id' => $product['item']['id']]) }}"> X </a>
                                             <input type="number" class="input-sm" value="{{ $product['qty'] }}">
                                         </div>
                                     </div>
                                 @endforeach
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                          <a href="{{ route('product.index') }}" type="button" class="btn btn-primary btn-lg btn-block btn-cont btn_cont_check"><span class="glyphicon glyphicon-share-alt"></span>Continue shopping</a>
+                                          <a href="{{ route('indexPage') }}" type="button" class="btn btn-primary btn-lg btn-block btn-cont btn_cont_check"><span class="glyphicon glyphicon-share-alt"></span>Continue shopping</a>
                                         </div>
                                         <div class="col-md-6">
                                             <a href="{{ route('checkout') }}">  <button type="button" class="btn btn-primary btn-lg btn-block btn_cont_check"> Checkout </button> </a>
@@ -147,10 +143,10 @@
                                             <h4> <span class="text-muted">x</span> <strong>{{ $product['price'] }} $ </strong></h4>
                                         </div>                                          
                                         <div class="col-xs-5 col-md-9">
-                                        <a href="{{ route('DecreaseProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-minus"> </span></a>
+                                        <a href="{{ route('DecreaseProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm plus_minus_delete"><span class="glyphicon glyphicon-minus"> </span></a>
                                         <input type="text" class="input-sm" value="{{ $product['qty'] }}">
-                                        <a href="{{ route('IncreaseProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> </span></a><br>
-                                        <a href="{{ route('RemoveProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item"><span class="glyphicon glyphicon-trash"> </span></a>
+                                        <a href="{{ route('IncreaseProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm plus_minus_delete"><span class="glyphicon glyphicon-plus"> </span></a><br>
+                                        <a href="{{ route('RemoveProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item plus_minus_delete"><span class="glyphicon glyphicon-trash"> </span></a>
                                         </div>
                                     </div>
                                 </div>

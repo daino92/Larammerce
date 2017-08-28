@@ -859,6 +859,9 @@ ul.profile li:hover a {
     margin: 77px auto;  
 }
 @media (max-width:1024px) {
+    .pull-right {
+                   float:left !important;
+    }
     .container.demo-3 .grid li {
         width: 463px;
     }
@@ -964,7 +967,7 @@ ul.profile li:hover a {
     width: 195px;
     margin: 197px auto;
 }
-    .plus_minus{
+    .plus_minus_delete{
             width: 108%;
     }
     .btn_cont_check{
