@@ -522,104 +522,7 @@ nav.navbar.navbar-default {
     margin-bottom: -150px;
 }
 
-@media  (max-width:768px) {
-    .align-center {
-        width: 73%;
-    }
-    .black {
-        /* extra div block for index footer! */
-        width: 0;
-        height: 0;
-    }
-    .container.demo-3 .grid li {
-        width: 338px;
-    }
-    .mi-slider nav {
-        top: 300px;
-    }
-    .section_popular .pop_products h1 {
-        font-size: 26px;
-    }
-    .section_offers .offer_title:after {
-        left: 0;
-        bottom: 0;
-    }
-    .section_popular .pop_products:after {
-        left: 0;
-        bottom: 0;
-        height: 0;
-    }
-    .what_we_offer, .popular_products {
-        background: #00bcd4;
-        padding-top: 108px;
-        padding-bottom: 100px;
-    }
-    .container-fluid.vendors {
-        padding-top: 108px;
-        padding-bottom: 100px;
-    }
-    .container-fluid.categories {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-}
 
-@media (width: 320px) {
-    .container.demo-3 .grid li {
-        width: 300px;
-    }
-    .popular_vendors {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .popular_vendors .col-md-4 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .shape {
-        width: auto;
-    }
-    .shape .overlay.round {
-        left: 0;
-        width: 308px;
-    }
-    .base {
-        width: 320px;
-        height: 320px;
-    }
-    .shape .bg, .shape .details {
-        width: auto;
-    }
-    .shape .base img {
-        height: 300px;
-        width: 292px;
-    }
-}
-@media (width:768px) {
-    .align-center {
-        width: 65%;
-        padding-top: 11%;
-    }
-    .mi-slider {
-        height: 385px;
-    }
-    .section_offers .circle .Offer {
-        text-align: center;
-    }
-    .section_popular .pop_products h1 {
-        font-size: 36px;
-    }
-}
-@media (width:1024px) {
-    .container.demo-3 .grid li {
-        width: 463px;
-    }
-    .align-center {
-        width: 49%;
-        padding-top: 15%;
-    }
-}
 /* what we offer/popular products end */
 
 /*  =============== END: CSS Regarding the Index area =============== */
@@ -627,7 +530,7 @@ nav.navbar.navbar-default {
 /*  =============== START: CSS Regarding the Shopping Cart area =============== */
 
 .input-sm {
-    width: 140px;
+    width: 148px;
     text-align: center;
     font-size: 10pt;
 }
@@ -897,3 +800,214 @@ ul.profile li:hover a {
     max-height: 155px;
 }
 /*  =============== END: CSS Regarding the Preview Products area =============== */
+
+.view_btn{
+    float:right;
+    margin-top: 51px;
+}
+@media  (max-width:768px) {
+    .align-center {
+        width: 73%;
+    }
+    .black {
+        /* extra div block for index footer! */
+        width: 0;
+        height: 0;
+    }
+    .container.demo-3 .grid li {
+        width: 338px;
+    }
+    .mi-slider nav {
+        top: 300px;
+    }
+    .section_popular .pop_products h1 {
+        font-size: 26px;
+    }
+    .section_offers .offer_title:after {
+        left: 0;
+        bottom: 0;
+    }
+    .section_popular .pop_products:after {
+        left: 0;
+        bottom: 0;
+        height: 0;
+    }
+    .what_we_offer, .popular_products {
+        background: #00bcd4;
+        padding-top: 108px;
+        padding-bottom: 100px;
+    }
+    .container-fluid.vendors {
+        padding-top: 108px;
+        padding-bottom: 100px;
+    }
+    .container-fluid.categories {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width:1366px){
+      #adv-search {
+    width: 500px;
+    margin: 77px auto;  
+}
+}
+@media (max-width:1280px){
+  #adv-search {
+    width: 500px;
+    margin: 77px auto;  
+}
+@media (max-width:1024px) {
+    .container.demo-3 .grid li {
+        width: 463px;
+    }
+    .align-center {
+        width: 49%;
+        padding-top: 15%;
+        
+    }
+    .input-sm {
+    width: 98px;
+    text-align: center;
+    font-size: 10pt;
+}
+}
+@media (max-width:768px) {
+                .btn_cont_check{
+                        width: 49%;
+    margin: 0px auto;
+        margin-top:20px;
+    }
+    .view_btn{
+        float: right;
+    margin-top: -23px;
+    }
+    .align-center {
+        width: 65%;
+        padding-top: 11%;
+    }
+    .mi-slider {
+        height: 385px;
+    }
+    .section_offers .circle .Offer {
+        text-align: center;
+    }
+    .section_popular .pop_products h1 {
+        font-size: 36px;
+    }
+    .input-sm{
+    width: 179px;
+    text-align: center;
+    font-size: 10pt;
+    }
+      .downsec{
+        padding-top: 20px;
+    }
+}
+@media (max-width:640px){
+        .dropdown-menu-right{
+        width: 362px;
+    }
+    #adv-search {
+    width: 392px;
+        margin: 72px auto;}
+    
+            .btn_cont_check{
+        margin-top:20px;
+    }
+
+      .input-sm{
+    width: 127px;
+    text-align: center;
+    font-size: 10pt;
+    }  
+}
+@media (max-width:480px){
+            .dropdown-menu-right{
+        width: 296px;
+    }
+    
+    
+    #adv-search {
+    width: 296px;
+    margin: 119px auto;
+}
+
+        .btn_cont_check{
+        margin-top:10px;
+        width: 80%;
+    }
+      
+    .input-sm{
+    width: 67px;
+    text-align: center;
+    font-size: 10pt;
+    }
+    .downsec{
+    padding-top: 20px;
+    padding-left: 0px;
+    }
+}
+@media (max-width: 320px) {
+    a.btn.btn-primary.btn-sm.btn-block.btn-cont {
+    width: 110%;
+}
+    .categ{
+        height: 264px;
+}
+
+    .dropdown-menu-right{
+        width:195px;
+    }
+    #adv-search {
+    width: 195px;
+    margin: 197px auto;
+}
+    .plus_minus{
+            width: 108%;
+    }
+    .btn_cont_check{
+        margin-top:20px;
+            width: 110%;
+    }
+        .view_btn{
+        float: right;
+    margin-top: -12px;
+    }
+    .input-sm {
+    width: 85px;
+    text-align: center;
+    font-size: 10pt;
+}
+    .container.demo-3 .grid li {
+        width: 300px;
+    }
+    .popular_vendors {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .popular_vendors .col-md-4 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .shape {
+        width: auto;
+    }
+    .shape .overlay.round {
+        left: 0;
+        width: 308px;
+    }
+    .base {
+        width: 320px;
+        height: 320px;
+    }
+    .shape .bg, .shape .details {
+        width: auto;
+    }
+    .shape .base img {
+        height: 300px;
+        width: 292px;
+    }
+}
