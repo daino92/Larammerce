@@ -29,10 +29,24 @@
                  display: inline-block;
                 font-size: 14px;
                 padding: 5px;
+               font-weight: bold;
                }
            .det p{
                font-size: 18px;
            }
+           .text-right h4{
+               display:inline-block;
+               
+           }
+           .text-right{
+               display:inline-block;
+           }
+           @media (max-width: 1024px) {
+                      .pull-right {
+                   float:left !important;
+                  }
+
+}
     </style>
                         
         <div class="container">
@@ -40,7 +54,7 @@
                 <br>
                 <div class="col-md-12">
                     <h2 style="text-align:center; margin-bottom:20px;">My Shopping Cart</h2>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         @foreach($products as $product)
                            <div class="col-md-12" style=" margin-bottom: 50px;
             border: 1px solid rgb(234, 234, 234);
@@ -59,21 +73,22 @@
                                    <p>Size: XXL </p>
                                    <p>Seller:Manos G</p>
                                </div>
-                               <p style="position:absolute;left:80%; bottom:5px;" class="btn btn-success">View Product</p>
+                               <p class="btn btn-success view_btn">View Product</p>
                            </div>
                         @endforeach
                         <!--REVIEW ORDER-->
 
                         <!--REVIEW ORDER END-->
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <div class="panel panel-default">
                             <div class="panel-heading text-center">
                                 <h4>Review Order</h4>
                             </div>
                             <div class="panel-body">
                                 @foreach($products as $product)
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 " style="    padding-bottom: 50px;">
+                                       
                                         <p class="title">{{ $product['item']['title'] }}</p>
                                         <div class="pull-right inc">
                                             <span style="font-weight:bold;">{{ $product['price'] }}$  </span>
@@ -86,10 +101,10 @@
                                 @endforeach
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                          <a href="{{ route('product.index') }}" type="button" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-share-alt"></span>Continue shopping</a>
+                                          <a href="{{ route('product.index') }}" type="button" class="btn btn-primary btn-lg btn-block btn-cont btn_cont_check"><span class="glyphicon glyphicon-share-alt"></span>Continue shopping</a>
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="{{ route('checkout') }}">  <button type="button" class="btn btn-primary btn-lg btn-block"> Checkout </button> </a>
+                                            <a href="{{ route('checkout') }}">  <button type="button" class="btn btn-primary btn-lg btn-block btn_cont_check"> Checkout </button> </a>
                                         </div>
                                     </div>
                             </div>
@@ -111,7 +126,7 @@
                                         <h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
                                     </div>
                                     <div class="col-xs-6">
-                                        <a href="{{ route('product.index') }}" type="button" class="btn btn-primary btn-sm btn-block"><span class="glyphicon glyphicon-share-alt"></span>Continue shopping</a>
+                                        <a href="{{ route('product.index') }}" type="button" class="btn btn-primary btn-sm btn-block btn-cont"><span class="glyphicon glyphicon-share-alt"></span>Continue shopping</a>
                                     </div>
                                 </div>
                             </div>
@@ -120,20 +135,20 @@
                             @foreach($products as $product)
                                <div class="container-fluid">
                                 <div class="row">
-                                    <div class="col-xs-2"><img class="img-responsive" src="{{ $product['item']['imagePath'] }}">
+                                    <div class="col-xs-6 col-md-2"><img class="img-responsive" src="{{ $product['item']['imagePath'] }}">
                                     </div>
-                                    <div class="col-xs-4">
+                                    <div class="col-xs-6 col-md-4">
                                         <h4 class="product-name"><strong>{{ $product['item']['title'] }}</strong></h4><h4><small>{{ $product['item']['short_desc'] }}</small></h4>
                                     </div>
-                                    <div class="col-xs-6">
-                                        <div class="col-xs-3 text-right">
-                                            <h4><strong>{{ $product['price'] }} $ <span class="text-muted">x</span></strong></h4>
+                                    <div class="col-xs-12 col-md-6 downsec">
+                                        <div class="text-right">
+                                            <h4> <span class="text-muted">x</span> <strong>{{ $product['price'] }} $ </strong></h4>
                                         </div>
-                                        <div class="col-xs-9">
-                                        <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-minus"> </span></a>
+                                        <div class="col-xs-5 col-md-9">
+                                        <a href="{{ route('product.reduceByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm plus_minus"><span class="glyphicon glyphicon-minus "> </span></a>
                                         <input type="text" class="input-sm" value="{{ $product['qty'] }}">
-                                        <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> </span></a><br>
-                                        <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item"><span class="glyphicon glyphicon-trash"> </span></a>                                            
+                                        <a href="{{ route('product.increaseByOne', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm plus_minus"><span class="glyphicon glyphicon-plus "> </span></a><br>
+                                        <a href="{{ route('product.remove', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item plus_minus"><span class="glyphicon glyphicon-trash"> </span></a>                                            
                                         </div>
                                     </div>
                                 </div>
@@ -143,10 +158,10 @@
                          <div class="container-fluid">
                             <div class="row">
                                 <div class="text-center">
-                                    <div class="col-xs-9">
+                                    <div class="col-xs-6">
                                         <h6 class="text-right">Added items?</h6>
                                     </div>
-                                    <div class="col-xs-3">
+                                    <div class="col-xs-6">
                                         <button type="button" class="btn btn-default btn-sm btn-block"> Update cart </button>
                                     </div>
                                 </div>
@@ -155,10 +170,10 @@
                         </div>
                         <div class="panel-footer">
                             <div class="row text-center">
-                                <div class="col-xs-9">
+                                <div class="col-xs-6">
                                     <h4 class="text-right">Total: <strong>{{ $totalPrice }} $</strong></h4>
                                 </div>
-                                <div class="col-xs-3">
+                                <div class="col-xs-6">
                                     <a href="{{ route('checkout') }}" type="button" class="btn btn-success btn-block">Checkout</a>
                                 </div>
                             </div>
