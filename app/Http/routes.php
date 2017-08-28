@@ -14,54 +14,54 @@
 
 Route::get('/', [
     'uses' => 'ProductController@getIndex',
-    'as' => 'product.index'
+    'as' => 'indexPage'
 ]);
 
 Route::get('/search', [
     'uses' => 'ProductController@getResults',
-    'as' => 'shop.results'
+    'as' => 'results'
 ]);
 
 Route::get('/categories', [
     'uses' => 'ProductController@getCategories',
-    'as' => 'shop.categories'
+    'as' => 'categories'
 ]);
 
 Route::get('/product-details/{id}', [
     'uses' => 'ProductController@preview_product',
-    'as' => 'shop.preview_product'
+    'as' => 'preview_product'
 ]);
 
 Route::get('/category', [
     'uses' => 'ProductController@products',
-    'as' => 'shop.products'
+    'as' => 'products'
 ]);
 
 //=============== *** Cart Routes *** ===============//
 
 Route::get('/add-to-cart/{id}', [
-    'uses' => 'CartController@getAddToCart',
-    'as' => 'product.addToCart'
+    'uses' => 'CartController@AddToCart',
+    'as' => 'addToCart'
 ]);
 
 Route::get('/reduce/{id}', [
-    'uses' => 'CartController@getReduceByOne',
-    'as' => 'product.reduceByOne'
+    'uses' => 'CartController@DecreaseProduct',
+    'as' => 'DecreaseProduct'
 ]);
 
 Route::get('/increase/{id}', [
-    'uses' => 'CartController@getIncreaseByOne',
-    'as' => 'product.increaseByOne'
+    'uses' => 'CartController@IncreaseProduct',
+    'as' => 'IncreaseProduct'
 ]);
 
 Route::get('/remove/{id}', [
-    'uses' => 'CartController@getRemoveItem',
-    'as' => 'product.remove'
+    'uses' => 'CartController@RemoveProduct',
+    'as' => 'RemoveProduct'
 ]);
 
 Route::get('/shopping-cart', [
-    'uses' => 'CartController@getCart',
-    'as' => 'product.shoppingCart'
+    'uses' => 'CartController@showCart',
+    'as' => 'shoppingCart'
 ]);
 
 //=============== *** Order Routes *** ===============//
