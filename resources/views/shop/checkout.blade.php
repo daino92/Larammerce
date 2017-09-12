@@ -5,9 +5,10 @@
 @endsection
 
 @section('content')
-    <?php foreach ($shops as $shop_id => $shop) { ?>
-        <input id="pk" class='public_key' type="hidden" data-shop="<?php print $shop_id;?>" value="<?php print $shop[1] ?>">
-    <?php } ?>
+
+    @foreach ($shops as $shop_id => $shop)
+        <input id="pk" class='public_key' type="hidden" data-shop="{{$shop_id}}" value="{{$shop[1]}}">
+    @endforeach
 
     <div class="container-fluid">
         <div class="row">
@@ -18,12 +19,15 @@
                     {{ !Session::has('error') ? 'hidden' : ''}}">
                     {{ Session::get('error') }}
                 </div>
-                <form action ="{{ route('checkout') }}" method="post" id="checkout-form">
+                <form action = "{{ route('checkout') }}" method="post" id="checkout-form">
+                    @foreach ($shops as $shop_id => $shop)
+                        <input type="hidden" name="sp" value="{{$shop_id}}">
+                    @endforeach
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" class="form-control" value="John" required>
+                                <input type="text" id="name" name="name" class="form-control" value="Bob" required>
                             </div>
                         </div>
                         <div class="col-xs-12">
@@ -41,7 +45,7 @@
                         <div class="col-xs-12">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" class="form-control" value="John" required>
+                                <input type="text" id="name" class="form-control" value="Bob" required>
                             </div>
                         </div>
                         <div class="col-xs-12">
