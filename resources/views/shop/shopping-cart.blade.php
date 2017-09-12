@@ -20,29 +20,31 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-body">
-                            @foreach($products as $product)
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-xs-6 col-md-2"><img class="img-responsive" src="{{ $product['item']['imagePath'] }}"></div>
-                                        <div class="col-xs-6 col-md-4">
-                                        <h4 class="product-name"><strong>{{ $product['item']['title'] }}</strong></h4><h4><small>{{ $product['item']['short_desc'] }}</small></h4>
-                                        </div>
-                                        <div class="col-xs-12 col-md-6 downsec">
-                                            <div class="text-right">
-                                                <h4><span class="text-muted">x</span><strong>{{ $product['price'] }} $ </strong></h4>
+                        @foreach($shop as $shop_id => $product)
+                            <div class="shops">Shop 1</div>
+                            <div class="panel-body">
+                                @for($i = 0; $i < count($product[0]); $i++)
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-md-2"><img class="img-responsive" src="{{ $products[$product[0][$i]]['item']['imagePath'] }}"></div>
+                                            <div class="col-xs-6 col-md-4">
+                                                <h4 class="product-name"><strong>{{ $products[$product[0][$i]]['item']['title'] }}</strong></h4><h4><small>{{ $products[$product[0][$i]]['item']['short_desc'] }}</small></h4>
                                             </div>
-                                            <div class="col-xs-5 col-md-9">
-                                                <a href="{{ route('DecreaseProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-warning btn-sm plus_minus_delete"><span class="glyphicon glyphicon-minus"> </span></a>
-                                                <input type="text" class="input-sm" value="{{ $product['qty'] }}">
-                                                <a href="{{ route('IncreaseProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-success btn-sm plus_minus_delete"><span class="glyphicon glyphicon-plus"> </span></a><br>
-                                                <a href="{{ route('RemoveProduct', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item plus_minus_delete"><span class="glyphicon glyphicon-trash"> </span></a>
+                                            <div class="col-xs-12 col-md-6 downsec">
+                                                <div class="text-right">
+                                                    <h4><span class="text-muted">x</span><strong>{{ $products[$product[0][$i]]['price'] }} $ </strong></h4>
+                                                </div>
+                                                <div class="col-xs-5 col-md-9">
+                                                    <a href="{{ route('DecreaseProduct', ['id' => $products[$product[0][$i]]['item']['id']]) }}" type="button" class="btn btn-warning btn-sm plus_minus_delete"><span class="glyphicon glyphicon-minus"> </span></a>
+                                                    <input type="text" class="input-sm" value="{{ $products[$product[0][$i]]['qty'] }}">
+                                                    <a href="{{ route('IncreaseProduct', ['id' => $products[$product[0][$i]]['item']['id']]) }}" type="button" class="btn btn-success btn-sm plus_minus_delete"><span class="glyphicon glyphicon-plus"> </span></a><br>
+                                                    <a href="{{ route('RemoveProduct', ['id' => $products[$product[0][$i]]['item']['id']]) }}" type="button" class="btn btn-danger btn-sm form-control delete-item plus_minus_delete"><span class="glyphicon glyphicon-trash"> </span></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <hr>
-                            @endforeach
+                                    <hr>
+                                @endfor
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="text-center">
@@ -53,17 +55,18 @@
                                         </div>
                                     </div>
                                 </div>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="row text-center">
-                                <div class="col-xs-6">
-                                    <h4 class="text-right">Total: <strong>{{ $totalPrice }} $</strong></h4>
-                                </div>
-                                <div class="col-xs-6">
-                                    <a href="{{ route('checkout') }}" type="button" class="btn btn-success btn-block">Checkout</a>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="row text-center">
+                                    <div class="col-xs-6">
+                                        <h4 class="text-right">Total: <strong>{{ $product[1] }} $</strong></h4>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <a href="{{ route('checkout','sp='.$shop_id) }}" type="button" class="btn btn-success btn-block">Checkout</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
