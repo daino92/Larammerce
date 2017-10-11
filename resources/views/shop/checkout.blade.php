@@ -6,9 +6,9 @@
 
 @section('content')
 
-    @foreach ($shops as $shop_id => $shop)
-        <input id="pk" class='public_key' type="hidden" data-shop="{{$shop_id}}" value="{{$shop[1]}}">
-    @endforeach
+    {{--@foreach ($shops as $shop_id => $shop)--}}
+        <input id="pk" class='public_key' type="hidden"  value="{{$key}}">
+    {{--@endforeach--}}
 
     <div class="container-fluid">
         <div class="row">
@@ -20,9 +20,9 @@
                     {{ Session::get('error') }}
                 </div>
                 <form action = "{{ route('checkout') }}" method="post" id="checkout-form">
-                    @foreach ($shops as $shop_id => $shop)
+                    {{--@foreach ($shops as $shop_id => $shop)--}}
                         <input type="hidden" name="sp" value="{{$shop_id}}">
-                    @endforeach
+                    {{--@endforeach--}}
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
