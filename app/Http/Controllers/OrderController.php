@@ -6,6 +6,7 @@ use App\Cart;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
+use Mockery\Exception;
 use Session;
 use Auth;
 use DB;
@@ -42,7 +43,7 @@ class OrderController extends Controller
             //print_r($key[0]->stripe_public_key); //prints public key
             $shops[$shop_id][1] = $key[0]->stripe_public_key;
         }*/
-        return view('shop.checkout', ['total' => $pk_price[$shopID][0], 'shops' => $pk_price]);
+        return view('shop.checkout', ['total' => $pk_price[$shopID][0], 'shops' => $pk_price,'key'=> $key[0]->stripe_public_key,'shop_id'=>$shopID]);
     }
 
     public function postCheckout(Request $request){
@@ -80,12 +81,14 @@ class OrderController extends Controller
             $token = $request->input('stripeToken');  //Token received from stripe.js
 
             // Stripe creates the charge
+
             $charge = Charge::create(array(
                 "amount" => $total_amount * 100,
                 "currency" => "usd",
                 "source" => $token,
                 "description" => "Test Charge"
             ));
+
 
             $order = new Order();
             $order->cart = serialize($cart); // Cart serialization in order to insert it as a string in the database
@@ -95,7 +98,8 @@ class OrderController extends Controller
 
             Auth::user()->orders()->save($order);
         } catch (\Exception $e){
-            return redirect()->route('checkout', 'sp=' . $_REQUEST["sp"])->with('error', $e->getMessage());
+
+//            return redirect()->route('checkout', 'sp=' . $_REQUEST["sp"])->with('error', $e->getMessage());
         }
 
         for($i = 0; $i < count($remainingShops); $i++){
